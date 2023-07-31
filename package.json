@@ -1,5 +1,10 @@
 {
-  "name": "bandchain-docs-v-2",
+  "name": "bandchain-docs",
+  "description": "Band Protocol official documentation website",
+  "author": {
+    "name": "Band Protocol",
+    "email": "dev@bandprotocol.com"
+  },
   "version": "0.0.0",
   "private": true,
   "scripts": {
