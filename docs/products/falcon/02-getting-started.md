@@ -6,8 +6,8 @@ This guide serves as a quick reference on how to run Falcon.
 
 There are two main components on the BandChain in the requesting process:
 
-- [Oracle script](/custom-script/oracle-script/introduction.html)
-- [Data source](/custom-script/data-source/introduction.html)
+- [Oracle script](/develop/custom-scripts/oracle-script/introduction)
+- [Data source](/develop/custom-scripts/data-source/introduction)
 
 For requesting data from BandChain, you have to deploy both of them in the BandChain first so that your Falcon program can specify the `oracle_script_id` when sending the request.
 
