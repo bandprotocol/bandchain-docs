@@ -1029,10 +1029,10 @@ const client = new Client('<GRPC_WEB>')
 ```
 
 [`referencedata`]: /develop/developer-tools/bandchain.js/data#referencedata
-[`txresponse`]: https://docs.cosmos.network/v0.44/core/proto-docs#txresponse
+[`txresponse`]: https://docs.cosmos.network/v0.45/core/proto-docs.html#cosmos.base.abci.v1beta1.TxResponse
 [`queryrequestresponse`]: /core-concepts/oracle-modules#queryrequestresponse
 [`request`]: /core-concepts/oracle-modules#request
 [`oraclescript`]: /core-concepts/oracle-modules#oraclescript
 [`datasource`]: /core-concepts/oracle-modules#datasource
-[`baseaccount`]: https://docs.cosmos.network/v0.44/core/proto-docs#baseaccount
-[`block`]: https://docs.cosmos.network/v0.44/core/proto-docs#getlatestblockresponse
+[`baseaccount`]: https://docs.cosmos.network/v0.45/core/proto-docs.html#cosmos.auth.v1beta1.BaseAccount
+[`block`]: https://docs.cosmos.network/v0.45/core/proto-docs.html#cosmos.base.tendermint.v1beta1.GetLatestBlockResponse

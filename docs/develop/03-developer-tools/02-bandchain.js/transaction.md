@@ -323,7 +323,6 @@ const sendCoin = async () => {
 [`any`]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/any.proto
 [`getaccount`]: /develop/developer-tools/bandchain.js/client#getaccount-address
 [`getchainid`]: /develop/developer-tools/bandchain.js/client#getchainid
-[`fee`]: https://docs.cosmos.network/v0.44/core/proto-docs#fee
 [`publickey`]: /develop/developer-tools/bandchain.js/wallet#publickey
 [`signmode`]: https://docs.cosmos.network/master/core/proto-docs#signmode
 [`client`]: /develop/developer-tools/bandchain.js/client
