@@ -40,7 +40,7 @@ const FeatureList: CardItem[] = [
         applications.
       </>
     ),
-    to: '/develop/developer-guides/how-to-use-bandchain',
+    to: '/develop/developer-guides/obi',
     target: '_self',
   },
   {
