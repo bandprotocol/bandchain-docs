@@ -76,7 +76,7 @@ The last two lines of the oracle script above shows the macros in action.
 
 ### Preparation phase
 
-The `prepare_impl` function takes the previously-defined input struct as an argument. The function then has only one main task; calling the [`ask_external_data`](https://github.com/bandprotocol/owasm/blob/master/src/oei/mod.rs#L35) function in `oei` module.
+The `prepare_impl` function takes the previously-defined input struct as an argument. The function then has only one main task; calling the [`ask_external_data`](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/oei/mod.rs#L49) function in `oei` module.
 
 In case extra information from relating oracle request is needed for implementing some logic before calling `ask_external_data`, here are functions and their details from`oei` module which can be used in `prepare_impl`.
 
@@ -93,7 +93,7 @@ In case extra information from relating oracle request is needed for implementin
 
 ### Execution phase
 
-The `execute_impl` function takes in the input type as an argument as well, but also returns the output struct type. It then starts by computing the final value of the request through calling [`load_average`](https://github.com/bandprotocol/owasm/blob/master/src/ext/mod.rs#L21) function from the `ext` module and proceed to use the computed average to construct and return the appropriate output struct.
+The `execute_impl` function takes in the input type as an argument as well, but also returns the output struct type. It then starts by computing the final value of the request through calling [`load_average`](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/ext/mod.rs#L23) function from the `ext` module and proceed to use the computed average to construct and return the appropriate output struct.
 
 Below is the list of functions from `oei` that can be called in `execute_impl`.
 
