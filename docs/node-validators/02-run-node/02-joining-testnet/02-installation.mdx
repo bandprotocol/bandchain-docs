@@ -274,6 +274,8 @@ Since a subset of validators who are selected for a data request must send the d
 
 Yoda is a program used by BandChain's validator nodes to help automatically query data from data providers by executing data source script, then submitting the result to fulfill the request. [Read more on the Yoda section.](/node-validators/yoda)
 
+**Yoda requires indexer to run properly. Please make sure if your node has set indexer in config.toml file as "kv"**
+
 ### Step 5.1: Installation
 
 Before setting up Yoda, the Lambda function executor need to be set up to execute data sources. If this step has not been done yet, please follow the instructions on the following pages (select either one of these methods):
