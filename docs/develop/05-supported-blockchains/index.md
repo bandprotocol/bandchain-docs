@@ -25,6 +25,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Findora           |                       [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet-anvil.evm.findorascan.io/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)                        |
 | Godwoken          |                             [0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a](https://v1.betanet.gwscan.com/address/0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a)                             |
 | Harmony           |                               [0xD0b2234eB9431e850a814bCdcBCB18C1093F986B](https://explorer.pops.one/address/0xd0b2234eb9431e850a814bcdcbcb18c1093f986b)                               |
+| Horizen (Gobi)    |                           [0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293](https://gobi-explorer.horizen.io/address/0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293)                            |
 | Icon (Berlin)     |                        [cxd2bac764a0277efb9a6861fa991be4e5a46f16a2](https://berlin.tracker.solidwallet.io/contract/cxd2bac764a0277efb9a6861fa991be4e5a46f16a2)                         |
 | Icon (Lisbon)     |                        [cx734512ad03efdcedb69e0526415a7ce21340e0db](https://lisbon.tracker.solidwallet.io/contract/cx734512ad03efdcedb69e0526415a7ce21340e0db)                         |
 | Meter             |                          [0xe1bCC505f2Bdd02C9480C924856f5080834A3897](https://scan-warringstakes.meter.io/address/0xe1bCC505f2Bdd02C9480C924856f5080834A3897)                          |
@@ -50,6 +51,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Ethereum         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
 | Fantom           |                  [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://ftmscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
 | Godwoken         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
+| Horizen (EON)    |          [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://eon-explorer.horizenlabs.io/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)          |
 | Icon (Java)      |            [cxe647e0af68a4661566f5e9861ad4ac854de808a2](https://tracker.icon.community/contract/cxe647e0af68a4661566f5e9861ad4ac854de808a2)            |
 | Meter            |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
 | Moonriver        |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
