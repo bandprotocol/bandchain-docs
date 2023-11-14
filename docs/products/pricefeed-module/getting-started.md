@@ -20,7 +20,7 @@ Be sure you have met the prerequisites before you follow this guide.
 
 ### Ignite CLI
 
-- 0.26.1 or higher
+- 0.27.2 or higher
 
 ### Rust (for Hermes Relayer)
 
@@ -55,8 +55,8 @@ To expedite the testing of the pricefeed module, modify the default voting perio
 genesis:
   app_state:
     gov:
-      voting_params:
-        voting_period: '40s'
+      params:
+        voting_period: "40s"
 ```
 
 ### Initiate source channel and symbol requests by Ignite
@@ -78,32 +78,21 @@ genesis:
 
 ### Edit Cosmos SDK and IBC-go version
 
-To ensure compatibility with the pricefeed module, kindly update the Cosmos SDK version to `v0.46.12`.
+To ensure compatibility with the pricefeed module, kindly update the Cosmos SDK version to `v0.47.5`.
 
 ```go
 require (
     ...
-    github.com/cosmos/Cosmos SDK v0.46.12
+    github.com/cosmos/Cosmos SDK v0.47.5
 )
 ```
 
-Additionally, modify the ibc-go dependency in both the go.mod and app.go files, replacing the version `v6.1.0` from the repository github.com/cosmos/ibc-go/v6 with version `v5.2.0` from the repository github.com/cosmos/ibc-go/v5.
+Additionally, ensure that ibc-go version is v7.2.1
 
 ```go
 require (
     ...
-    github.com/cosmos/ibc-go/v5 v5.2.0
-)
-```
-
-### Replace Tendermint with CometBFT
-
-The pricefeed module now uses the version implemented by CometBFT. Therefore, to replace the Tendermint version, kindly add this line in `go.mod`.
-
-```
-replace (
-    ...
-    github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.27
+    github.com/cosmos/ibc-go/v7 v7.2.1
 )
 ```
 
@@ -294,23 +283,41 @@ The current default value for the source channel is `[not_set]`. If you wish to 
 
 ```json
 {
-  "title": "Param change for SourceChannel",
-  "description": "Proposal for change SourceChannel param in pricefeed module",
-  "changes": [
+  "messages": [
     {
-      "subspace": "pricefeed",
-      "key": "SourceChannel",
-      "value": "channel-0"
+      "@type": "/pricefeed.MsgUpdateParams",
+      "authority": <Gov Address>,
+      "params": {
+        "ask_count": "16",
+        "min_count": "10",
+        "min_ds_count": "3",
+        "prepare_gas_base": "3000",
+        "prepare_gas_each": "600",
+        "execute_gas_base": "70000",
+        "execute_gas_each": "7500",
+        "source_channel": "channel-1",
+        "fee_limit": [
+          {
+            "amount": "1000000",
+            "denom": "uband"
+          }
+        ]
+      }
     }
   ],
-  "deposit": "10000000stake"
+  "metadata": "ipfs://CID",
+  "deposit": "10000000stake",
+  "title": "Param change for SourceChannel",
+  "summary": "Proposal for change SourceChannel param in pricefeed module"
 }
 ```
+
+Note that you have to put your gov module address in authority field, you can get it by running this command `oracle-consumerd query auth module-account gov`
 
 #### Submit proposal
 
 ```
-exampled tx gov submit-legacy-proposal param-change param-change-proposal.json --from alice
+exampled tx gov submit-proposal param-change-proposal.json --from alice
 ```
 
 #### Vote the proposal
