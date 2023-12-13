@@ -6,14 +6,14 @@ const items: CardItem[] = [
     title: 'Devloper Discord',
     Svg: require('@site/static/img/discord.svg').default,
     description: <>Chat with Band Protocol Developers on Discord.</>,
-    to: 'https://100x.band/discord',
+    to: 'https://discord.com/invite/3t4bsY7',
     target: '_blank',
   },
   {
     title: 'Telegram Group',
     Svg: require('@site/static/img/telegram.svg').default,
     description: <>Join our Telegram group to get support from our team.</>,
-    to: 'https://100x.band/tg',
+    to: 'https://t.me/bandprotocol',
     target: '_blank',
   },
   {
