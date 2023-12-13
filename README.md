@@ -18,8 +18,7 @@ Band's flexible Oracle design allows developers to **query any data** including 
 ## 💬 Community
 
 - [Official Website](https://bandprotocol.com)
-- [Telegram](https://100.band/tg)
-- [Developer Discord](https://100x.band/discord)
+- [Telegram](https://t.me/bandprotocol)
+- [Developer Discord](https://discord.com/invite/3t4bsY7)
 
 For updates on the Band Protocol team's activities follow us on the [Band Protocol Twitter](https://twitter.com/bandprotocol) account.
-
