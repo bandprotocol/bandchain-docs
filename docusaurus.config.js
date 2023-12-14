@@ -186,7 +186,7 @@ const config = {
               },
               {
                 label: 'Discord',
-                href: 'https://100x.band/discord',
+                href: 'https://discord.com/invite/3t4bsY7',
               },
               {
                 label: 'Telegram',
