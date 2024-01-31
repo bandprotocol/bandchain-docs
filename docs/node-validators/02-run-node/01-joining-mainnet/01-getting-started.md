@@ -14,7 +14,6 @@ This guide includes full instructions for joining the mainnet either as an archi
 - [Sync Options](./02-installation.mdx#step-3-sync-with-the-network)
   - [Block Sync](./02-installation.mdx#step-3-sync-with-the-network)
   - [State Sync](./02-installation.mdx#step-3-sync-with-the-network)
-  - [Snapshot - ChainLayer](./02-installation.mdx#step-3-sync-with-the-network)
   - [Snapshot - HighStakes](./02-installation.mdx#step-3-sync-with-the-network)
 - [Setup daemon service](./02-installation.mdx#step-4-setup-daemon-service)
 - [Setup Yoda](./02-installation.mdx#step-5-setup-yoda)
