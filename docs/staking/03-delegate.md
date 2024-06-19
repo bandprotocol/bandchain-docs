@@ -72,7 +72,7 @@ To verify your transaction, navigate back to your **Account Details** page. To v
 
 you'll be able to see the updated status showing that you've delegated to your chosen validator.
 
-![your account detail page](/img/staking/account_details.png)
+![your account detail page](/img/staking/account_delegation_details.png)
 
 ## Next — Manage your BAND stake
 
