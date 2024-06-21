@@ -5,7 +5,7 @@ Once you delegate your BAND, you can later undelegate to receive your BAND back.
 we will show you how to undelegate
 
 :::info
-This guide necessitates that you first familiarize yourself with the [Delegate](./02-delegate.md) document before proceeding.
+This guide necessitates that you first familiarize yourself with the [Delegate](./03-delegate.md) document before proceeding.
 :::
 
 ### Step 1 — Select the Validator you want to undelegate

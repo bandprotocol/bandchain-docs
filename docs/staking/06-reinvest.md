@@ -3,7 +3,7 @@
 Reinvestment refers to the process of claiming your rewards and then redelegating them back to the same validator. This manual aims to provide detailed steps to guide you on how to execute this process of reinvesting.
 
 :::info
-This guide necessitates that you first familiarize yourself with the [Delegate](./02-delegate.md) document before proceeding.
+This guide necessitates that you first familiarize yourself with the [Delegate](./03-delegate.md) document before proceeding.
 :::
 
 ### Step 1 — Navigate account details page
