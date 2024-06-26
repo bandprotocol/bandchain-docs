@@ -3,7 +3,7 @@
 Delegator will get rewards for staking. This guide is intended to provide step-by-step instructions on how to claim these staking rewards.
 
 :::info
-This guide necessitates that you first familiarize yourself with the [Delegate](./02-delegate.md) document before proceeding.
+This guide necessitates that you first familiarize yourself with the [Delegate](./03-delegate.md) document before proceeding.
 :::
 
 ### Step 1 — Navigate account details page

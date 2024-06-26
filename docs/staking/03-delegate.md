@@ -23,19 +23,7 @@ Once you're on the site, make sure the url is `https://www.cosmoscan.io` and ens
 
 ### Step 3 — Click to connect wallet
 
-Next, you will need to connect your wallet to the website. click the button **Connect Wallet** on the right of navigation bar to initiate this process.
-
-![locate connect wallet button](/img/staking/connect_wallet_button.png)
-
-### Step 4 — Connect with ledger
-
-Upon clicking the **Connect Wallet** button, a pop-up window will appear. At the moment, our website only supports wallet connections via the Ledger device utilizing the Cosmos Application. Please ensure your Ledger device is properly set up, the Cosmos application is open on your device, and it's ready for the connection process.
-
-![connect wallet modal](/img/staking/connect_modal.png)
-
-Once you've successfully connected your Ledger device, you'll see an account button, as shown in the image below.
-
-![account button](/img/staking/account_button.png)
+Next, you will need to connect your wallet to the website. see [Connect Wallet Guide](./02-connect-wallet.md) before continue
 
 ### Step 5 — Navigate to Validators page
 
@@ -72,7 +60,7 @@ To verify your transaction, navigate back to your **Account Details** page. To v
 
 you'll be able to see the updated status showing that you've delegated to your chosen validator.
 
-![your account detail page](/img/staking/account_details.png)
+![your account detail page](/img/staking/account_delegation_details.png)
 
 ## Next — Manage your BAND stake
 

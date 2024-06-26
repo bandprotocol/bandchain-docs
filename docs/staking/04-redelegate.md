@@ -3,7 +3,7 @@
 If you've already delegated your BAND tokens and then decide to switch validators, you have the option to **redelegate** your BAND to new validators.
 
 :::info
-This guide necessitates that you first familiarize yourself with the [Delegate](./02-delegate.md) document before proceeding.
+This guide necessitates that you first familiarize yourself with the [Delegate](./03-delegate.md) document before proceeding.
 :::
 
 ### Step 1 — Select the Validator you want to redelegate
