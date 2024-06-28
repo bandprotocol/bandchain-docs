@@ -93,3 +93,4 @@ As mentioned earlier, building on the CosmosSDK allows us to enable our users to
 2. [Ledger](https://www.ledger.com)
 3. [Leap](https://www.leapwallet.io/ecosystem/chains/band-protocol)
 4. [Keplr](https://www.keplr.app)
+5. [Cosmostation](https://www.cosmostation.io/products/cosmostation_extension)
