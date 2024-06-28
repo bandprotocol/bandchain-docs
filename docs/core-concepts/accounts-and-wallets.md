@@ -1,5 +1,5 @@
 ---
-title: "Accounts and Wallets"
+title: 'Accounts and Wallets'
 sidebar_position: 3
 ---
 
@@ -18,23 +18,21 @@ The BandChain coin type HD path is `m/44'/494'/0'/0/0`. This path is used to der
 
 The first part of the path, `m/44'`, specifies the derivation path is based on BIP44 standard. The second part of the path, `494'`, indicates the BandChain is the coin type for this address. The third part of the path, `0'`, specifies that this is a hardened derivation path, which means that the child keys can only be derived by someone who has the parent key. The fourth part of the path, `0`, specifies the account index which is used to generate multiple accounts from the same master key. The last path, `0`, specifies the address index, which is used to generate multiple addresses for a single account.
 
-
-
 ## Addresses and Public Keys
 
 BandChain supports [Bech32](https://en.bitcoin.it/wiki/Bech32) (`band...`). The Bech32 format is the default format for Cosmos-SDK queries and transactions through CLI and REST clients.
 
 For example, a BandChain address might look like this: `band18p27yl962l8283ct7srr5l3g7ydazj07dqrwph`. This address can be used to receive and send BandChain tokens and interact with smart contracts and dApps on the BandChain network.
 
-`Addresses` and `PubKeys` are both public information that identifies actors in the application. Each account is identified using `Address` which is a sequence of bytes derived from a public key. 
+`Addresses` and `PubKeys` are both public information that identifies actors in the application. Each account is identified using `Address` which is a sequence of bytes derived from a public key.
 
 In the BandChain, we define 3 types of addresses that specify a context where an account is used:
 
-| Types | Address bech32 Prefix | Pubkey bech32 Prefix | Address byte length | Pubkey byte length
-| --- | --- | --- | --- | --- |
-| Accounts | `band` | `bandpub` | 20 | 33 |
-| Validators | `bandvaloper` | `bandvaloperpub` | 20 | 33 |
-| Consensus Nodes | `bandvalcons` | `bandvalconspub` | 20 | 33 |
+| Types           | Address bech32 Prefix | Pubkey bech32 Prefix | Address byte length | Pubkey byte length |
+| --------------- | --------------------- | -------------------- | ------------------- | ------------------ |
+| Accounts        | `band`                | `bandpub`            | 20                  | 33                 |
+| Validators      | `bandvaloper`         | `bandvaloperpub`     | 20                  | 33                 |
+| Consensus Nodes | `bandvalcons`         | `bandvalconspub`     | 20                  | 33                 |
 
 ## Mnemonic and Address Generation
 
@@ -61,11 +59,10 @@ If the mnemonic phrase leaks, accounts cannot be derived without the initial pas
 
 :::
 
-
 At BandChain, we offer a simple method for generating a mnemonic phrase to create a BandChain account using either [PyBand](/develop/developer-tools/pyband/wallet#from_mnemonicword-path) or [BandChain.js](/develop/developer-tools/bandchain.js/wallet#frommnemonicword-path).
 
 ```js
-import { Wallet } from "@bandprotocol/bandchain.js";
+import { Wallet } from '@bandprotocol/bandchain.js'
 const { PrivateKey } = Wallet
 
 const [mnemonic, privateKey] = PrivateKey.generate("m/44'/494'/0'/0/0")
@@ -94,4 +91,5 @@ As mentioned earlier, building on the CosmosSDK allows us to enable our users to
 
 1. [Cosmostation](https://www.cosmostation.io/)
 2. [Ledger](https://www.ledger.com/)
-
+3. [Leap](https://www.leapwallet.io/ecosystem/chains/band-protocol)
+4. [Keplr](https://www.keplr.app)
