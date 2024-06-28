@@ -25,13 +25,13 @@ Next, you will need to connect your wallet to the website. click the button **Co
 ### Prerequisites
 
 Ensure that you have the Leap Wallet extension installed on your browser.
-[download here](https://www.leapwallet.io/download)
+[Download here](https://www.leapwallet.io/download)
 
 ### 1. Select Leap Wallet options
 
 after you click the `Connect Wallet` button you will see pop-up that shown wallet options
 
-![select wallet options](/img/staking/select_wallet.png)
+![select wallet options](/img/staking/select-wallet-leap-focus.png)
 
 ### 2. Approve on Leap wallet
 
@@ -51,7 +51,7 @@ Once you have clicked connect, you are now connected to Leap.
 
 Ensure that you have the Keplr Wallet extension installed on your browser.
 
-[download here](https://www.keplr.app/download)
+[Download here](https://www.keplr.app/download)
 
 ### 1. Add BandChain on Keplr
 
@@ -70,8 +70,6 @@ if you already have a keplr wallet. you can manually add in [this website](https
 
 Search for Band, then click Add to Keplr. Keplr will prompt a pop-up for you to click approve.
 
-<!-- TODO: will redo the image once it's deploy -->
-
 ![add bandchian keplr site](/img/staking/add_bandchain_to_keplr.png)
 
 Keplr will prompt pop-up for you to approve
@@ -80,7 +78,7 @@ Keplr will prompt pop-up for you to approve
 
 After you click the Connect Wallet button, a pop-up will appear showing wallet options.
 
-![select wallet options](/img/staking/select_wallet.png)
+![select wallet options](/img/staking/select-wallet-keplr-focus.png)
 
 ### 3. Approve on Keplr wallet
 
@@ -90,4 +88,34 @@ If you are connecting to Keplr Wallet on CosmoScan for the first time, the Keplr
 ### 4. You are now connected to Keplr
 
 Once you have clicked "Approve," you are now connected to Keplr. You can see the details of your account by clicking on the address button.
+![account details](/img/staking/account_details.png)
+
+## How to connect Cosmostation Wallet
+
+### Prerequisites
+
+Ensure that you have the Cosmostation Wallet extension installed on your browser.
+
+[Download here](https://cosmostation.io/products/cosmostation_extension)
+
+### 1. Add BandChain on Cosmostation
+
+If you don't see BandChain on your Cosmostation Extension. you can easily add it by clicking on the Add Chain button then searching for Band and click on the toggle button to add BandChain.
+
+![add bandchain to cosmostation](/img/staking/add-band-cosmostation.png)
+
+### 2. Select Cosmostation Wallet options
+
+After you click the Connect Wallet button on CosmoScan website, a pop-up will appear showing wallet options. Then select _Cosmostation_
+
+![select wallet options](/img/staking/select-wallet-cosmostation-focus.png)
+
+### 3. Approve on Cosmostation wallet
+
+If you are connecting to Cosmostation Wallet on CosmoScan for the first time, the Cosmostation Wallet extension will display a pop-up asking you to connect.
+![connect Cosmostation wallet](/img/staking/connect_cosmostation.png)
+
+### 4. You are now connected to Cosmostation
+
+Once you have clicked "Approve" you are now connected to Cosmostation. You can see the details of your account by clicking on the address button.
 ![account details](/img/staking/account_details.png)
