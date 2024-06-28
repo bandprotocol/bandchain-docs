@@ -25,7 +25,7 @@ Next, you will need to connect your wallet to the website. click the button **Co
 ### Prerequisites
 
 Ensure that you have the Leap Wallet extension installed on your browser.
-[download here](https://www.leapwallet.io/download)
+[Download here](https://www.leapwallet.io/download)
 
 ### 1. Select Leap Wallet options
 
@@ -51,7 +51,7 @@ Once you have clicked connect, you are now connected to Leap.
 
 Ensure that you have the Keplr Wallet extension installed on your browser.
 
-[download here](https://www.keplr.app/download)
+[Download here](https://www.keplr.app/download)
 
 ### 1. Add BandChain on Keplr
 
@@ -96,17 +96,17 @@ Once you have clicked "Approve," you are now connected to Keplr. You can see the
 
 Ensure that you have the Cosmostation Wallet extension installed on your browser.
 
-[download here](https://cosmostation.io/products/cosmostation_extension)
+[Download here](https://cosmostation.io/products/cosmostation_extension)
 
 ### 1. Add BandChain on Cosmostation
 
-if you don't see BandChain on your Cosmostation Extension. you can exsily activate it by click Add Chain button then search for Band and toggle swtich
+If you don't see BandChain on your Cosmostation Extension. you can easily add it by clicking on the Add Chain button then searching for Band and click on the toggle button to add BandChain.
 
 ![add bandchain to cosmostation](/img/staking/add-band-cosmostation.png)
 
 ### 2. Select Cosmostation Wallet options
 
-After you click the Connect Wallet button, a pop-up will appear showing wallet options.then select _Cosmostation_
+After you click the Connect Wallet button on CosmoScan website, a pop-up will appear showing wallet options. Then select _Cosmostation_
 
 ![select wallet options](/img/staking/select-wallet-cosmostation-focus.png)
 
@@ -117,5 +117,5 @@ If you are connecting to Cosmostation Wallet on CosmoScan for the first time, th
 
 ### 4. You are now connected to Cosmostation
 
-Once you have clicked "Approve," you are now connected to Cosmostation. You can see the details of your account by clicking on the address button.
+Once you have clicked "Approve" you are now connected to Cosmostation. You can see the details of your account by clicking on the address button.
 ![account details](/img/staking/account_details.png)
