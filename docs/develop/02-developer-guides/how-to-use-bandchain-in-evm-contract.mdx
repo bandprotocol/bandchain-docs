@@ -1,0 +1,93 @@
+# How to use BandChain in your EVM Contract
+
+In this guide, we will delve into how you can leverage BandChain's reliable data in your EVM contracts. We'll cover the essentials of understanding BandChain's Oracle script and ensuring your EVM contracts can accurately and effectively decode and verify the data. Additionally, we'll introduce our suite of tools designed to simplify and streamline the process of relaying data. 
+
+Whether you are a experienced blockchain developer or just starting out, this comprehensive guide aims to provide you with the knowledge and techniques necessary to harness the full potential of BandChain in your EVM contracts.
+
+## Step 1: Understanding BandChain’s Oracle script
+
+### What is an Oracle Script
+
+An oracle script is a turing-complete executable program that is at the heart of BandChain. It encodes a set of raw data requests, which is then sent to the data sources, and aggregates the raw data returned from the data sources into a final report.
+
+As an EVM Contract developer, your responsibility isn't necessarily to author your own Oracle Script. Instead, your focus should be on comprehending how to initiate data requests, as well as the necessary inputs and outputs of existing oracle scripts. This understanding will enable you to select the oracle script most suited to fulfill your specific needs and objectives. However, if you're inclined to create your own Oracle Script, you can delve deeper and expand your knowledge by visiting this [link](/docs/develop/04-custom-scripts/02-oracle-script/01-introduction.md).
+
+### How to request data from Oracle Script
+ 
+Let's look at the standard Oracle Script in our testnet [Band Protocol's Cryptocurrency Standard Dataset](https://laozi-testnet6.cosmoscan.io/oracle-script/401). This refers to the standard Oracle Script employed to fetch the price data of widely recognized cryptocurrencies.
+
+Then heads to the bottom section and select "Make New Request"
+<img src="/img/make_new_request.png" style={{ maxHeight: 300 + 'px' }}/>
+
+You will see a set of inputs of this Oracle Script 
+
+<img src="/img/oracle_script_input.png" style={{ maxHeight: 700 + 'px' }}/>
+
+There are two main types of input in this image. The first type is input of the Oracle Script which can be vary among the Oracle Script and the Second type is the input require by BandChain itself.
+
+There are two inputs for each type you need to know.
+
+### Oracle Script Input
+
+### 1. Symbols
+"Symbols" refers to the input parameter that accepts a list of cryptocurrency symbols for which you wish to query prices, for example ["BTC", "ETH"].
+
+### 2. Minimum Source Count
+"Minimum Source" is an input parameter that designates the requisite number of data sources for each symbol. If a symbol doesn't have sufficient data sources, an error will be triggered.
+
+You can see the list of Data Sources of this Oracle Script in the top section.
+
+<img src="/img/datasources_example.png" style={{ maxHeight: 400 + 'px' }}/>
+
+If you are not sure what is the appropriate number, you can input 3 as the standard.
+
+### BandChain Input
+
+### 1. Ask Count
+"Ask Count" is an input parameter that specifies the number of validators required to run the Oracle Script for a particular request. A higher ask count generally leads to more reliable data. Typically, this number is 16.
+
+### 2. Min Count
+"Min Count" is an input parameter denoting the minimum number of validators needed to respond before the final output is computed. This count should ideally be less than the "Ask Count," with a common choice being 10.
+
+You can try execute a request by following these steps: First, click on "Connect Wallet" in the top right corner. Then, enter any set of random words (mnemonic) - they don't need to adhere to a specific format. Following this, click on "Get 10 Testnet BAND". Finally, input the values as per the parameters outlined above and click 'Request'.
+
+After waiting for approximately 10 seconds, you should expect to see a result similar to this.
+<img src="/img/request_result.png" style={{ maxHeight: 300 + 'px' }}/>
+
+## Step 2: How to write your EVM Contract
+
+Upon receiving data in your contract, it's advisable not to use it immediately due to potential risks of malicious actors sending incorrect data. To mitigate this risk, we recommend validating the received data using our bridge contract. This tool can ascertain whether the data originated from BandChain, ensuring its authenticity and security before it's utilized in your contract.
+
+### Bridge Contract
+
+In essence, a Bridge Contract is a smart contract facilitated by Band Protocol, designed to validate the authenticity of data received by your contract across various blockchains. A list of supported blockchains can be found [here](/products/vrf/supported-blockchains).
+
+### Example Contract and Function
+
+To integrate BandChain data into your contract, you need to accomplish two things. Firstly, your contract must inherit the BandBridgeConsumer contract. Secondly, you must implement the function _handleOracleResponse within your contract.
+
+For a practical illustration of these steps, you may refer to this sample contract [MockConsumer.sol](https://github.com/bandprotocol/BandBridgeConsumer/blob/main/src/mock/MockConsumer.sol).
+
+## Step 3: Relaying data from BandChain to contract
+
+Once you've completed the creation of your contract, the next step involves transferring data from BandChain to your contract. One tool specifically designed for this task, which comes highly recommended, is the Falcon program, developed by the Band Protocol team.
+
+### Falcon
+
+The Falcon program is designed to enable secure and efficient cross-chain communication between different blockchain networks. It achieves this by requesting data from BandChain, and then sending the data along with the proof to the other chain.
+
+By using Falcon, any smart contract developers can easily integrate data from BandChain into their applications and services, enabling a more seamless and interconnected blockchain ecosystem. This can unlock new use cases and applications, and provide users with access to a wider range of data from BandChain.
+
+![Falcon_Infographic_Chapter1](https://user-images.githubusercontent.com/54426055/234471438-47b3de9f-4660-4c34-80ae-2d075c92d547.png)
+
+At a high level, the workflow will be as follows. Firstly, when reached the specified condition such as time interval, Trigger will trigger Falcon to request data from BandChain. Then, BandChain will run the Oracle script specified in the request which will get data from the Data sources and return data result along with its proof to Falcon.
+
+After Falcon recieved the result and proof, it will send the data and proof to all other chains' contract that are specified in the Falcon program.
+
+At this point, the smart contract in other chains can verify the proof using the bridge contract provided in that chain. If the proof is correct, the smart contract can trust and use the data.
+
+You can learn more about Falcon in this [link](/docs/products/falcon/introduction.md) or start using it with this [documentation](https://github.com/bandprotocol/falcon/blob/main/docs/getting_started.md)
+
+### Other library from Band
+
+Band Protocol also provides additional libraries, such as Pyband and Bandchain.js, that aid in building data-relaying programs. You can explore more about these resources on their respective pages [here](/develop/developer-tools/pyband/getting-started). Alternatively, you can use Falcon as a base and add more features to it according to your requirements. We trust you will find utilizing data from our BandChain a rewarding experience.
