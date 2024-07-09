@@ -89,8 +89,10 @@ curl -X GET "https://laozi1.bandchain.org/api/cosmos/auth/v1beta1/accounts/band1
 
 As mentioned earlier, building on the CosmosSDK allows us to enable our users to interact with BandChain using Cosmos native wallets. The most popular Cosmos and IBC-enabled wallets are supported on BandChain. These include:
 
+
 1. [Cosmostation](https://www.cosmostation.io)
 2. [Ledger](https://www.ledger.com)
 3. [Leap](https://www.leapwallet.io/ecosystem/chains/band-protocol)
 4. [Keplr](https://www.keplr.app)
 5. [Cosmostation](https://www.cosmostation.io/products/cosmostation_extension)
+
