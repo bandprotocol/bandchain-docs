@@ -6,7 +6,7 @@ const items: CardItem[] = [
     title: 'Devloper Discord',
     Svg: require('@site/static/img/discord.svg').default,
     description: <>Chat with Band Protocol Developers on Discord.</>,
-    to: 'https://discord.com/invite/3t4bsY7',
+    to: 'https://discord.bandprotocol.com',
     target: '_blank',
   },
   {
