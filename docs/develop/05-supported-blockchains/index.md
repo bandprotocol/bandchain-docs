@@ -49,7 +49,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Meter            |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
 | Moonriver        |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
 | Oasis (Emerald)  |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.emerald.oasis.dev/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)           |
-| Oasis (Sapphire) |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.sapphire.oasis.dev/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)          |
+| Oasis (Sapphire) |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.oasis.io/mainnet/sapphire/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)   |
 | Optimism         |            [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://optimistic.etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)            |
 | PlatON           |              [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://scan.platon.network/address/0xda7a001b254cd22e46d3eab04d937489c93174c3)              |
 | Secret 4         | [secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k](https://secretnodes.com/secret/chains/secret-4/accounts/secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k) |
