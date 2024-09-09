@@ -19,6 +19,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | BitTorrent Chain  |         [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet.bttcscan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)          |
 | Celo (Alfajores)  | [0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc](https://alfajores-blockscout.celo-testnet.org/address/0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc) |
 | Cronos            |         [0xD0b2234eB9431e850a814bCdcBCB18C1093F986B](https://testnet.cronoscan.com/address/0xD0b2234eB9431e850a814bCdcBCB18C1093F986B)         |
+| Cronos zkEVM      |   [0x712f9E98E72E1EB7aA7E3B58eC6F9a93FB5bfc46](https://explorer.zkevm.cronos.org/testnet/address/0x712f9e98e72e1eb7aa7e3b58ec6f9a93fb5bfc46)   |
 | Godwoken          |         [0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a](https://v1.betanet.gwscan.com/address/0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a)         |
 | Harmony           |           [0xD0b2234eB9431e850a814bCdcBCB18C1093F986B](https://explorer.pops.one/address/0xd0b2234eb9431e850a814bcdcbcb18c1093f986b)           |
 | Horizen (Gobi)    |       [0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293](https://gobi-explorer.horizen.io/address/0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293)        |
@@ -40,6 +41,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | BNB              |                  [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
 | Celo             |               [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)               |
 | Cronos           |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://cronoscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                 |
+| Cronos zkEVM     |           [0x4ef80a75ac964d9eb366263a065ed35c842efe40](https://explorer.zkevm.cronos.org/address/0x4ef80a75ac964d9eb366263a065ed35c842efe40)           |
 | Ethereum         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
 | Fantom           |                  [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://ftmscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
 | Godwoken         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
@@ -49,7 +51,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Meter            |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
 | Moonriver        |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
 | Oasis (Emerald)  |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.emerald.oasis.dev/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)           |
-| Oasis (Sapphire) |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.oasis.io/mainnet/sapphire/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)   |
+| Oasis (Sapphire) |      [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.oasis.io/mainnet/sapphire/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)       |
 | Optimism         |            [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://optimistic.etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)            |
 | PlatON           |              [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://scan.platon.network/address/0xda7a001b254cd22e46d3eab04d937489c93174c3)              |
 | Secret 4         | [secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k](https://secretnodes.com/secret/chains/secret-4/accounts/secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k) |
