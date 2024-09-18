@@ -30,6 +30,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Oasis (Sapphire)  |  [0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A](https://testnet.explorer.sapphire.oasis.dev/address/0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A)  |
 | PlatON            |      [0xb6256DCb23CEE06eDa2408E73945963606fdddd7](https://devnet2scan.platon.network/address/0xb6256DCb23CEE06eDa2408E73945963606fdddd7)       |
 | Secret (Pulsar-3) |     [secret14swdnnllsfvtnvwmtvnvcj2zu0njsl9cdkk5xp](https://secretnodes.com/pulsar/accounts/secret14swdnnllsfvtnvwmtvnvcj2zu0njsl9cdkk5xp)     |
+| Soneium Minato    |     [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://explorer-testnet.soneium.org/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)      |
 
 ## Mainnets
 
