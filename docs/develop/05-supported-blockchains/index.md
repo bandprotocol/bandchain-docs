@@ -17,9 +17,10 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Astar (Shibuya)   |        [0x2Bf9a731f9A56C59DeB4DF1369286A3E69F5b418](https://blockscout.com/shibuya/address/0x2Bf9a731f9A56C59DeB4DF1369286A3E69F5b418)         |
 | Bitgert           |    [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet-explorer.brisescan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)     |
 | BitTorrent Chain  |         [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet.bttcscan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)          |
-| Celo (Alfajores)  | [0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc](https://alfajores-blockscout.celo-testnet.org/address/0x660cBc25F0cFD31F0Bdcaa43525f0bACC6DB2ABc) |
+| Celo (Alfajores)  | [0x3d00deA966314E47aC3D4ACd2f00121351Cec1C5](https://alfajores-blockscout.celo-testnet.org/address/0x3d00deA966314E47aC3D4ACd2f00121351Cec1C5) |
 | Cronos            |         [0xD0b2234eB9431e850a814bCdcBCB18C1093F986B](https://testnet.cronoscan.com/address/0xD0b2234eB9431e850a814bCdcBCB18C1093F986B)         |
 | Cronos zkEVM      |   [0x712f9E98E72E1EB7aA7E3B58eC6F9a93FB5bfc46](https://explorer.zkevm.cronos.org/testnet/address/0x712f9e98e72e1eb7aa7e3b58ec6f9a93fb5bfc46)   |
+| Coti              | [0xb6256dcb23cee06eda2408e73945963606fdddd7](https://testnet.cotiscan.io/address/0xb6256dcb23cee06eda2408e73945963606fdddd7?tab=transactions)  |
 | Godwoken          |         [0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a](https://v1.betanet.gwscan.com/address/0x0c2362c9a0586dd7295549c65a4a5e3afe10a88a)         |
 | Harmony           |           [0xD0b2234eB9431e850a814bCdcBCB18C1093F986B](https://explorer.pops.one/address/0xd0b2234eb9431e850a814bcdcbcb18c1093f986b)           |
 | Horizen (Gobi)    |       [0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293](https://gobi-explorer.horizen.io/address/0xdE2022A8aB68AE86B0CD3Ba5EFa10AaB859d0293)        |
@@ -31,6 +32,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | PlatON            |      [0xb6256DCb23CEE06eDa2408E73945963606fdddd7](https://devnet2scan.platon.network/address/0xb6256DCb23CEE06eDa2408E73945963606fdddd7)       |
 | Secret (Pulsar-3) |     [secret14swdnnllsfvtnvwmtvnvcj2zu0njsl9cdkk5xp](https://secretnodes.com/pulsar/accounts/secret14swdnnllsfvtnvwmtvnvcj2zu0njsl9cdkk5xp)     |
 | Soneium Minato    |     [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://explorer-testnet.soneium.org/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)      |
+| Sonic             |         [0x1744a64d95059e5281Ee573BF1C26813811d9BD3](https://testnet.soniclabs.com/address/0x1744a64d95059e5281Ee573BF1C26813811d9BD3)         |
 
 ## Mainnets
 
