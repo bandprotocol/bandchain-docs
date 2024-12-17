@@ -8,7 +8,7 @@
 
 :::
 
-Currently, our `StdReferenceProxy` smart contracts are available on the following networks:
+Currently, our `` StdReferenceProxysmart contracts are available on the following networks:
 
 ## Testnets
 
@@ -32,7 +32,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | PlatON            |      [0xb6256DCb23CEE06eDa2408E73945963606fdddd7](https://devnet2scan.platon.network/address/0xb6256DCb23CEE06eDa2408E73945963606fdddd7)       |
 | Secret (Pulsar-3) |     [secret14swdnnllsfvtnvwmtvnvcj2zu0njsl9cdkk5xp](https://secretnodes.com/pulsar/accounts/secret14swdnnllsfvtnvwmtvnvcj2zu0njsl9cdkk5xp)     |
 | Soneium Minato    |     [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://explorer-testnet.soneium.org/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)      |
-| Sonic             |         [0x1744a64d95059e5281Ee573BF1C26813811d9BD3](https://testnet.soniclabs.com/address/0x1744a64d95059e5281Ee573BF1C26813811d9BD3)         |
+| Sonic             |         [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet.soniclabs.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)         |
 
 ## Mainnets
 
