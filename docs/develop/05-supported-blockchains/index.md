@@ -8,7 +8,7 @@
 
 :::
 
-Currently, our `` StdReferenceProxysmart contracts are available on the following networks:
+Currently, our `StdReferenceProxy` smart contracts are available on the following networks:
 
 ## Testnets
 
@@ -46,7 +46,7 @@ Currently, our `` StdReferenceProxysmart contracts are available on the followin
 | Cronos           |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://cronoscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                 |
 | Cronos zkEVM     |           [0x4ef80a75ac964d9eb366263a065ed35c842efe40](https://explorer.zkevm.cronos.org/address/0x4ef80a75ac964d9eb366263a065ed35c842efe40)           |
 | Ethereum         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
-| Fantom           |                  [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://ftmscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
+| Flow             |                                       [0x6801a6222ebf784a](https://www.flowdiver.io/account/0x6801a6222ebf784a)                                        |
 | Godwoken         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
 | Horizen (EON)    |          [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://eon-explorer.horizenlabs.io/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)          |
 | Harmony          |             [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://explorer.harmony.one/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)              |
@@ -58,3 +58,4 @@ Currently, our `` StdReferenceProxysmart contracts are available on the followin
 | Optimism         |            [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://optimistic.etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)            |
 | PlatON           |              [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://scan.platon.network/address/0xda7a001b254cd22e46d3eab04d937489c93174c3)              |
 | Secret 4         | [secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k](https://secretnodes.com/secret/chains/secret-4/accounts/secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k) |
+| Sonic            |                 [0x506085050Ea5494Fe4b89Dd5BEa659F506F470Cc](https://sonicscan.org/address/0x506085050Ea5494Fe4b89Dd5BEa659F506F470Cc)                 |
