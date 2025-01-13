@@ -36,8 +36,7 @@ const config: Config = {
   // themes: ['@docusaurus/theme-search-algolia'],
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       {
         docs: {
           // sidebarPath: require.resolve('./sidebars.js'),
@@ -66,6 +65,14 @@ const config: Config = {
         // },
       },
     ],
+  ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
   ],
   plugins: [
     require.resolve('docusaurus-plugin-image-zoom'),

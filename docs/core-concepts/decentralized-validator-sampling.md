@@ -25,7 +25,7 @@ As with most random number generator, our number generation proces require the u
 - The `requestID` of the request the validators are being chosen for
 - `chainID` of BandChain
 
-In the case of the list of `blockHashes`, we will use the blockHashes of the previous $n$ blocks (currently we use 32). We then take `$\frac{32}{n}$` bytes from each of the hashes and concatenate them. The purpose of this is to prevent any potentially malicious validators from influencing the entire seed in the turn they have to propose the block. Even if they attempt to intentionally construct certain `blockHashes` in their proposed block, they can only control $\frac{n}{32}$ of the seed. Finally, we concatenate the result from `blockHashes` with `requestID` and `chainID` to create the seed.
+In the case of the list of `blockHashes`, we will use the blockHashes of the previous $n$ blocks (currently we use 32). We then take $\frac{32}{n}$ bytes from each of the hashes and concatenate them. The purpose of this is to prevent any potentially malicious validators from influencing the entire seed in the turn they have to propose the block. Even if they attempt to intentionally construct certain `blockHashes` in their proposed block, they can only control $\frac{n}{32}$ of the seed. Finally, we concatenate the result from `blockHashes` with `requestID` and `chainID` to create the seed.
 
 ## Manipulation Resistant Seed Generation
 
@@ -35,12 +35,13 @@ To do so, we again assume that the validators in the selection space is sorted i
 
 Then, we imagine that we have a cumulative scale running across that list, with the values being the validator's voting power. For example:
 
-Where \( k > l > m \)
+where $ k > l > m $
 
-- \(\{1, k\}\): Assigned to the first validator in line with \( k \) voting power
-- \(\{k+1, k+l\}\): Assigned to the second validator in line with \( l \) voting power
-- \(\{(k+l)+1, (k+l)+m\}\): Assigned to the third validator in line with \( m \) voting power
-- And so forth...
+$\{1, k\}$ $\hspace{90pt}$ is assigned to the first validator in line with $k$ voting power <br />
+$\{k+1, k+l\}$ $\hspace{57pt}$ to the second in line with $l$ power <br />
+$\{(k+l)+1, (k+l)+m\}$ $\hspace{8pt}$to the third in line with $m$ power <br />
+$. . .$  
+and so forth.
 
 With that, the specific range in which our random number falls in along that cumulative scale determine which validator is ultimately chosen for that round. A visual representation of this method is shown below.
 
