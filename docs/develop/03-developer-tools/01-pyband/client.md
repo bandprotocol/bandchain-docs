@@ -158,7 +158,7 @@ print(c.get_reporters(validator))
 
 **Result**
 
-```
+```json
 [
   "band1p46uhvdk8vr829v747v85hst3mur2dzlmlac7f",
   "band1zgly2mgx7ykckfgm4dqgc58vrntdlgcemy62eq",
@@ -466,7 +466,7 @@ print(c.get_request_id_by_tx_hash(tx_hash))
 
 **Result**
 
-```
+```json
 [37625, 37626, 37627, 37628, 37629]
 ```
 

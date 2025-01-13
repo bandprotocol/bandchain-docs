@@ -103,7 +103,7 @@ OracleScript is the data structure for storing oracle scripts in the storage.
 | name            | [string](#string) |       | Name is oracle script name used for display                                                                                                                |
 | description     | [string](#string) |       | Description is oracle script description used for display                                                                                                  |
 | filename        | [string](#string) |       | Filename is string of file name used as reference for locating compiled oracle script WASM file stored in bandchain nodes                                  |
-| schema          | [string](#string) |       | Schema is the schema of the oracle script input/output which is formatted in OBI format e.g. &#34;{symbol:string,multiplier:u64}/{px:u64}&#34;             |
+| schema          | [string](#string) |       | Schema is the schema of the oracle script input/output which is formatted in OBI format e.g. `"{symbol:string,multiplier:u64}/{px:u64}"`                   |
 | source_code_url | [string](#string) |       | SourceCodeURL is the URL of oracle script&#39;s source code. It is recommendded to store source code on IPFS and get its URL to preserve decentralization. |
 
 <a name="oracle.v1.Params"></a>

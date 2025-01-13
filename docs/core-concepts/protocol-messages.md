@@ -105,12 +105,12 @@ Reports raw data points for the given data request. Each data point corresponds 
 
 #### Parameters
 
-| Parameter | Type                                              | Description                                                                 |
-| --------- | ------------------------------------------------- | --------------------------------------------------------------------------- |
-| RequestID | int64                                             | The unique identifier number of the particular request                      |
-| Validator | sdk.ValAddress                                    | The reporting validator's actual validator address                          |
-| Reporter  | sdk.AccAddress                                    | The address the reporting validator uses to sign when submitting the report |
-| Data      | []struct'{ externalDataId: int64, data: []byte }' | The array of raw data points. Each item corresponds to a data source query. |
+| Parameter | Type                                                | Description                                                                 |
+| --------- | --------------------------------------------------- | --------------------------------------------------------------------------- |
+| RequestID | int64                                               | The unique identifier number of the particular request                      |
+| Validator | sdk.ValAddress                                      | The reporting validator's actual validator address                          |
+| Reporter  | sdk.AccAddress                                      | The address the reporting validator uses to sign when submitting the report |
+| Data      | `[]struct'{ externalDataId: int64, data: []byte }'` | The array of raw data points. Each item corresponds to a data source query. |
 
 ### MsgAddReporter
 

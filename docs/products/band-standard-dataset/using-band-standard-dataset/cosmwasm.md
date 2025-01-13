@@ -17,7 +17,7 @@ The deployed contract addresses can be found in [Supported Blockchains](/develop
 To compile all contracts, run the following script in the repo root: `/scripts/build_artifacts.sh` or the command below:
 The optimized wasm code and its checksums can be found in the `/artifacts` directory
 
-```
+```bash
 docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
