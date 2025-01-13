@@ -1,11 +1,12 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import type { Config } from '@docusaurus/types'
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { themes } = require('prism-react-renderer')
+const lightCodeTheme = themes.github
+const darkCodeTheme = themes.dracula
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'Band Protocol',
   tagline:
     'Band Protocol is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts.',
@@ -41,6 +42,8 @@ const config = {
         docs: {
           // sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -108,7 +111,7 @@ const config = {
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       image: 'img/Thumbnail_Doc.png',
       docs: {
         sidebar: {
@@ -225,7 +228,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['rust', 'solidity', 'python'],
+        additionalLanguages: ['rust', 'solidity', 'python', 'bash'],
       },
       algolia: {
         appId: 'TVYAB9F349',
@@ -243,7 +246,7 @@ const config = {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
         },
       },
-    }),
+    },
 }
 
 module.exports = config

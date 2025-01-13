@@ -21,7 +21,7 @@ This library is only implemented on Python.
 
 This library is available on [PyPI](https://pypi.org/project/pyband/)
 
-```
+```bash
 pip install pyband
 ```
 
