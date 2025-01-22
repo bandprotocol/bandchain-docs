@@ -25,20 +25,20 @@ Once you're on the site, make sure the url is `https://www.cosmoscan.io` and ens
 
 Next, you will need to connect your wallet to the website. see [Connect Wallet Guide](./02-connect-wallet.md) before continue
 
-### Step 5 — Navigate to Validators page
+### Step 4 — Navigate to Validators page
 
 Proceed to the validators page by clicking on **Validator** located in the navigation bar. or navigate to [Validators](https://www.cosmoscan.io/validators). Once on the validators page, you'll see a list of all validators that you can choose to delegate your tokens to.
 
 ![validators page](/img/staking/all_validators_page.png)
 
-### Step 6 — Choose a validator
+### Step 5 — Choose a validator
 
 Choose a validator that you wish to delegate to. This decision should be based on various factors (check out [How to choose a validator section](./introduction#how-to-choose-a-validator))
 Upon clicking on a validator, you'll be presented with specific information about them. This typically includes their identity, performance statistics, commission rates, and more.
 
 ![validator details page](/img/staking/validator_detail.png)
 
-### Step 7 — Delegate to validator
+### Step 6 — Delegate to validator
 
 Scroll down to the **Your Delegation Info** section. This area provides detailed information about your current and past delegations with the selected validator. You'll notice a **Delegate** button within this section – click on it to initiate the delegation process.
 
