@@ -1,11 +1,12 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+import type { Config } from '@docusaurus/types'
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const { themes } = require('prism-react-renderer')
+const lightCodeTheme = themes.github
+const darkCodeTheme = themes.dracula
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'Band Protocol',
   tagline:
     'Band Protocol is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts.',
@@ -35,12 +36,13 @@ const config = {
   // themes: ['@docusaurus/theme-search-algolia'],
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       {
         docs: {
           // sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -64,9 +66,15 @@ const config = {
       },
     ],
   ],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
   plugins: [
-    require.resolve('docusaurus-plugin-image-zoom'),
-    // only enabled on production
     [
       '@docusaurus/plugin-google-gtag',
       {
@@ -74,41 +82,50 @@ const config = {
         anonymizeIP: true,
       },
     ],
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to: '/products/band-standard-dataset/using-band-standard-dataset/contract',
-            from: ['/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html'],
-          },
-          {
-            to: '/products/band-standard-dataset/using-band-standard-dataset/client',
-            from: ['/band-standard-dataset/using-band-dataset/using-band-dataset-web.html'],
-          },
-          {
-            to: '/products/pricefeed-module/introduction',
-            from: ['/integration-tools/pricefeed-module/introduction.html'],
-          },
-          {
-            to: '/products/vrf/supported-blockchains',
-            from: ['/vrf/supported-blockchains.html'],
-          },
-          {
-            to: '/node-validators/run-node/joining-testnet/getting-started',
-            from: ['/joining-networks/joining-testnet.html'],
-          },
-          {
-            to: '/node-validators/run-node/joining-mainnet/getting-started',
-            from: ['/joining-networks/joining-mainnet.html'],
-          },
-        ],
-      },
-    ],
+    require.resolve('docusaurus-plugin-image-zoom'),
+    // only enabled on production
+    // [
+    // '@docusaurus/plugin-google-gtag',
+    // {
+    //   trackingID: 'G-DCFFR6X15E',
+    //   anonymizeIP: true,
+    // },
+    // ],
+    // [
+    //   '@docusaurus/plugin-client-redirects',
+    // {
+    //   redirects: [
+    //     {
+    //       to: '/products/band-standard-dataset/using-band-standard-dataset/contract',
+    //       from: ['/band-standard-dataset/using-band-dataset/using-band-dataset-evm.html'],
+    //     },
+    //     {
+    //       to: '/products/band-standard-dataset/using-band-standard-dataset/client',
+    //       from: ['/band-standard-dataset/using-band-dataset/using-band-dataset-web.html'],
+    //     },
+    //     {
+    //       to: '/products/pricefeed-module/introduction',
+    //       from: ['/integration-tools/pricefeed-module/introduction.html'],
+    //     },
+    //     {
+    //       to: '/products/vrf/supported-blockchains',
+    //       from: ['/vrf/supported-blockchains.html'],
+    //     },
+    //     {
+    //       to: '/node-validators/run-node/joining-testnet/getting-started',
+    //       from: ['/joining-networks/joining-testnet.html'],
+    //     },
+    //     {
+    //       to: '/node-validators/run-node/joining-mainnet/getting-started',
+    //       from: ['/joining-networks/joining-mainnet.html'],
+    //     },
+    //   ],
+    // },
+    // ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       image: 'img/Thumbnail_Doc.png',
       docs: {
         sidebar: {
@@ -225,7 +242,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['rust', 'solidity', 'python'],
+        additionalLanguages: ['rust', 'solidity', 'python', 'bash', 'protobuf'],
       },
       algolia: {
         appId: 'TVYAB9F349',
@@ -243,7 +260,7 @@ const config = {
           // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
         },
       },
-    }),
+    },
 }
 
 module.exports = config
