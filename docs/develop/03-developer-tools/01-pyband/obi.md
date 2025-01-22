@@ -100,7 +100,7 @@ print(obi.decode_input(bytearray.fromhex("000000034254430000000000002328010200")
 
 **Result**
 
-```json
+```
 {"symbol": "BTC", "px": 9000, "in": {"a": 1, "b": 2}, "tb": False}
 ```
 
