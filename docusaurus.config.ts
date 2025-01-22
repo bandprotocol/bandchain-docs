@@ -235,7 +235,7 @@ const config: Config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['rust', 'solidity', 'python', 'bash'],
+        additionalLanguages: ['rust', 'solidity', 'python', 'bash', 'protobuf'],
       },
       algolia: {
         appId: 'TVYAB9F349',
