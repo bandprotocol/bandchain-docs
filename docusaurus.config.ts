@@ -184,10 +184,10 @@ const config: Config = {
                 label: 'Band Bootcamp',
                 to: 'https://bootcamp.bandprotocol.com',
               },
-              {
-                label: 'Band Builder',
-                to: 'https://builder.bandprotocol.com',
-              },
+              // {
+              //   label: 'Band Builder',
+              //   to: 'https://builder.bandprotocol.com',
+              // },
             ],
           },
           {
