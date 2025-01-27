@@ -20,7 +20,7 @@ const items: CardItem[] = [
     title: 'Found an Issue?',
     Svg: require('@site/static/img/github.svg').default,
     description: <>Help us improve this page by suggesting edits on GitHub.</>,
-    to: 'https://github.com/bandprotocol/bandchain-docs/edit/master/docs/README.md', // TODO: change to this repo
+    to: 'https://github.com/bandprotocol/bandchain-docs/issues/new',
     target: '_blank',
   },
 ]
