@@ -10,8 +10,7 @@ Furthermore, most data providers already have APIs that can be used to query dat
 Therefore, we have developed Yoda to help validators to automatically query data from data providers by executing data
 source script, then submit the result to fulfill the request.
 
-Yoda's execution flow consists of the follwing steps
-
+Yoda's execution flow consists of the following steps
 1. Listening on incoming oracle requests and filter them.
 2. Loading data source script based on received requests.
 3. Execute the data source to get a result from data provider.
