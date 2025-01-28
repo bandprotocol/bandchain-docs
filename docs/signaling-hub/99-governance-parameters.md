@@ -3,7 +3,7 @@
 This section explains the governance variables associated with Band Protocol's signaling hub.
 
 ### `feeds:admin`
-Admin is the address of the admin that is allowed to update reference source config on modules.
+Admin is the address of the admin that is allowed to update reference source config on the module.
 
 ### `feeds:allowable_block_time_discrepancy`
 AllowableBlockTimeDiscrepancy is the allowed discrepancy (in seconds) between validator price timestamp and block_time.
