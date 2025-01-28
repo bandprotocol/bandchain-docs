@@ -19,6 +19,6 @@ This guide includes full instructions for joining the testnet either as an archi
 
 ## Hardware Requirements
 
-You have to have at least 16 GB of RAM and 4 CPU Cores to run a node in BandChain Laozi testnet.
+You have to have at least 16 GB of RAM, 4 CPU Cores and storage size of 100GB to run a node.
 
 **Note:** Storage size for validators will depend on the level of pruning.
