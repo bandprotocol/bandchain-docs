@@ -25,7 +25,7 @@ export BOTHAN_CONFIG_FILE_URL=https://raw.githubusercontent.com/bandprotocol/lau
 export FAUCET_URL=https://band-v3-testnet.bandchain.org/faucet
 ```
 
-**Note:** for those in the US region please use the following `BOTHAN_CONFIG_FILE_URL`
+**Note:** For those in the US region please use the following `BOTHAN_CONFIG_FILE_URL`
 
 ```bash
 # URL of config file for Bothan
@@ -37,7 +37,7 @@ export BOTHAN_CONFIG_FILE_URL=https://raw.githubusercontent.com/bandprotocol/lau
 The following application is required for building and running Bandchain node.
 
 - make, gcc, g++ (can be obtained from `build-essential` package on linux)
-- wget, curl for downloading files
+- jq, wget, curl for downloading files
 
 ```bash
 # install required tools

@@ -9,13 +9,11 @@ This guide includes full instructions for joining the testnet either as an archi
 ## Overview
 
 - [Hardware Requirements](#hardware-requirements)
-- [Setup Node](./02-installation.mdx#step-1-node-installation)
-- [Setup Cosmovisor](./02-installation.mdx#step-2-setup-cosmovisor)
-- [Sync Options](./02-installation.mdx#step-3-sync-with-the-network)
-  - [Block Sync](./02-installation.mdx#step-3-sync-with-the-network)
-  - [State Sync](./02-installation.mdx#step-3-sync-with-the-network)
-- [Setup daemon service](./02-installation.mdx#step-4-setup-daemon-service)
-- [Setup Yoda](./02-installation.mdx#step-5-setup-yoda)
+- [Setup Node](./02-installation.md#step-1-node-installation)
+- [Setup Cosmovisor](./02-installation.md#step-2-setup-cosmovisor)
+- [Setup Yoda](./02-installation.md#step-3-setup-yoda)
+- [Setup Bothan](./02-installation.md#step-4-setup-bothan)
+- [Setup Grogu](./02-installation.md#step-5-setup-grogu)
 
 ## Hardware Requirements
 
