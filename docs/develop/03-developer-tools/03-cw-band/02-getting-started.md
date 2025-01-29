@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Getting started
 
-This guide serves as a quick reference on how to request and receive data from BandChain. For examples of CosmWasm contracts, please refer to the [Example Use Cases](/products/cw-band/example) section.
+This guide serves as a quick reference on how to request and receive data from BandChain. For examples of CosmWasm contracts, please refer to the [Example Use Cases](/develop/developer-tools/cw-band/example) section.
 
 ### Step 1: Prepare an oracle script and data sources
 
