@@ -4,10 +4,10 @@ Cylinder is a program designed for TSS (Threshold Signature Scheme) members to s
 
 When members are selected through a TSS group creation proposal, they must submit their information using a series of messages to ensure proper participation in the process. These messages include:
 
-- `MsgSubmitDKGRound1`: For submitting the member's partial public keys.
-- `MsgSubmitDKGRound2`: For submitting shared secrets used to exchange necessary data during the Distributed Key Generation (DKG) rounds.
-- `MsgConfirm`: To finalize participation and securely establish their role in the TSS group.
-- `MsgComplain`: To report incorrect information provided by other members.
+- `MsgSubmitDKGRound1`: For submitting the commitments and public exchange key that being used for generating member secret.
+- `MsgSubmitDKGRound2`: For submitting shared encrypted partial secrets.
+- `MsgConfirm`: To finalize participation and approve correctness of the group creation information.
+- `MsgComplain`: To report incorrect information provided by malicious members.
 
 Additionally, a subset of members selected for a request must submit their signatures for the requested message within a limited time using the `MsgSubmitSignature` message. They are also responsible for maintaining public signing nonces (public DEs) on BandChain via the `MsgSubmitDEs` message to fulfill their obligations.
 
@@ -18,7 +18,7 @@ Cylinder's execution flow consists of two main parts: **Group Creation** and **S
 **Group Creation Flow**
 
 1. Listening for a group creation event
-2. Submitting member's partial public keys
+2. Submitting member's commitments and exchange key
 3. Submitting member's shared secrets
 4. Finalizing member private key
 
@@ -46,9 +46,9 @@ The following section describes mechanism of the Cylinder in each step.
 
 Cylinder listens for new TSS group creation proposals through the BandChain’s Tendermint RPC WebSocket. Once a proposal is detected, Cylinder checks whether the request is assigned to the respective TSS member.
 
-### 2. Submitting Member's Partial Public Key
+### 2. Submitting Member's Exchange Key and Commitment
 
-After detecting the group creation request, Cylinder generates private exchange keys and public commitments (representing partial keys) and stores them in its storage. Cylinder then shares these commitments with BandChain by submitting a `MsgSubmitDKGRound1` message, which includes the commitments and public exchange keys. This ensures that all participants have access to the necessary public commitments to verify each other's contributions. Once every member submits their Round 1 information, BandChain aggregates the submitted data, computes the group public key, and emits an event to notify members to proceed to the next step.
+After detecting the group creation request, Cylinder generates private exchange key and public commitments (representing partial keys) and stores them in its storage. Cylinder then shares these commitments with BandChain by submitting a `MsgSubmitDKGRound1` message, which includes the commitments and public exchange keys. This ensures that all participants have access to the necessary public commitments to verify each other's contributions. Once every member submits their Round 1 information, BandChain aggregates the submitted data, computes the group public key, and emits an event to notify members to proceed to the next step.
 
 ### 3. Submitting Member's Shared Secrets
 
