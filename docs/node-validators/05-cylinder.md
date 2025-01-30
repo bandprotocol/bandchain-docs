@@ -48,11 +48,11 @@ Cylinder listens for new TSS group creation proposals through the BandChain’s 
 
 ### 2. Submitting Member's Exchange Key and Commitment
 
-After detecting the group creation request, Cylinder generates private exchange key and public commitments (representing partial keys) and stores them in its storage. Cylinder then shares these commitments with BandChain by submitting a `MsgSubmitDKGRound1` message, which includes the commitments and public exchange keys. This ensures that all participants have access to the necessary public commitments to verify each other's contributions. Once every member submits their Round 1 information, BandChain aggregates the submitted data, computes the group public key, and emits an event to notify members to proceed to the next step.
+After detecting the group creation request, Cylinder generates private exchange key and commitments (representing partial keys) and stores them in its storage. Cylinder then shares these commitments and public exchange keys with BandChain by submitting a `MsgSubmitDKGRound1` message. This ensures that all participants have access to the necessary public commitments to verify each other's contributions. Once every member submits their Round 1 information, BandChain aggregates the submitted data, computes the group public key, and emits an event to notify members to proceed to the next step.
 
 ### 3. Submitting Member's Shared Secrets
 
-After receiving the event from the previous step, Cylinder exchanges secret values using verifiable encryption on BandChain via the `MsgSubmitDKGRound2` message. These secrets are essential for securely exchanging data with other members during the DKG rounds. Once every member submits their data, BandChain emits an event to notify members to proceed further.
+After receiving the event from the previous step, Cylinder exchanges secret values using verifiable encryptio and submits those information to BandChain via the `MsgSubmitDKGRound2` message. These secrets are essential for securely exchanging data with other members during the DKG rounds. Once every member submits their data, BandChain emits an event to notify members to proceed further.
 
 ### 4. Finalizing Member Private Key
 
