@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Introduction
 
 The correctness of the data is a crucial part of decentralized applications (dApps) that rely on data from the real world. Manipulated data can impact the security and the objective of the applications.

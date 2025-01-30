@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Example Use Cases
 
 As you can request any oracle script in BandChain from your CosmWasm contract. it opens the opportunity for getting any data from the real world such as crypto prices, stock prices, and weather data. Please see the examples of CosmWasm contracts that requests data from BandChain below.

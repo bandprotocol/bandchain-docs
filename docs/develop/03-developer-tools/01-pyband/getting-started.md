@@ -21,7 +21,7 @@ This library is only implemented on Python.
 
 This library is available on [PyPI](https://pypi.org/project/pyband/)
 
-```
+```bash
 pip install pyband
 ```
 
@@ -82,7 +82,7 @@ In this example, we will use [`MsgRequestData`] with the following parameters as
 - **ask_count** `<int>`: The number of validator required to process this transaction.
 - **min_count** `<int>`: The minimum number of validator required to process this transaction.
 - **client_id** `<str>`: Name of the client (can be any name or an empty string).
-- **fee_limit** <[`Coin`]>: The fee limit.
+- **fee_limit** {'<['}`Coin`{']>'}: The fee limit.
 - **prepare_gas** `<int>`: The amount of gas used in the preparation stage.
 - **execute_gas** `<int>`: The amount of gas used in the execution stage.
 - **sender** `<str>`: The sender's address.

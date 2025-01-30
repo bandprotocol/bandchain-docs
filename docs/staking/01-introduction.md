@@ -4,7 +4,7 @@
 
 In a Proof-of-Stake (PoS) blockchain protocol, block creation is reliant on validators. These entities bond the native asset (in this case, BAND) to the network and take part in the consensus protocol by broadcasting cryptographic signatures, or votes, to agree upon the next block. In exchange for their contributions to the network, validators are awarded transaction fees. These fees are then distributed proportionately among the stakeholders who have bonded their BAND. Staking is an integral part of PoS protocols as it motivates honest participation in the network and bolsters the network's security.
 
-Validators are required to operate and maintain a software referred to as a node (see [Running a node](../node-validators/01-overview.md) for further details). However, you have the option to delegate your BAND to a validator and receive a portion of the staking rewards in line with your staked amount.
+Validators are required to operate and maintain a software referred to as a node (see [Running a node](../node-validators/overview) for further details). However, you have the option to delegate your BAND to a validator and receive a portion of the staking rewards in line with your staked amount.
 
 ## Risks of Slashing
 
