@@ -36,7 +36,7 @@ This parameter controls the maximum length of the message. This is to prevent fl
 
 ## `bandtss` Module
 
-`bandtss` module is for BandChain's specific TSS assumption. Mainly it involves maintaining the TSS primary group, including managing the incentive and penalty of involved participants. It has the following module parameters.
+`bandtss` module is for BandChain's specific TSS assumption. Mainly it involves maintaining the BandChain TSS primary group, including managing the incentive and penalty of involved participants. It has the following module parameters.
 
 ### `bandtss:reward_percentage`
 
@@ -48,7 +48,7 @@ This parameter controls the cooldown before an inactive TSS member can send `Msg
 
 ### `bandtss:min_transition_duration`
 
-This parameter controls the minimum required time between the activation of a new TSS group and the transition from the existing group. This prevents a frequent or rapid transitions that could disrupt ongoing signing operations. This also is a buffer for handling potential disputes or necessary confirmations before the transition is finalized.
+This parameter controls the minimum required time between the activation of a new BandChain TSS group and the transition from the existing group. This prevents a frequent or rapid transitions that could disrupt ongoing signing operations. This also is a buffer for handling potential disputes or necessary confirmations before the transition is finalized.
 
 ### `bandtss:max_transition_duration`
 

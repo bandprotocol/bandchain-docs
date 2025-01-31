@@ -1,6 +1,6 @@
 # Requesting a TSS Signature
 
-The Threshold Signature Scheme (TSS) Signing Process enables users to request a TSS group to sign various types of messages in a secure and decentralized manner. This ensures that sensitive cryptographic operations, such as signing transactions, verifying oracle results, and price feed data aggregation, are performed without exposing private key material.
+The Threshold Signature Scheme (TSS) Signing Process enables users to request a BandChain TSS group to sign various types of messages in a secure and decentralized manner. This ensures that sensitive cryptographic operations, such as signing transactions, verifying oracle results, and price feed data aggregation, are performed without exposing private key material.
 
 ## Requesting a Signature
 

@@ -34,7 +34,7 @@ message MsgSubmitDEs {
 
 When a user requests a signature, BandChain:
 
-- Randomly selects signers from the active TSS group.
+- Randomly selects signers in the active BandChain TSS group.
 - Uses the stored public nonces to initialize signing data.
 - Publishes a signing request event to notify selected signers.
 
@@ -71,4 +71,4 @@ message MsgSubmitSignature {
 
 ### 4.Aggregating and Finalizing the Signature
 
-Once a sufficient number of valid partial signatures are submitted, BandChain aggregates them to compute the final group signature. The final signature is then published and made available for use in transactions or smart contract executions.
+Once every members submit their valid partial signatures, BandChain aggregates them to compute the final group signature. The event is then published and the final signature is stored and made available for use.
