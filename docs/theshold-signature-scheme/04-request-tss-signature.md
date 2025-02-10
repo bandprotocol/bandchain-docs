@@ -34,7 +34,7 @@ message MsgRequestSignature {
 message OracleResultSignatureOrder {
   option (gogoproto.goproto_getters) = false;
 
-  // RequestID is oracle's unique identifier for this oracle request.
+  // request_id is oracle's unique identifier for this oracle request.
   uint64 request_id = 1 [(gogoproto.customname) = "RequestID", (gogoproto.casttype) = "RequestID"];
 
   // encoder is the mode of encoding oracle result signature order.
