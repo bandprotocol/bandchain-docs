@@ -40,11 +40,11 @@ message MsgCreateTunnel {
 
 When creating, the creator provides the list of `SignalDeviation` objects to specify the price symbols together with the time interval and price deviation to feed price data.
 
-| Field         | Description                                          |
-| ------------- | ---------------------------------------------------- |
-| signal_id     | The signal id (symbol) to feed price                 |
-| deviation_bps | Addtional price deviation threshold (in basis point) |
-| interval      | The default feeding interval in seconds              |
+| Field         | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| signal_id     | The signal id (symbol) to feed price                  |
+| deviation_bps | Additional price deviation threshold (in basis point) |
+| interval      | The default feeding interval in seconds               |
 
 ## Tunnel Route
 
