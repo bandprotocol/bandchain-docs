@@ -10,7 +10,7 @@ We appreciate your patience and understanding as we aim to deliver a robust and 
 
 :::
 
-In BandChain v3, price data are constantly and automatically updated through the concurrent price stream module. These price data can be publci accessible and can be used off-chain without any charge. However, to utilize the price data on a different blockchain, the price data needs to be passed through **data tunnel** to ensure data integrity.
+In BandChain v3, price data are constantly and automatically updated through the concurrent price stream module. These price data can be public accessible and can be used off-chain without any charge. However, to utilize the price data on a different blockchain, the price data needs to be passed through **data tunnel** to ensure data integrity.
 
 BandChain allows developers to create a tunnel specifying the pricing symbols (signals), the feeding interval, and the price deviation triggering condition. Once registered, BandChain continuously and automatically checks for data delivery conditions, which are met if any of the following occurs:
 
