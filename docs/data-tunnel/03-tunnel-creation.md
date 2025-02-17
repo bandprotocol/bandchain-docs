@@ -48,7 +48,7 @@ When creating, the creator provides the list of `SignalDeviation` objects to spe
 
 ## Tunnel Route
 
-The creator also specifies the **route** to deliver price data to the destination, currently [TSS](./05-tss-integration.md), [IBC](./06-ibc-intergation.md), [IBC_Router](./07-ibc-hook-integration.md), and [ROUTER](./08-router-integration.md) routes are supported.
+The creator also specifies the **route** to deliver price data to the destination, currently [TSS](./06-tss-integration.md), [IBC](./07-ibc-intergation.md), [IBC Hook](./08-ibc-hook-integration.md), and [Router](./09-router-integration.md) routes are supported.
 
 ## Initial Deposit
 
