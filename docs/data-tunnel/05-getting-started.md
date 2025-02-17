@@ -4,7 +4,7 @@ This guide provides a quick reference on how to use Data Tunnel to send price da
 
 ## Step 1: Prepare the Consumer Contract
 
-To send packet data from BandChain to the destination chain, the client must implement a contract based on the destination chain and the selected route type. The implementation details vary for each integration method. For example, refer to [IBC Hook Integration - Implementing a WASM Contract](./07-ibc-hook-integration.md#implementing-a-wasm-contract).
+To send packet data from BandChain to the destination chain, the client must implement a contract based on the destination chain and the selected route type. The implementation details vary for each integration method. For example, refer to [IBC Hook Integration - Implementing a WASM Contract](./08-ibc-hook-integration.md#implementing-a-wasm-contract).
 
 ## Step 2: Create a Tunnel
 
