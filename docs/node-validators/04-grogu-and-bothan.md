@@ -13,7 +13,7 @@ Therefore, we have developed [Bothan](#bothan) to help validators to automatical
 Grogu's execution flow consists of the following steps
 1. Querying chain on current feeds, validator status and its latest submitted prices.
 2. Getting prices of required signals from Bothan.
-3. Calculating on which signals are required be updated.
+3. Calculating on which signals are required to be updated.
 4. Collect price data and store in local pending list.
 5. Pack price data and send to BandChain.
 
@@ -37,7 +37,7 @@ Grogu first queries the chain for its required feeds, validator status, and the 
 
 After querying the required feeds, Grogu filters out signals that are already pending in the submission process. It then retrieves the prices for the remaining signals from Bothan.
 
-### 3. Calculating on which signals are required be updated
+### 3. Calculating on which signals are required to be updated
 
 After getting prices data from Bothan, it filters the signals to include only those that need to be sent based on their interval, deviation and price status.
 
