@@ -66,7 +66,7 @@ We can then use that `appHash` to finally compute the `blockHash` using the very
 
 ## Recovering Signer Addresses
 
-After we have constructed a `blockHash`, we can move on to prove its validity by attempting to use it to recover the addresses of the validators who signed on this block using Ethereum’s [ecrecover](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol#L16) opcode. To ensure that the addresses we extracted are valid, we verify that each address we extract is unique.
+After we have constructed a `blockHash`, we can move on to prove its validity by attempting to use it to recover the addresses of the validators who signed on this block using Ethereum’s [ECDSA recover](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol#L16) opcode. To ensure that the addresses we extracted are valid, we verify that each address we extract is unique.
 
 As we recover each signer, we also add each extracted validator’s voting power to a counting tally, which we will use in the next step.
 
