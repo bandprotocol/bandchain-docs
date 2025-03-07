@@ -33,7 +33,7 @@ bandd tx tunnel update-route ibc [tunnel-id] [channel-id]
 
 ## Fee Collection
 
-This route does not require any additional fees. You only need to pay the base fee by sending `uband` to the Band fee payer address.
+This route does not require any additional fees. You only need to pay the base fee by sending `uband` to the tunnel fee payer address.
 
 ## Core App Implementation
 
