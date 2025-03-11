@@ -27,6 +27,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Icon (Berlin)     |    [cxd2bac764a0277efb9a6861fa991be4e5a46f16a2](https://berlin.tracker.solidwallet.io/contract/cxd2bac764a0277efb9a6861fa991be4e5a46f16a2)     |
 | Icon (Lisbon)     |    [cx734512ad03efdcedb69e0526415a7ce21340e0db](https://lisbon.tracker.solidwallet.io/contract/cx734512ad03efdcedb69e0526415a7ce21340e0db)     |
 | Meter             |      [0xe1bCC505f2Bdd02C9480C924856f5080834A3897](https://scan-warringstakes.meter.io/address/0xe1bCC505f2Bdd02C9480C924856f5080834A3897)      |
+| Nibiru            |        [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://evm-explorer.nibiru.fi/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)         |
 | Oasis (Emerald)   |  [0x61704EFB8b8120c03C210cAC5f5193BF8c80852a](https://testnet.explorer.emerald.oasis.dev/address/0x61704EFB8b8120c03C210cAC5f5193BF8c80852a)   |
 | Oasis (Sapphire)  |  [0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A](https://testnet.explorer.sapphire.oasis.dev/address/0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A)  |
 | PlatON            |      [0xb6256DCb23CEE06eDa2408E73945963606fdddd7](https://devnet2scan.platon.network/address/0xb6256DCb23CEE06eDa2408E73945963606fdddd7)       |
@@ -53,6 +54,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Icon (Java)      |            [cxe647e0af68a4661566f5e9861ad4ac854de808a2](https://tracker.icon.community/contract/cxe647e0af68a4661566f5e9861ad4ac854de808a2)            |
 | Meter            |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
 | Moonriver        |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
+| Nibiru           |                  [0x9503d502435f8e228b874Ba0F792301d4401b523](https://nibiscan.io/address/0x9503d502435f8e228b874Ba0F792301d4401b523)                  |
 | Oasis (Emerald)  |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.emerald.oasis.dev/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)           |
 | Oasis (Sapphire) |      [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.oasis.io/mainnet/sapphire/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)       |
 | Optimism         |            [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://optimistic.etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)            |
