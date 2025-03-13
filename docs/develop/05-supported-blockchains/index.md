@@ -27,6 +27,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Icon (Berlin)     |    [cxd2bac764a0277efb9a6861fa991be4e5a46f16a2](https://berlin.tracker.solidwallet.io/contract/cxd2bac764a0277efb9a6861fa991be4e5a46f16a2)     |
 | Icon (Lisbon)     |    [cx734512ad03efdcedb69e0526415a7ce21340e0db](https://lisbon.tracker.solidwallet.io/contract/cx734512ad03efdcedb69e0526415a7ce21340e0db)     |
 | Meter             |      [0xe1bCC505f2Bdd02C9480C924856f5080834A3897](https://scan-warringstakes.meter.io/address/0xe1bCC505f2Bdd02C9480C924856f5080834A3897)      |
+| Monad             |       [0xb6256dcb23cee06eda2408e73945963606fdddd7](https://testnet.monadexplorer.com/address/0xb6256dcb23cee06eda2408e73945963606fdddd7)       |
 | Nibiru            |        [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://evm-explorer.nibiru.fi/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)         |
 | Oasis (Emerald)   |  [0x61704EFB8b8120c03C210cAC5f5193BF8c80852a](https://testnet.explorer.emerald.oasis.dev/address/0x61704EFB8b8120c03C210cAC5f5193BF8c80852a)   |
 | Oasis (Sapphire)  |  [0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A](https://testnet.explorer.sapphire.oasis.dev/address/0x0c2362c9A0586Dd7295549C65a4A5e3aFE10a88A)  |
