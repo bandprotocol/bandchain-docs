@@ -11,9 +11,9 @@ Furthermore, most data providers already have APIs that can be used to query dat
 Therefore, we have developed [Bothan](#bothan) to help validators to automatically query data from data providers, then Grogu to submit the result to fulfill the Price Stream.
 
 Grogu's execution flow consists of the following steps
-1. Querying chain on current feeds, validator status and its latest submitted prices.
-2. Getting prices of required signals from Bothan.
-3. Calculating on which signals are required to be updated.
+1. Query chain on current feeds, validator status and its latest submitted prices.
+2. Get prices of required signals from Bothan.
+3. Calculate on which signals are required to be updated.
 4. Collect price data and store in local pending list.
 5. Pack price data and send to BandChain.
 
@@ -25,19 +25,19 @@ The reason of using feeder account instead of validator account is to maintain s
 If Yoda's server is compromised, then feeder's private key may be exposed but not validator's private key. 
 Moreover, most validators use hardware wallets, which is not designed for server that runs 24/7.
 
-<!-- TODO: add diagram -->
+![Grogu's diagram](https://github.com/user-attachments/assets/244da953-78e8-4a26-8325-3e46ccd6b072)
 
 The image above represents high-level mechanism of Grogu.
 
-### 1. Querying chain on current feeds, validator status and its latest submitted prices
+### 1. Query chain on current feeds, validator status and its latest submitted prices
 
 Grogu first queries the chain for its required feeds, validator status, and the latest submitted prices. It then uses the validator status to determine whether price data submission is required. If submission is not needed, it simply waits for the validator status to become valid before proceeding.
 
-### 2. Getting prices of required signals from Bothan
+### 2. Get prices of required signals from Bothan
 
 After querying the required feeds, Grogu filters out signals that are already pending in the submission process. It then retrieves the prices for the remaining signals from Bothan.
 
-### 3. Calculating on which signals are required to be updated
+### 3. Calculate on which signals are required to be updated
 
 After getting prices data from Bothan, it filters the signals to include only those that need to be sent based on their interval, deviation and price status.
 
