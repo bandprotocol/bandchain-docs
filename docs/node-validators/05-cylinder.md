@@ -34,40 +34,40 @@ The primary reason for using a grantee account instead of a member's main accoun
 
 Cylinder's mechanism is designed with an event-driven approach, handling tasks concurrently to improve performance.
 
-<!-- TODO: add diagram -->
-
 The image above represents high-level mechanism of Cylinder.
 
 The following section describes mechanism of the Cylinder in each step.
 
 ## Group Creation Flow
 
-### 1. Listening for a Group Creation Event
+![Cylinder's group creation diagram](https://i.imgur.com/53LFAS3.png)
+
+### 1. Listening for a Group Creation Event (1-2)
 
 Cylinder listens for new TSS group creation proposals through the BandChain’s Tendermint RPC WebSocket. Once a proposal is detected, Cylinder checks whether the request is assigned to the respective TSS member.
 
-### 2. Submitting Member's Exchange Key and Commitment
+### 2. Submitting Member's Exchange Key and Commitment (3-6)
 
 After detecting the group creation request, Cylinder generates private exchange key and commitments (representing partial keys) and stores them in its storage. Cylinder then shares these commitments and public exchange keys with BandChain by submitting a `MsgSubmitDKGRound1` message. This ensures that all participants have access to the necessary public commitments to verify each other's contributions. Once every member submits their Round 1 information, BandChain aggregates the submitted data, computes the group public key, and emits an event to notify members to proceed to the next step.
 
-### 3. Submitting Member's Shared Secrets
+### 3. Submitting Member's Shared Secrets (9-11)
 
-After receiving the event from the previous step, Cylinder exchanges secret values using verifiable encryptio and submits those information to BandChain via the `MsgSubmitDKGRound2` message. These secrets are essential for securely exchanging data with other members during the DKG rounds. Once every member submits their data, BandChain emits an event to notify members to proceed further.
+After receiving the event from the previous step, Cylinder exchanges secret values using verifiable encryption and submits those information to BandChain via the `MsgSubmitDKGRound2` message. These secrets are essential for securely exchanging data with other members during the DKG rounds. Once every member submits their data, BandChain emits an event to notify members to proceed further.
 
-### 4. Finalizing Member Private Key
+### 4. Finalizing Member Private Key (14-17)
 
 After receiving the event from the previous step, Cylinder queries the encrypted secret shares and forms the member's private key. If Cylinder succeeds to aggregate member private keys, it submit a `MsgConfirm` to BandChain; otherwise, creates a complaint message identifying malicious members and submit it via `MsgComplain`.
 
 ## Signing Execution Steps
 
-### 1. Generating Public Signing Nonce
+![Cylinder's signing diagram](https://i.imgur.com/jeH6LBp.png)
 
-Cylinder generates and submits the member’s public signing nonce (public DE) to BandChain using the `MsgSubmitDEs` message. This ensures that the signing data is properly initialized and ready for use.
+### 1. Listening for Incoming Signing Requests
 
-### 2. Listening for Incoming Signing Requests
+When a user creates a signing request for a message, BandChain randomly selects members from the TSS group and consumes their public nonces, which are generated submitted by Cylinder through `MsgSubmitDEs`, to initialize the signing data. BandChain then publishes a signing request event. Cylinder monitors these incoming signing requests through Tendermint’s RPC WebSocket and processes the related request.
 
-When a user creates a signing request for a message, BandChain randomly selects members from the TSS group and consumes their public nonces to initialize the signing data. BandChain then publishes a signing request event. Cylinder monitors these incoming signing requests through Tendermint’s RPC WebSocket and processes the related request.
+Cylinder generates and submits the member’s public signing nonce (public DE) to BandChain using the message. This ensures that the signing data is properly initialized and ready for use.
 
-### 3. Submitting Signatures
+### 2. Submitting Signatures
 
 Cylinder signs the message and submits `MsgSubmitSignature` messages containing the member’s signature for the requested data. These messages are sent within the designated time frame to fulfill the signing obligation. BandChain aggregates the members' signatures and computes the group signature for the requested message.
