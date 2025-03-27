@@ -4,7 +4,7 @@
 
 The **Data Tunnel** serves as a critical bridge for relaying price data from a concurrent price stream to decentralized applications. It ensures seamless interoperability between various blockchain networks, including Cosmos SDK applications, L1/L2+ EVM contracts, and non-EVM contracts.
 
-[waiting-for-image]
+![Band Tunnel Architecture](../../static/img/band_tunnel_architecture.png)
 
 ## Components
 
