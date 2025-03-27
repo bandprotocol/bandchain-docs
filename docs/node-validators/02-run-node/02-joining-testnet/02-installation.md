@@ -16,7 +16,7 @@ export WALLET_NAME=<YOUR_WALLET_NAME>
 # Name of your validator node, please change this into your name.
 export MONIKER=<YOUR_MONIKER>
 # Seed and persistent peers for P2P communication
-export SEEDS="cf91ef30a9877d7cf0e654d5f75f8d68ff6ee4e7@34.2.133.3:26656,cbe055146a4607c3db5909bfa20e9e0c5ea95f90@35.212.1.35:26656"
+export SEEDS="62eb486c7163b173ad9948579555872b809f09cd@37.27.244.210:26656,fda81adfb9dce7cf74179a8caf1e116cf9284318@65.108.45.110:26656"
 # URL of genesis file for Band V3 Testnet #1
 export GENESIS_FILE_URL=https://raw.githubusercontent.com/bandprotocol/launch/master/band-v3-testnet-1/genesis.json
 # URL of config file for Bothan
@@ -91,7 +91,7 @@ wget $GENESIS_FILE_URL -O $HOME/.band/config/genesis.json
 bandd keys add $WALLET_NAME
 ```
 
-### Step 1.4: Setup seeds and minimum gas price
+### Step 1.4: Setup node configuration
 
 ```bash
 # Add seeds to config.toml
@@ -104,9 +104,34 @@ sed -E -i \
   "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.0025uband\"/" \
   $HOME/.band/config/app.toml
 
-# Set timeout commit to 0.7 second
+# Set timeout propose
 sed -E -i \
-  "s/timeout_commit = \".*\"/timeout_commit = \"700ms\"/" \
+  "s/timeout_propose = \".*\"/timeout_propose = \"1s\"/" \
+  $HOME/.band/config/config.toml
+
+# Set timeout commit
+sed -E -i \
+  "s/timeout_commit = \".*\"/timeout_commit = \"500ms\"/" \
+  $HOME/.band/config/config.toml
+
+# Set peer_gossip_sleep_duration
+sed -E -i \
+  "s/peer_gossip_sleep_duration = \".*\"/peer_gossip_sleep_duration = \"10ms\"/" \
+  $HOME/.band/config/config.toml
+
+# Set flush_throttle_timeout
+sed -E -i \
+  "s/flush_throttle_timeout = \".*\"/flush_throttle_timeout = \"10ms\"/" \
+  $HOME/.band/config/config.toml
+
+# Set number of inbound peers
+sed -E -i \
+  "s/max_num_inbound_peers = .*/max_num_inbound_peers = 40/" \
+  $HOME/.band/config/config.toml
+
+# Set number of outbound peers
+sed -E -i \
+  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 40/" \
   $HOME/.band/config/config.toml
 ```
 

@@ -157,8 +157,8 @@ There are three main ways to sync a node on the BandChain; Blocksync, State Sync
 It is highly recommended to use **State Sync** or **Snapshots** as it's faster. However, if you want to use Blocksync, please read the following section.
 :::
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 <Tabs className="docs-tabs">
 <TabItem value="block-sync" label="Block Sync" default className="tab-content">
@@ -191,9 +191,9 @@ State Sync is an efficient and fast way to bootstrap a new node, and it works by
 ```bash
 # Get trust height and trust hash
 
-LATEST_HEIGHT=$(curl -s https://rpc.laozi4.bandchain.org/block | jq -r .result.block.header.height);
+LATEST_HEIGHT=$(curl -s http://rpc.laozi1.bandchain.org/block | jq -r .result.block.header.height);
 TRUST_HEIGHT=$(($LATEST_HEIGHT-30000))
-TRUST_HASH=$(curl -s "https://rpc.laozi4.bandchain.org/block?height=$TRUST_HEIGHT" | jq -r .result.block_id.hash)
+TRUST_HASH=$(curl -s "http://rpc.laozi1.bandchain.org/block?height=$TRUST_HEIGHT" | jq -r .result.block_id.hash)
 
 # show trust height and trust hash
 echo "TRUST HEIGHT: $TRUST_HEIGHT"
@@ -210,7 +210,7 @@ sed -i \
 
 # Set RPC Endpoint for State Sync
 sed -E -i \
-    "/\[statesync\]/,+34 s/rpc_servers = \".*\"/rpc_servers = \"http\:\/\/rpc.laozi1.bandchain.org\:80,http\:\/\/rpc.laozi2.bandchain.org\:80,https\:\/\/rpc.laozi3.bandchain.org\:443,https\:\/\/rpc.laozi4.bandchain.org\:443\"/" \
+    "/\[statesync\]/,+34 s/rpc_servers = \".*\"/rpc_servers = \"http\:\/\/rpc.laozi1.bandchain.org\:80,https\:\/\/rpc.laozi3.bandchain.org\:443\"/" \
     $HOME/.band/config/config.toml
 
 # Set Trust Height for State Sync
