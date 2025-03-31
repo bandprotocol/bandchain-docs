@@ -47,7 +47,7 @@ When creating a tunnel, the creator provides a list of `SignalDeviation` objects
 
 ## Tunnel Route
 
-The creator also specifies the **route** to deliver price data to the destination. Currently, [TSS](./06-tss-route.md) and [IBC](./07-ibc-route.md) routes are supported, with [IBC Hook](./08-ibc-hook-route.md) and [Router](./09-router-route.md) routes coming soon.
+The creator also specifies the **route** to deliver price data to the destination. Currently, [TSS](./route-types/01-tss.md) and [IBC](./route-types/02-ibc.md) routes are supported, with [IBC Hook](./route-types/03-ibc-hook.md) and [Router](./route-types/04-router.md) routes coming soon.
 
 ## Initial Deposit
 
