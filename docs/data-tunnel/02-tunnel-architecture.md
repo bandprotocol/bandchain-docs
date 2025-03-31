@@ -10,10 +10,7 @@ The **Data Tunnel** serves as a bridge for relaying price data from a concurrent
 
 ### 1. **Concurrent Price Stream**
 
-The Concurrent Price Stream is responsible for obtaining real-time pricing data from validators. This data is then fed into the **Data Tunnel** for further processing and transmission.
-
-- **Functionality:** Fetches live price updates
-- **Interaction:** Sends price data to the Data Tunnel
+The Concurrent Price Stream is responsible for obtaining real-time pricing data from validators. The stream continuously aggregates price data from multiple trusted validators, ensuring that the Data Tunnel always has access to high-quality and reliable price feeds. The **Data Tunnel** actively collects this price information from the Concurrent Price Stream for processing and transmission. Through this mechanism, BandChain maintains an up-to-date price oracle that enables Data Tunnels to efficiently relay price data to various blockchain networks.
 
 ### 2. **Data Tunnel**
 
