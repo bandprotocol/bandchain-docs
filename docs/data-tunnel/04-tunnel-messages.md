@@ -2,7 +2,7 @@
 
 ## Update Route
 
-The tunnel creator can update the route information by broadcasting a `MsgUpdateRoute` message to BandChain. The fields that can be modified depend on the specific route type that was initially set for the tunnel.
+The tunnel creator can update the route information by broadcasting a `MsgUpdateRoute` message to BandChain. The fields that can be modified depend on the specific route type that was initially set for the tunnel. Note that the route type itself cannot be changed after tunnel creation - only parameters within the same route type can be updated.
 
 ```protobuf
 message MsgUpdateRoute {
@@ -114,7 +114,7 @@ message MsgDepositToTunnel {
 
 ## **Withdraw from Tunnel**
 
-Anyone who has previously deposited **uBand** into a tunnel can withdraw their funds by broadcasting a `MsgWithdrawFromTunnel` message when needed.
+Anyone who has previously deposited **uband** into a tunnel can withdraw their funds by broadcasting a `MsgWithdrawFromTunnel` message when needed.
 
 > **Note:** If a withdrawal causes the total deposit in the tunnel to fall below the required minimum deposit, the tunnel will be automatically deactivated.
 
@@ -123,17 +123,17 @@ message MsgWithdrawFromTunnel {
   option (cosmos.msg.v1.signer) = "withdrawer";
   option (amino.name)           = "tunnel/MsgWithdrawFromTunnel";
 
-  // The unique identifier of the tunnel from which funds are withdrawn.
+  // tunnel_id defines the unique id of the tunnel.
   uint64 tunnel_id = 1 [(gogoproto.customname) = "TunnelID"];
 
-  // The amount of coins to be withdrawn.
+  // amount to be withdrawn by withdrawer.
   repeated cosmos.base.v1beta1.Coin amount = 2 [
     (gogoproto.nullable)     = false,
     (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins",
     (amino.dont_omitempty)   = true
   ];
 
-  // The address of the withdrawer requesting the withdrawal.
+  // withdrawer defines the withdraw addresses from the tunnel.
   string withdrawer = 3 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 }
 ```

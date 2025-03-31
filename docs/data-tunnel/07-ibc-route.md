@@ -1,4 +1,4 @@
-# IBC Integration
+# IBC Route
 
 ## Overview
 

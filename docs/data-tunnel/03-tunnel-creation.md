@@ -38,17 +38,16 @@ message MsgCreateTunnel {
 
 ## Signal Specification
 
-When creating, the creator provides the list of `SignalDeviation` objects to specify the price symbols together with the time interval and price deviation to feed price data.
+When creating a tunnel, the creator provides a list of `SignalDeviation` objects to specify the price deviation thresholds that trigger data feeds.
 
-| Field         | Description                                           |
-| ------------- | ----------------------------------------------------- |
-| signal_id     | The signal id (symbol) to feed price                  |
-| deviation_bps | Additional price deviation threshold (in basis point) |
-| interval      | The default feeding interval in seconds               |
+| Field         | Description                                    |
+| ------------- | ---------------------------------------------- |
+| signal_id     | The signal id (symbol) to feed price           |
+| deviation_bps | The price deviation threshold (in basis point) |
 
 ## Tunnel Route
 
-The creator also specifies the **route** to deliver price data to the destination, currently [TSS](./06-tss-integration.md), [IBC](./07-ibc-intergation.md), [IBC Hook](./08-ibc-hook-integration.md), and [Router](./09-router-integration.md) routes are supported.
+The creator also specifies the **route** to deliver price data to the destination. Currently, [TSS](./06-tss-route.md) and [IBC](./07-ibc-route.md) routes are supported, with [IBC Hook](./08-ibc-hook-route.md) and [Router](./09-router-route.md) routes coming soon.
 
 ## Initial Deposit
 
@@ -56,4 +55,4 @@ The creator must seed the initial BAND token deposit to the tunnel. This initial
 
 ## Fee Payer Funds
 
-Lastly, once a tunnel is created, a dedicated BandChain address will be generated as the fee payer. Anyone can send BAND tokens to this address to fund the tunnel for operations. As specified in [the previous section](./02-tunnel-architecture.md), every message sent from a tunnel will incur various fees. If the tunnel runs out of BAND tokens, it will temporarily stop operating until more BAND tokens are sent and the creator broadcasts a `MsgActivateTunnel` message.
+Lastly, once a tunnel is created, a dedicated BandChain address will be generated as the fee payer. Anyone can send BAND tokens to this address to fund the tunnel for operations. Every message sent from a tunnel will incur various fees for data transmission and processing. If the tunnel runs out of BAND tokens, it will temporarily stop operating until more BAND tokens are sent and the creator broadcasts a `MsgActivateTunnel` message.

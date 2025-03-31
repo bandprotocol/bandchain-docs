@@ -1,4 +1,4 @@
-# IBC Hook Integration
+# IBC Hook Route
 
 ## Overview
 

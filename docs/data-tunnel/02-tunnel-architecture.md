@@ -10,7 +10,7 @@ The **Data Tunnel** serves as a bridge for relaying price data from a concurrent
 
 ### 1. **Concurrent Price Stream**
 
-The Concurrent Price Stream is responsible for obtaining real-time pricing data from validators. The stream continuously aggregates price data from multiple trusted validators, ensuring that the Data Tunnel always has access to high-quality and reliable price feeds. The **Data Tunnel** actively collects this price information from the Concurrent Price Stream for processing and transmission. Through this mechanism, BandChain maintains an up-to-date price oracle that enables Data Tunnels to efficiently relay price data to various blockchain networks.
+The Concurrent Price Stream is responsible for obtaining real-time pricing data from validators. The stream continuously aggregates price data from multiple trusted validators, ensuring that the Data Tunnel always has access to high-quality and reliable price feeds.
 
 ### 2. **Data Tunnel**
 
@@ -25,7 +25,7 @@ The Data Tunnel serves as the main process for producing tunnel packets data. It
 
 The **Data Tunnel Routes** consist of multiple interoperability mechanisms that facilitate secure and efficient data transmission to send tunnel packets to decentralized applications. These mechanisms include:
 
-- **Threshold Signature Scheme**: Ensures cryptographic security for transactions to send it to decentralized applications.
+- **TSS (Threshold Signature Scheme)**: Ensures cryptographic security for transactions to send it to decentralized applications.
 - **IBC (Inter-Blockchain Communication Protocol)**: Provides communication between different Cosmos-based blockchains.
 - **IBC Hook**: Extends IBC functionalities, allowing customized interactions with WASM contracts on Cosmos-based blockchains.
 - **Router Protocol**: First blockchain interoperability platform that supports Band Data Tunnel.
