@@ -17,12 +17,11 @@ Grogu's execution flow consists of the following steps
 4. Collect price data and store in local pending list.
 5. Pack price data and send to BandChain.
 
-Grogu usually run as a process alongside the main BandChain daemon process. It holds another wallet (private key) account 
-called a `feeder account`, which is owned by validator account. The feeder account is used to help validator submit 
+Grogu usually run as a process alongside the main BandChain daemon process. It holds multiple wallet (private key) accounts called a `feeder account`, which is owned by validator account. The feeder account is used to help validator submit 
 transactions of price data.
 
 The reason of using feeder account instead of validator account is to maintain security of validator's private key. 
-If Yoda's server is compromised, then feeder's private key may be exposed but not validator's private key. 
+If Grogu's server is compromised, then feeder's private key may be exposed but not validator's private key. 
 Moreover, most validators use hardware wallets, which is not designed for server that runs 24/7.
 
 ![Grogu's diagram](https://github.com/user-attachments/assets/244da953-78e8-4a26-8325-3e46ccd6b072)
@@ -57,23 +56,12 @@ Bothan is an independent program designed for querying and interacting with vari
 
 Its primary goal is to serve as the go-to price hub and cache for Grogu, reducing delay times and efficiently streamlining and summarizing price data from multiple sources.
 
-Bothan supports the following sources:
- - Binance
- - Bybit
- - CoinBase
- - CoinGecko
- - CoinMarketCap
- - CryptoCompare
- - HTX
- - Kraken
- - OKX
-
 ## Bothan flow
 
 Bothan's execution flow consists of the following steps
 1. Validate and register Bothan registry.
 2. Start each source API workers.
-3. Query all source via REST/Websocket by signals in the registry and Update the price.
+3. Query all source via REST/Websocket by signals in the registry and update the price.
 4. Receive price request and return requested price data.
 5. Send record to Bothan monitoring.
 
