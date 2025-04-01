@@ -73,7 +73,7 @@ func DeriveIntermediateSender(destChannel, originalSender, bech32Prefix string) 
 
 To receive tunnel packet data on the destination contract, developers must implement the `iReceive` interface. Below is an example EVM smart contract that supports a **Router Tunnel**.
 
-The full implementation will be available in the cw-band repository [Link to be added].
+For the full implementation, will be available in the tunnel-router-consumer-contract repository [Link to be added].
 
 ```solidity
 /// @notice Handles cross-chain requests received from another chain.
