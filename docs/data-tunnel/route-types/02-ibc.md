@@ -49,7 +49,7 @@ This route does not require any additional fees. You only need to pay the base f
 
 ## Core App Implementation
 
-Below is an example implementation of the `OnRecvPacket` function to support the IBC Tunnel on the destination chain. The complete implementation can be found in the [tunnel-consumer](https://github.com/bandprotocol/tunnel-consumer) repository.
+Below is an example implementation of the `OnRecvPacket` function to support the IBC Tunnel on the destination chain. The complete implementation will be available in the tunnel-consumer repository [Link to be added].
 
 ```go
 // OnRecvPacket implements the IBCModule interface
