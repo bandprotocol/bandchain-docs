@@ -38,7 +38,7 @@ This route does not require any additional fees. You only need to pay the base f
 
 ## Implementing a WASM Contract
 
-Below is an example implementation of a WASM contract to support an **IBC Hook Tunnel**. The full implementation is available in the [cw-band repository](https://github.com/bandprotocol/cw-band/blob/main/contracts/tunnel-consumer-ibc-hook).
+Below is an example implementation of a WASM contract to support an **IBC Hook Tunnel**. The full implementation will be available in the cw-band repository [Link to be added].
 
 ```rust
 #[cfg(not(feature = "library"))]
