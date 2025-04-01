@@ -112,7 +112,7 @@ message MsgDepositToTunnel {
 }
 ```
 
-## **Withdraw from Tunnel**
+## Withdraw from Tunnel
 
 Anyone who has previously deposited **uband** into a tunnel can withdraw their funds by broadcasting a `MsgWithdrawFromTunnel` message when needed.
 
