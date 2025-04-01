@@ -9,8 +9,10 @@ message SignalDeviation {
 
   // signal_id is the signal ID
   string signal_id = 1 [(gogoproto.customname) = "SignalID"];
-  // deviation_bps is the deviation in basis points
-  uint64 deviation_bps = 2 [(gogoproto.customname) = "HardDeviationBPS"];
+  // soft_deviation_bps is the soft deviation in basis points
+  uint64 soft_deviation_bps = 2 [(gogoproto.customname) = "SoftDeviationBPS"];
+  // hard_deviation_bps is the hard deviation in basis points
+  uint64 hard_deviation_bps = 3 [(gogoproto.customname) = "HardDeviationBPS"];
 }
 
 
@@ -40,10 +42,29 @@ message MsgCreateTunnel {
 
 When creating a tunnel, the creator provides a list of `SignalDeviation` objects to specify the price deviation thresholds that trigger data feeds.
 
-| Field         | Description                                    |
-| ------------- | ---------------------------------------------- |
-| signal_id     | The signal id (symbol) to feed price           |
-| deviation_bps | The price deviation threshold (in basis point) |
+> **Note:** In the current implementation, soft and hard deviation values are set to be equal by the bandd CLI. The soft deviation feature is implemented but reserved for future use cases, particularly for high-volatility scenarios where using soft deviation could help reduce the number of on-chain transactions by batching price updates together.
+
+| Field              | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| signal_id          | The signal id (symbol) to feed price           |
+| soft_deviation_bps | The soft deviation threshold (in basis points) |
+| hard_deviation_bps | The hard deviation threshold (in basis points) |
+
+The price update mechanism works as follows:
+
+- **Hard Deviation**: When any signal's price deviation exceeds its hard threshold:
+
+  - All collected prices (including those that only exceeded soft deviation) are sent
+  - This triggers an immediate price update through the tunnel
+
+- **Soft Deviation**: When a signal's price deviation exceeds soft threshold but is below hard threshold:
+  - The price is collected but not immediately sent
+  - These prices will only be included if another signal triggers the hard deviation threshold
+
+For example, with different thresholds:
+
+- Signal A: deviation 0.6% (above soft 0.5%, below hard 1%) → price collected but not sent
+- Signal B: deviation 1.2% (above hard 1%) → triggers sending of both Signal A and B prices
 
 ## Tunnel Route
 
