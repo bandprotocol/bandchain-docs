@@ -34,8 +34,6 @@ The primary reason for using a grantee account instead of a member's main accoun
 
 Cylinder's mechanism is designed with an event-driven approach, handling tasks concurrently to improve performance.
 
-The image above represents high-level mechanism of Cylinder.
-
 The following section describes mechanism of the Cylinder in each step.
 
 ## Group Creation Flow
