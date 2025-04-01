@@ -24,7 +24,7 @@ The reason of using feeder account instead of validator account is to maintain s
 If Grogu's server is compromised, then feeder's private key may be exposed but not validator's private key. 
 Moreover, most validators use hardware wallets, which is not designed for server that runs 24/7.
 
-![Grogu's diagram](https://imgur.com/a/3fMFJxu)
+![Grogu's diagram](https://i.imgur.com/FmH2xxH.png)
 
 The image above represents high-level mechanism of Grogu.
 
