@@ -4,23 +4,50 @@ This guide provides a quick reference on how to use Data Tunnel to send price da
 
 ## Step 1: Prepare the Consumer Contract
 
-To send packet data from BandChain to the destination chain, the client must implement a contract based on the destination chain and the selected route type. The implementation details vary for each integration method. For example, refer to [IBC Hook Integration - Implementing a WASM Contract](./route-types/03-ibc-hook.md#implementing-a-wasm-contract).
+To send packet data from BandChain to the destination chain, the client must implement a contract based on the destination chain and the selected route type. Choose your preferred route type to learn more about implementation details:
+
+- [TSS Route](./route-types/01-tss.md)
+- [IBC Route](./route-types/02-ibc.md)
+- [IBC Hook Route](./route-types/03-ibc-hook.md)
+- [Router Route](./route-types/04-router.md)
 
 ## Step 2: Create a Tunnel
 
-Each tunnel route has specific requirements for tunnel creation. For example, creating an IBC Hook tunnel requires specifying the `[channel-id]` and `[destination-contract-address]`.
+Before creating a tunnel, you should understand the common parameters required for all tunnel types:
 
-However, every tunnel must include the following parameters:
+### Common Parameters
 
-- `[initial-deposit]`
-- `[interval]`
-- `[signalInfos-json-file]`
+- `[initial-deposit]`: The initial amount of uband tokens to deposit into the tunnel.
+- `[interval]`: The time interval (in seconds) between each forced price transmission. The tunnel will send updates when prices exceed their deviation thresholds
+- `[signalInfos-json-file]`: A JSON file specifying the price feed configurations, including:
+  - `signal_id`: The symbol/identifier of the price feed (e.g., "CS:BTC-USD")
+  - `deviation_bps`: The threshold (in basis points) that triggers a price update. For example, 100 basis points equals 1%. When price movement exceeds this threshold, the tunnel will send an update.
 
-IBC Hook Tunnel CLI Example:
+Example `signalInfos.json`:
 
-```bash
-bandd tx tunnel create-tunnel ibc-hook [channel-id] [destination-contract-address] [initial-deposit] [interval] [signalInfos-json-file]
+```json
+{
+  "signal_deviations": [
+    {
+      "signal_id": "CS:BTC-USD",
+      "deviation_bps": 200
+    },
+    {
+      "signal_id": "CS:ETH-USD",
+      "deviation_bps": 400
+    }
+  ]
+}
 ```
+
+### Route-Specific Creation
+
+Choose your route type to learn about specific parameters and creation steps:
+
+- [Creating a TSS Tunnel](./route-types/01-tss.md)
+- [Creating an IBC Tunnel](./route-types/02-ibc.md#creating-an-ibc-tunnel)
+- [Creating an IBC Hook Tunnel](./route-types/03-ibc-hook.md#creating-an-ibc-hook-tunnel)
+- [Creating a Router Tunnel](./route-types/04-router.md#creating-a-router-tunnel)
 
 ## Step 3: Deposit to the Tunnel
 

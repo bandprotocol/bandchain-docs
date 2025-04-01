@@ -1,5 +1,7 @@
 # IBC Hook Route
 
+> This route type is coming soon.
+
 ## Overview
 
 The **IBC Hook Route** is an extension of the **IBC Route**, used to transmit tunnel packet data from **BandChain** to other **Cosmos SDK-based blockchains**. Unlike the standard IBC Route that sends data to the core Cosmos-based application, the IBC Hook Route utilizes **ICS-20 token transfers** to interact directly with WASM contracts on the destination chain. This enables consumers to create smart contracts that receive real-time price data from BandChain and seamlessly integrate it into their applications.
@@ -14,7 +16,7 @@ bandd tx tunnel create-tunnel ibc-hook [channel-id] [destination-contract-addres
 
 ### Parameters:
 
-- **channel-id**: The IBC channel ID used for transmission.
+- **channel-id**: The IBC channel ID used for transmission. This needs to be the channel of the `transfer` port (e.g., `channel-0`).
 - **destination-contract-address**: The WASM contract address on the destination chain.
 - **initial-deposit**: The initial deposit required to create the tunnel.
 - **interval**: The frequency at which price updates are sent.

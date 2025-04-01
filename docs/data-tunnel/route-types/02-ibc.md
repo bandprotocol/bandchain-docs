@@ -1,5 +1,7 @@
 # IBC Route
 
+> This route type is currently only available on BandChain v3 testnet.
+
 ## Overview
 
 The **IBC Route** is one of the tunnel routes used to transmit tunnel packet data from **BandChain** to other **Cosmos SDK-based blockchains**. To utilize this route, consumers have two options:
@@ -9,21 +11,31 @@ The **IBC Route** is one of the tunnel routes used to transmit tunnel packet dat
 
 ## Creating an IBC Tunnel
 
-To create an IBC tunnel using the command-line interface (CLI), execute the following command:
+Setting up an IBC tunnel requires two main steps:
 
-```bash
-bandd tx tunnel create-tunnel ibc [initial-deposit] [interval] [signalInfos-json-file]
-```
+1. First, create the tunnel using the following command:
 
-### Parameters:
+   ```bash
+   bandd tx tunnel create-tunnel ibc [initial-deposit] [interval] [signalInfos-json-file]
+   ```
 
-- **initial-deposit**: The initial deposit amount required to create the tunnel.
-- **interval**: The time interval at which data updates are sent.
-- **signalInfos-json-file**: A JSON file containing signal information for the tunnel.
+   Parameters:
 
-This command initializes an IBC tunnel that facilitates secure and efficient transmission of tunnel packet data from BandChain to other Cosmos SDK-based blockchains.
+   - **initial-deposit**: The initial deposit amount required to create the tunnel.
+   - **interval**: The time interval at which data updates are sent.
+   - **signalInfos-json-file**: A JSON file containing signal information for the tunnel.
 
-## Updating Route Information
+2. After creating the tunnel, you **must** establish an IBC channel between BandChain and your destination chain. The port ID on BandChain needs to be: `tunnel.[your-tunnel-id]`
+
+   > **Important**: The tunnel will not function until both steps are completed. The IBC channel must be properly established using the correct port format and the route must be updated with the correct channel ID.
+
+   Once the channel is established, update the tunnel with the channel ID using:
+
+   ```bash
+   bandd tx tunnel update-route ibc [tunnel-id] [channel-id]
+   ```
+
+## Updating an IBC Route
 
 BandChain allows tunnel creators to edit some route details. In this case, the tunnel creator can update the IBC channel ID by executing the following command:
 

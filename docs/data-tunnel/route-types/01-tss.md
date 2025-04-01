@@ -9,3 +9,5 @@ During this period, you may encounter intermittent updates, changes, and limited
 We appreciate your patience and understanding as we aim to deliver a robust and improved testing experience. Stay tuned for more updates and release information!
 
 :::
+
+> This route type is currently only available on BandChain v3 testnet.
