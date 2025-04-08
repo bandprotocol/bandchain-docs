@@ -38,27 +38,28 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 
 ## Mainnets
 
-| Blockchain       |                                                          `StdReferenceProxy` Contract Address                                                          |
-| ---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Astar (Astar)    |             [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://blockscout.com/astar/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)              |
-| Astar (Shiden)   |               [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://shiden.subscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)               |
-| BitTorrent Chain |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://bttcscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
-| BNB              |                  [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
-| Celo             |               [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)               |
-| Cronos           |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://cronoscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                 |
-| Cronos zkEVM     |           [0x4ef80a75ac964d9eb366263a065ed35c842efe40](https://explorer.zkevm.cronos.org/address/0x4ef80a75ac964d9eb366263a065ed35c842efe40)           |
-| Ethereum         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
-| Flow             |                                       [0x6801a6222ebf784a](https://www.flowdiver.io/account/0x6801a6222ebf784a)                                        |
-| Godwoken         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
-| Horizen (EON)    |          [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://eon-explorer.horizenlabs.io/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)          |
-| Harmony          |             [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://explorer.harmony.one/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)              |
-| Icon (Java)      |            [cxe647e0af68a4661566f5e9861ad4ac854de808a2](https://tracker.icon.community/contract/cxe647e0af68a4661566f5e9861ad4ac854de808a2)            |
-| Meter            |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
-| Moonriver        |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
-| Nibiru           |                  [0x9503d502435f8e228b874Ba0F792301d4401b523](https://nibiscan.io/address/0x9503d502435f8e228b874Ba0F792301d4401b523)                  |
-| Oasis (Emerald)  |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.emerald.oasis.dev/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)           |
-| Oasis (Sapphire) |      [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.oasis.io/mainnet/sapphire/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)       |
-| Optimism         |            [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://optimistic.etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)            |
-| PlatON           |              [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://scan.platon.network/address/0xda7a001b254cd22e46d3eab04d937489c93174c3)              |
-| Secret 4         | [secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k](https://secretnodes.com/secret/chains/secret-4/accounts/secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k) |
-| Sonic            |                 [0x506085050Ea5494Fe4b89Dd5BEa659F506F470Cc](https://sonicscan.org/address/0x506085050Ea5494Fe4b89Dd5BEa659F506F470Cc)                 |
+| Blockchain         |                                                          `StdReferenceProxy` Contract Address                                                          |
+| ------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Astar (Astar)      |             [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://blockscout.com/astar/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)              |
+| Astar (Shiden)     |               [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://shiden.subscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)               |
+| BitTorrent Chain   |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://bttcscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
+| BNB                |                  [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://bscscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
+| Celo               |               [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)               |
+| Cronos             |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://cronoscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                 |
+| Cronos zkEVM       |           [0x4ef80a75ac964d9eb366263a065ed35c842efe40](https://explorer.zkevm.cronos.org/address/0x4ef80a75ac964d9eb366263a065ed35c842efe40)           |
+| Ethereum           |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
+| Flow               |                                       [0x6801a6222ebf784a](https://www.flowdiver.io/account/0x6801a6222ebf784a)                                        |
+| Godwoken           |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
+| Horizen (EON)      |          [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://eon-explorer.horizenlabs.io/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)          |
+| Harmony            |             [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://explorer.harmony.one/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)              |
+| Icon (Java)        |            [cxe647e0af68a4661566f5e9861ad4ac854de808a2](https://tracker.icon.community/contract/cxe647e0af68a4661566f5e9861ad4ac854de808a2)            |
+| Meter              |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
+| Moonriver          |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
+| Nibiru             |                  [0x9503d502435f8e228b874Ba0F792301d4401b523](https://nibiscan.io/address/0x9503d502435f8e228b874Ba0F792301d4401b523)                  |
+| Oasis (Emerald)    |          [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.emerald.oasis.dev/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)           |
+| Oasis (Sapphire)   |      [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.oasis.io/mainnet/sapphire/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)       |
+| Optimism           |            [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://optimistic.etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)            |
+| PlatON             |              [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://scan.platon.network/address/0xda7a001b254cd22e46d3eab04d937489c93174c3)              |
+| Secret 4           | [secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k](https://secretnodes.com/secret/chains/secret-4/accounts/secret1ezamax2vrhjpy92fnujlpwfj2dpredaafss47k) |
+| Sonic              |                 [0x506085050Ea5494Fe4b89Dd5BEa659F506F470Cc](https://sonicscan.org/address/0x506085050Ea5494Fe4b89Dd5BEa659F506F470Cc)                 |
+| XRPL EVM Sidechain |         [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://explorer.testnet.xrplevm.org/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)          |
