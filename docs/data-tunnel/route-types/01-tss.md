@@ -70,7 +70,7 @@ This command initializes a TSS Tunnel, enabling the secure transmission of real-
 
 Currently, there are 2 types of encoder:
 - FIXED_POINT_ABI (1) for requiring abi-encoded decimal price data, in the base of billion (x * 10^9), from the tunnel.
-- TICK_ABI (2) for requiring abi-encoded tick price data, in the term of 1.0001^x, where x is in the base of 2^96 
+- TICK_ABI (2) for requiring abi-encoded tick price data, in the term of 1.0001^x, where x is in the base of 2^96.
 
 ### Setting Up Tunnel ID for the Target Contract
 
