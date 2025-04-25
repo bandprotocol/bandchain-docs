@@ -19,7 +19,7 @@ Before creating a tunnel, you should understand the common parameters required f
 
 - `[initial-deposit]`: The initial amount of uband tokens to deposit into the tunnel.
 - `[interval]`: The time interval (in seconds) between each forced price transmission. The tunnel will send updates when prices exceed their deviation thresholds
-- `[signalInfos-json-file]`: A JSON file specifying the price feed configurations, including:
+- `[signal-deviations-json-file]`: A JSON file specifying the price feed configurations, including:
   - `signal_id`: The symbol/identifier of the price feed (e.g., "CS:BTC-USD")
   - `deviation_bps`: The threshold (in basis points) that triggers a price update. For example, 100 basis points equals 1%. When price movement exceeds this threshold, the tunnel will send an update.
 
