@@ -1,5 +1,7 @@
 # Getting Starts with Falcon
 
+## Prerequisite
+
 If this is the first time you start the falcon service, run the following
 
 1. Initialize the Falcon configuration file.
@@ -86,7 +88,7 @@ If this is the first time you start the falcon service, run the following
     PASSPHRASE=$YOUR_PASSPHRASE falcon q balance $CHAIN_NAME $KEY_NAME
     ```
 
-4. Start Falcon
+## Start Falcon
     Starts the Falcon to relay every tss-tunnel by running the following command
     ``` shell
     falcon start
