@@ -46,11 +46,11 @@ sudo apt-get upgrade -y && \
 sudo apt-get install -y build-essential curl wget jq
 ```
 
-- Go 1.22.3
+- Go 1.24.2
 ```bash
-# Install Go 1.22.3
-wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
-tar xf go1.22.3.linux-amd64.tar.gz
+# Install Go 1.24.2
+wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
+tar xf go1.24.2.linux-amd64.tar.gz
 sudo mv go /usr/local/go
 
 # Set Go path to $PATH variable
@@ -67,10 +67,10 @@ Install [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ### Step 1.2: Clone & Install Band V3 binary
 
 ```bash
-# Clone Band binary version v3.0.0-rc2
+# Clone Band binary version v3.0.0-rc3
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v3.0.0-rc2
+git checkout v3.0.0-rc3
 
 # Install binaries to $GOPATH/bin
 make install
@@ -137,8 +137,6 @@ sed -E -i \
 
 ### Step 1.5: Setup State Sync config
 
-**Note:** If you want to sync blocks traditionally from genesis, you can skip this step.
-
 ```bash
 # Get trust height and trust hash
 LATEST_HEIGHT=$(curl -s https://rpc.band-v3-testnet.bandchain.org/block | jq -r .result.block.header.height);
@@ -195,6 +193,10 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 mkdir -p $HOME/.band/cosmovisor/genesis/bin
 mkdir -p $HOME/.band/cosmovisor/upgrades
 cp $HOME/go/bin/bandd $HOME/.band/cosmovisor/genesis/bin
+
+# Setup folder and provide bandd binary for Cosmovisor Upgrades
+mkdir -p $HOME/.band/cosmovisor/upgrades/v3_rc3/bin
+cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_rc3/bin
 ```
 
 ### Step 2.3: Update Bandchain service
@@ -245,11 +247,11 @@ There is an update in the executor configuration. You can **set up a new executo
 
 **Note** You can use the old executor on laozi-testnet6 (no change from that version)
 
-Then, check Yoda version that we have compiled. It should be `v3.0.0-rc2`.
+Then, check Yoda version that we have compiled. It should be `v3.0.0-rc3`.
 
 ```bash
 yoda version
-# v3.0.0-rc2
+# v3.0.0-rc3
 ```
 
 ### Step 3.2: Configure Yoda
