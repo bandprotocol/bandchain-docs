@@ -80,7 +80,7 @@ Users must set up the tunnel ID received from the tunnel creation process and ac
 
 Users must deposit tokens into the tunnel's fee payer address on BandChain to cover the cost of the tunnel base fee and TSS signing fee. 
 
-Moreover, users must deposit tokens (gas tokens) into the Vault contract on destination chain on behalf of the target contract address (via calling `activate(uint64 latestSeq)`) as a relaying fee to pay the relayer. By calling this the router contract will also set the latest sequence of the consumer contract and relayer will acknowledge which next sequence packet should be delivered.
+Moreover, users must deposit tokens (gas tokens) into the Vault contract on destination chain on behalf of the target contract address (via calling a payable function `activate(uint64 latestSeq)`) as a relaying fee to pay the relayer. By calling this the router contract will also set the latest sequence of the consumer contract and relayer will acknowledge which next sequence packet should be delivered.
 
 ## Integration Contract Address
 
