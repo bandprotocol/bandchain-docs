@@ -16,14 +16,14 @@ Setting up an IBC tunnel requires two main steps:
 1. First, create the tunnel using the following command:
 
    ```bash
-   bandd tx tunnel create-tunnel ibc [initial-deposit] [interval] [signalInfos-json-file]
+   bandd tx tunnel create-tunnel ibc [initial-deposit] [interval] [signal-deviations-json-file]
    ```
 
    Parameters:
 
    - **initial-deposit**: The initial deposit amount required to create the tunnel.
    - **interval**: The time interval at which data updates are sent.
-   - **signalInfos-json-file**: A JSON file containing signal information for the tunnel.
+   - **signal-deviations-json-file**: A JSON file containing signal information for the tunnel.
 
 2. After creating the tunnel, you **must** establish an IBC channel between BandChain and your destination chain. The port ID on BandChain needs to be: `tunnel.[your-tunnel-id]`
 

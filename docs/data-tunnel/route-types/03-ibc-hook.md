@@ -11,7 +11,7 @@ The **IBC Hook Route** is an extension of the **IBC Route**, used to transmit tu
 To create an IBC Hook Tunnel using the command-line interface (CLI), execute the following command:
 
 ```bash
-bandd tx tunnel create-tunnel ibc-hook [channel-id] [destination-contract-address] [initial-deposit] [interval] [signalInfos-json-file]
+bandd tx tunnel create-tunnel ibc-hook [channel-id] [destination-contract-address] [initial-deposit] [interval] [signal-deviations-json-file]
 ```
 
 ### Parameters:
@@ -20,7 +20,7 @@ bandd tx tunnel create-tunnel ibc-hook [channel-id] [destination-contract-addres
 - **destination-contract-address**: The WASM contract address on the destination chain.
 - **initial-deposit**: The initial deposit required to create the tunnel.
 - **interval**: The frequency at which price updates are sent.
-- **signalInfos-json-file**: A JSON file containing signal information for the tunnel.
+- **signal-deviations-json-file**: A JSON file containing signal information for the tunnel.
 
 This command initializes an IBC Hook Tunnel that facilitates the secure transmission of real-time price data from **BandChain** to a **WASM contract** on another Cosmos SDK-based blockchain.
 

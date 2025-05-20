@@ -11,7 +11,7 @@ The **Router Route** leverages IBC hooks and the Router Bridge Protocol to trans
 To create a Router Tunnel using the command-line interface (CLI), execute the following command:
 
 ```bash
-bandd tx tunnel create-tunnel router [destination-chain-id] [destination-contract-address] [destination-gas-limit] [initial-deposit] [interval] [signalDeviations-json-file]
+bandd tx tunnel create-tunnel router [destination-chain-id] [destination-contract-address] [destination-gas-limit] [initial-deposit] [interval] [signal-deviations-json-file]
 ```
 
 ### Parameters:
@@ -21,7 +21,7 @@ bandd tx tunnel create-tunnel router [destination-chain-id] [destination-contrac
 - **destination-gas-limit**: The gas limit for transactions on the destination chain. The Router chain automatically calculates the gas price.
 - **initial-deposit**: The initial deposit required to create the tunnel.
 - **interval**: The frequency at which price updates are sent.
-- **signalInfos-json-file**: A JSON file containing signal information for the tunnel.
+- **signal-deviations-json-file**: A JSON file containing signal information for the tunnel.
 
 This command initializes a Router Tunnel, enabling the secure transmission of real-time price data from **BandChain** to an **EVM smart contract** on another blockchain.
 
