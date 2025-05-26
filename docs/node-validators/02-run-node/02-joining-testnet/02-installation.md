@@ -67,10 +67,10 @@ Install [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ### Step 1.2: Clone & Install Band V3 binary
 
 ```bash
-# Clone Band binary version v3.0.0-rc3
+# Clone Band binary version v3.0.0-rc4
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v3.0.0-rc3
+git checkout v3.0.0-rc4
 
 # Install binaries to $GOPATH/bin
 make install
@@ -131,7 +131,7 @@ sed -E -i \
 
 # Set number of outbound peers
 sed -E -i \
-  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 40/" \
+  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 30/" \
   $HOME/.band/config/config.toml
 ```
 
@@ -195,8 +195,8 @@ mkdir -p $HOME/.band/cosmovisor/upgrades
 cp $HOME/go/bin/bandd $HOME/.band/cosmovisor/genesis/bin
 
 # Setup folder and provide bandd binary for Cosmovisor Upgrades
-mkdir -p $HOME/.band/cosmovisor/upgrades/v3_rc3/bin
-cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_rc3/bin
+mkdir -p $HOME/.band/cosmovisor/upgrades/v3_rc4/bin
+cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_rc4/bin
 ```
 
 ### Step 2.3: Update Bandchain service
@@ -247,11 +247,11 @@ There is an update in the executor configuration. You can **set up a new executo
 
 **Note** You can use the old executor on laozi-testnet6 (no change from that version)
 
-Then, check Yoda version that we have compiled. It should be `v3.0.0-rc3`.
+Then, check Yoda version that we have compiled. It should be `v3.0.0-rc4`.
 
 ```bash
 yoda version
-# v3.0.0-rc3
+# v3.0.0-rc4
 ```
 
 ### Step 3.2: Configure Yoda
@@ -363,7 +363,6 @@ Firstly, configure Grogu's basic configurations
 ```bash
 grogu config chain-id $CHAIN_ID
 grogu config validator $(bandd keys show $WALLET_NAME -a --bech val)
-grogu config broadcast-timeout "5m"
 grogu config rpc-poll-interval "1s"
 grogu config max-try 5
 grogu config nodes http://localhost:26657
