@@ -236,7 +236,7 @@ sudo systemctl enable bandd
 
 ## Step 3: Setup Yoda
 
-Based on design, validator need to send a transaction to submit reports based on certain oracle requests. The validator should send transactions to submit reports within specified timeframe. However, the method is quite tedious. Therefore, we have develop an application called `Yoda`, which is a bot application that help validator automatically listen new oracle requests on Bandchain, execute data sources, and submit report to Bandchain, so validators don't have to send the transactions manually.
+Based on design, validator need to send a transaction to submit reports based on certain data requests. The validator should send transactions to submit reports within specified timeframe. However, the method is quite tedious. Therefore, we have develop an application called `Yoda`, which is a bot application that help validator automatically listen new data requests on Bandchain, execute data sources, and submit report to Bandchain, so validators don't have to send the transactions manually.
 
 ### Step 3.1: Prerequisites
 

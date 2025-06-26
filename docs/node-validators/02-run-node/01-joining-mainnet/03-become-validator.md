@@ -27,7 +27,7 @@ bandd tx staking create-validator \
 
 Registered validators can be found on [CosmoScan](https://cosmoscan.io/validators).
 
-## Step 3: Register Reporters and Become Oracle Provider
+## Step 3: Register Reporters and Become Data Provider
 
 Yoda contains multiple reporters. You will need to register the reporters to help the validator submit transactions of reporting data.
 
@@ -40,7 +40,7 @@ bandd tx multi-send 1uband $(yoda keys list -a) \
   --chain-id $CHAIN_ID
 ```
 
-Secondly, register reporters to the validator, so that oracle requests for validator can be assigned to the reporters.
+Secondly, register reporters to the validator, so that data requests for validator can be assigned to the reporters.
 
 ```bash
 bandd tx oracle add-reporters $(yoda keys list -a) \
@@ -48,7 +48,7 @@ bandd tx oracle add-reporters $(yoda keys list -a) \
   --chain-id $CHAIN_ID
 ```
 
-Finally, activate the validator to become an oracle provider
+Finally, activate the validator to become a data provider
 
 ```bash
 bandd tx oracle activate \
@@ -56,7 +56,7 @@ bandd tx oracle activate \
   --chain-id $CHAIN_ID
 ```
 
-If all procedures are successful, then the oracle provider status for the validator should be `active`.
+If all procedures are successful, then the data provider status for the validator should be `active`.
 
 ```bash
 bandd query oracle validator $(bandd keys show -a $WALLET_NAME --bech val)

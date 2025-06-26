@@ -1,12 +1,12 @@
 # Requesting a TSS Signature
 
-The Threshold Signature Scheme (TSS) Signing Process enables users to request a BandChain TSS group to sign various types of messages in a secure and decentralized manner. This ensures that sensitive cryptographic operations, such as signing transactions, verifying oracle results, and price feed data aggregation, are performed without exposing private key material.
+The Threshold Signature Scheme (TSS) Signing Process enables users to request a BandChain TSS group to sign various types of messages in a secure and decentralized manner. This ensures that sensitive cryptographic operations, such as signing transactions, verifying data feed results, and price feed data aggregation, are performed without exposing private key material.
 
 ## Requesting a Signature
 
 To request a TSS signature, a user must submit a signing request on BandChain. The request can include one of the following SignatureOrder types:
 
-- `OracleResultSignatureOrder`: Requests a signature for an oracle result within the oracle module.
+- `OracleResultSignatureOrder`: Requests a signature for a data feed result within the data feed module.
 - `TextSignatureOrder`: Requests a signature for an arbitrary text message.
 - `FeedsSignatureOrder`: Requests a signature for price data within the feeds module.
 

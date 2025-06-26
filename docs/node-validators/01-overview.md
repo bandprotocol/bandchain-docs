@@ -11,7 +11,7 @@ A specific type of node, known as a full-node, carries out more comprehensive ta
 In the world of blockchain and decentralized finance, a validator plays a crucial role in maintaining the health, security, and smooth operation of the network. Essentially, a validator is a network participant that verifies and validates new transactions and adds them to the blockchain. They do this by running a full node that is constantly synced with the network and participating in the consensus protocol, which can vary from one blockchain to another. In proof-of-stake (PoS), validators are chosen based on the number of tokens they hold and are willing to **stake** as collateral.
 
 Validators are responsible for performing two main functions on the network. First, they are responsible for proposing and committing new blocks to the blockchain. They participate in the block consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key. This is similar to most other Cosmos-based delegated proof-of-stake blockchains.
-
+ 
 Each validator will have a certain amount of BAND tokens bonded to them. The source of these tokens can either be their own holdings, or the tokens delegated to them by other token owners. In most cases, there will be a large number of parties with tokens staked to them. In that case, the top 100 validator candidates with the most token staked to them will become BandChain’s validators.
 
 ## Running a Node
