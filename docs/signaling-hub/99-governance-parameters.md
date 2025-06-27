@@ -2,6 +2,9 @@
 
 This section explains the governance variables associated with Band Protocol's signaling hub.
 
+### `feeds:admin`
+Admin is the address of the admin that is allowed to update reference source config on the module.
+
 ### `feeds:allowable_block_time_discrepancy`
 AllowableBlockTimeDiscrepancy is the allowed discrepancy (in seconds) between validator price timestamp and block_time.
 
@@ -23,5 +26,17 @@ MaxCurrentFeeds is the maximum number of feeds supported at a time.
 ### `feeds:cooldown_time`
 CooldownTime represents the duration (in seconds) during which validators are prohibited from sending new prices.
 
+### `min_deviation_basis_point`
+MinDeviationBasisPoint is the minimum limit of every feeds' deviation (in basis point).
+
+### `max_deviation_basis_point`
+MaxDeviationBasisPoint is the maximum limit of every feeds' deviation (in basis point).
+
 ### `feeds:current_feeds_update_interval`
 CurrentFeedsUpdateInterval is the number of blocks after which the current feeds will be re-calculated.
+
+### `feeds:price_quorum`
+PriceQuorum is the minimum percentage of power that needs to be reached for a price to be processed.
+
+### `feeds:max_signal_ids_per_signing`
+MaxSignalIDsPerSigning is the maximum number of signals allowed in a single tss signing request.

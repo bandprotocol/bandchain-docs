@@ -4,6 +4,14 @@ title: Getting Started
 
 # Getting Started with Band VRF
 
+:::warning[Compatibility Notice]
+
+Band VRF is compatible with **BandChain v2** Mainnet and is **not yet implemented in BandChain v3**.
+
+Please ensure you're using BandChain v2 for this module to function as expected.
+
+:::
+
 This guide serves as a quick reference on how to request random data from the Band VRF. For a detailed reference with examples, please refer to the [VRF Integration](/verifiable-random-function/vrf-integration) section.
 
 ### Step 1: Prepare a VRF consumer contract
@@ -27,6 +35,6 @@ A summary of the Band VRF process is outlined below:
 
 1. Simply call the request function on you VRF consumer contract that implements the `requestRandomData` function in Step 1, providing a `seed` and an optional `msg.value`.
 2. Depending on the resolving method chosen in Step 2, the request is sent to the BandChain.
-3. The VRF oracle script on the BandChain forwards the request to a randomly chosen data source, and then retrieves the returned result and the corresponding proof of authenticity.
+3. The VRF data script on the BandChain forwards the request to a randomly chosen data source, and then retrieves the returned result and the corresponding proof of authenticity.
 4. Depending on the resolving method chosen in Step 2, the proof is relayed to the `Bridge` contract for verification on the client chain via the `VRFProvider` contract.
 5. If the verification succeeds, the result (random value) is returned to the VRF consumer contract via the callback function mentioned in Step 1.

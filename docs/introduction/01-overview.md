@@ -1,8 +1,8 @@
 # High-Level Overview
 
-[Band Protocol](https://bandprotocol.com) is a cross-chain data oracle aggregating and connecting real-world data and APIs to smart contracts.
+[Band Protocol](https://bandprotocol.com) is a unified data layer aggregating and connecting real-world data and APIs to AI and smart contracts.
 
-The protocol is built on top of [BandChain](https://github.com/bandprotocol/chain), a Cosmos-SDK-based blockchain designed to be compatible with most smart contract and blockchain development frameworks.
+Band is known for delivering price data to Web3 since 2018. The protocol is built on top of [BandChain](https://github.com/bandprotocol/chain), a Cosmos-SDK-based blockchain designed to be compatible with most smart contract and blockchain development frameworks.
 
 The network is designed to modularize and offload the task of constatly monitoring price data and react to price changes across all asset classes from the smart contract platforms onto itself. This not only prevents such tasks from congesting or causing high transaction fees on the destination network, but the same data points can be packaged, used, and verified efficiently across multiple blockchains.
 
