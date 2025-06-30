@@ -46,11 +46,11 @@ sudo apt-get upgrade -y && \
 sudo apt-get install -y build-essential curl wget jq
 ```
 
-- Go 1.22.3
+- Go 1.24.2
 ```bash
-# Install Go 1.22.3
-wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
-tar xf go1.22.3.linux-amd64.tar.gz
+# Install Go 1.24.2
+wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
+tar xf go1.24.2.linux-amd64.tar.gz
 sudo mv go /usr/local/go
 
 # Set Go path to $PATH variable
@@ -67,10 +67,10 @@ Install [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ### Step 1.2: Clone & Install Band V3 binary
 
 ```bash
-# Clone Band binary version v3.0.0-rc2
+# Clone Band binary version v3.0.1-rc1
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v3.0.0-rc2
+git checkout v3.0.1-rc1
 
 # Install binaries to $GOPATH/bin
 make install
@@ -131,13 +131,11 @@ sed -E -i \
 
 # Set number of outbound peers
 sed -E -i \
-  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 40/" \
+  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 30/" \
   $HOME/.band/config/config.toml
 ```
 
 ### Step 1.5: Setup State Sync config
-
-**Note:** If you want to sync blocks traditionally from genesis, you can skip this step.
 
 ```bash
 # Get trust height and trust hash
@@ -195,6 +193,10 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 mkdir -p $HOME/.band/cosmovisor/genesis/bin
 mkdir -p $HOME/.band/cosmovisor/upgrades
 cp $HOME/go/bin/bandd $HOME/.band/cosmovisor/genesis/bin
+
+# Setup folder and provide bandd binary for Cosmovisor Upgrades
+mkdir -p $HOME/.band/cosmovisor/upgrades/v3_0_1_rc1_testnet/bin
+cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_0_1_rc1_testnet/bin
 ```
 
 ### Step 2.3: Update Bandchain service
@@ -234,7 +236,7 @@ sudo systemctl enable bandd
 
 ## Step 3: Setup Yoda
 
-Based on design, validator need to send a transaction to submit reports based on certain oracle requests. The validator should send transactions to submit reports within specified timeframe. However, the method is quite tedious. Therefore, we have develop an application called `Yoda`, which is a bot application that help validator automatically listen new oracle requests on Bandchain, execute data sources, and submit report to Bandchain, so validators don't have to send the transactions manually.
+Based on design, validator need to send a transaction to submit reports based on certain data requests. The validator should send transactions to submit reports within specified timeframe. However, the method is quite tedious. Therefore, we have develop an application called `Yoda`, which is a bot application that help validator automatically listen new data requests on Bandchain, execute data sources, and submit report to Bandchain, so validators don't have to send the transactions manually.
 
 ### Step 3.1: Prerequisites
 
@@ -243,13 +245,11 @@ There is an update in the executor configuration. You can **set up a new executo
 - [AWS Lambda Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-AWS-Lambda)
 - [Google Cloud Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-Google-Cloud-Function)
 
-**Note** You can use the old executor on laozi-testnet6 (no change from that version)
-
-Then, check Yoda version that we have compiled. It should be `v3.0.0-rc2`.
+Then, check Yoda version that we have compiled. It should be `v3.0.1-rc1`.
 
 ```bash
 yoda version
-# v3.0.0-rc2
+# v3.0.1-rc1
 ```
 
 ### Step 3.2: Configure Yoda
@@ -361,7 +361,6 @@ Firstly, configure Grogu's basic configurations
 ```bash
 grogu config chain-id $CHAIN_ID
 grogu config validator $(bandd keys show $WALLET_NAME -a --bech val)
-grogu config broadcast-timeout "5m"
 grogu config rpc-poll-interval "1s"
 grogu config max-try 5
 grogu config nodes http://localhost:26657

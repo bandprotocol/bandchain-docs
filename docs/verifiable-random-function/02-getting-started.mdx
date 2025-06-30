@@ -35,6 +35,6 @@ A summary of the Band VRF process is outlined below:
 
 1. Simply call the request function on you VRF consumer contract that implements the `requestRandomData` function in Step 1, providing a `seed` and an optional `msg.value`.
 2. Depending on the resolving method chosen in Step 2, the request is sent to the BandChain.
-3. The VRF oracle script on the BandChain forwards the request to a randomly chosen data source, and then retrieves the returned result and the corresponding proof of authenticity.
+3. The VRF data script on the BandChain forwards the request to a randomly chosen data source, and then retrieves the returned result and the corresponding proof of authenticity.
 4. Depending on the resolving method chosen in Step 2, the proof is relayed to the `Bridge` contract for verification on the client chain via the `VRFProvider` contract.
 5. If the verification succeeds, the result (random value) is returned to the VRF consumer contract via the callback function mentioned in Step 1.

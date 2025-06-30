@@ -43,7 +43,7 @@ On the Validators page, you will encounter a table that outlines various validat
 - **Column 3 — Voting Power:** Denotes the number of tokens bonded to a particular validator.
 - **Column 4 — Commission:** Every validator charge commission on the rewards earned by the delegators on their behalf.
 - **Column 5 — Uptime:** Demonstrates the proportion of blocks a validator has been active within the last 100 blocks.
-- **Column 6 — Oracle Status:** shows that is this validator working as an oracle provider or not.
+- **Column 6 — Data Feeds Status:** shows that is this validator working as an data feed provider or not.
 
 There are three factors you should consider when choosing a validator:
 

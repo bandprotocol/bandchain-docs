@@ -19,7 +19,7 @@ export WALLET_NAME=<YOUR_WALLET_NAME>
 export MONIKER=<YOUR_MONIKER>
 # URL of genesis file for Laozi Mainnet
 export GENESIS_FILE_URL=https://raw.githubusercontent.com/bandprotocol/launch/master/laozi-mainnet/genesis.json
-# Data sources/oracle scripts files
+# Data sources/data scripts files
 export BIN_FILES_URL=https://raw.githubusercontent.com/bandprotocol/launch/master/laozi-mainnet/files.tar.gz
 ```
 
@@ -74,7 +74,7 @@ bandd init --chain-id $CHAIN_ID "$MONIKER"
 # Replace genesis file with our genesis file
 wget $GENESIS_FILE_URL -O $HOME/.band/config/genesis.json
 
-# Download data sources / oracle scripts files, and store in $HOME/.band/files
+# Download data sources / data scripts files, and store in $HOME/.band/files
 wget -qO- $BIN_FILES_URL | tar xvz -C $HOME/.band/
 
 # Create new account
@@ -192,7 +192,7 @@ State Sync is an efficient and fast way to bootstrap a new node, and it works by
 # Get trust height and trust hash
 
 LATEST_HEIGHT=$(curl -s http://rpc.laozi1.bandchain.org/block | jq -r .result.block.header.height);
-TRUST_HEIGHT=$(($LATEST_HEIGHT-30000))
+TRUST_HEIGHT=$(($LATEST_HEIGHT-50000))
 TRUST_HASH=$(curl -s "http://rpc.laozi1.bandchain.org/block?height=$TRUST_HEIGHT" | jq -r .result.block_id.hash)
 
 # show trust height and trust hash

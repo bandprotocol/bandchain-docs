@@ -85,7 +85,7 @@ bandd tx bank multi-send $WALLET_NAME $(yoda keys list -a) 1uband \
   -y
 ```
 
-Secondly, grant all reporters for the validator, so that oracle requests for validator can be sent by the reporters.
+Secondly, grant all reporters for the validator, so that data requests for validator can be sent by the reporters.
 
 ```bash
 bandd tx oracle add-reporters $(yoda keys list -a) \
@@ -121,9 +121,9 @@ bandd tx feeds add-feeders $(grogu keys list -a) \
   -y
 ```
 
-### Step 5: Become Oracle Provider
+### Step 5: Become Data Provider
 
-Finally, activate the validator to become an oracle provider
+Finally, activate the validator to become a data provider
 
 ```bash
 bandd tx oracle activate \
@@ -134,7 +134,7 @@ bandd tx oracle activate \
   -y
 ```
 
-If all procedures are successful, then the oracle provider status for the validator should be `active`.
+If all procedures are successful, then the data provider status for the validator should be `active`.
 
 ```bash
 bandd query oracle validator $(bandd keys show -a $WALLET_NAME --bech val)
