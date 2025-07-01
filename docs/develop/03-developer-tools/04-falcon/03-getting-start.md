@@ -9,7 +9,7 @@ If this is the first time you start the falcon service, run the following
     $ PASSPHRASE=$YOUR_PASSPHRASE falcon config init
     ```
 
-    Passphrase will be used when it interacts with keys manangement. 
+    Passphrase will be used when it interacts with keys management. 
     
     Default config will be at: `~/.falcon/config/config.toml`. By default, config will be initialized in format like this 
     ```toml
@@ -60,7 +60,7 @@ If this is the first time you start the falcon service, run the following
         - `max_base_fee` defines the maximum base fee.
         - `max_priority_fee` defines the maximum priority fee. If `max_priority_fee` is not defined, it will also be retrieved from the tunnel router
 
-    After creating a chain configuraiton file, run with the following commands
+    After creating a chain configuration file, run with the following commands
     ``` shell
     falcon chains add $CHAIN_NAME $CHAIN_CONFIG_FILE
     ```
