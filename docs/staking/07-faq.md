@@ -4,7 +4,7 @@
 
 **A:** you can see it in [Cosmoscan](https://www.cosmoscan.io/)
 
-### Q: Are there any auto cliam reward or auto-compound mechanism
+### Q: Are there any auto claim reward or auto-compound mechanism
 
 **A:** Claiming rewards is a manually process which involves transaction fees.
 

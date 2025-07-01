@@ -38,7 +38,7 @@ The final result is transmitted back to the main-chain’s VRFProvider contract 
 
 ### Band VRF on EVM
 
-From the protocol flow, we can catagorize the EVM contracts into two parts: the Band-operated contracts and the consumer (third-party) contract. We provide detailed explanations regarding the consumer contract in the VRF Intergration section. In this section, we will focus on the two Band-operated contracts: Bridge and VRFProvider.
+From the protocol flow, we can catagorize the EVM contracts into two parts: the Band-operated contracts and the consumer (third-party) contract. We provide detailed explanations regarding the consumer contract in the VRF Integration section. In this section, we will focus on the two Band-operated contracts: Bridge and VRFProvider.
 
 #### Bridge
 

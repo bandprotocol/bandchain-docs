@@ -19,7 +19,7 @@ From the pool of all validators, we have to select a specific set of validators 
 
 ### Random Number and Seed Generation
 
-As with most random number generator, our number generation proces require the use of a seed. In this specific case, our seed comprises of:
+As with most random number generator, our number generation process require the use of a seed. In this specific case, our seed comprises of:
 
 - A list of `blockHashes`
 - The `requestID` of the request the validators are being chosen for

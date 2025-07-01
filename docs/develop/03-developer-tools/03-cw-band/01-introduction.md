@@ -116,7 +116,7 @@ pub struct Input {
 // Output of the data script.
 #[derive(OBIDecode)]
 pub struct Output {
-    pub responses: Vec<Response>, // Arrary of response of each each symbol.
+    pub responses: Vec<Response>, // Array of response of each each symbol.
 }
 
 // Rate of the symbol.

@@ -167,7 +167,7 @@ prepare_entry_point!(prepare_impl);
 execute_entry_point!(execute_impl);
 ```
 
-### Compling the Data Script
+### Compiling the Data Script
 
 To compile the data script, the following command can be run
 

@@ -270,7 +270,7 @@ ResolveStatus encodes the status of an oracle request.
 | ------------------------------- | ------ | -------------------------------------------------------------------------------------- |
 | RESOLVE_STATUS_OPEN_UNSPECIFIED | 0      | Open - the request is not yet resolved.                                                |
 | RESOLVE_STATUS_SUCCESS          | 1      | Success - the request has been resolved successfully with no errors.                   |
-| RESOLVE_STATUS_FAILURE          | 2      | Failure - an error occured during the request&#39;s resolve call.                      |
+| RESOLVE_STATUS_FAILURE          | 2      | Failure - an error occurred during the request&#39;s resolve call.                      |
 | RESOLVE_STATUS_EXPIRED          | 3      | Expired - the request does not get enough reports from validator within the timeframe. |
 
 <a name="oracle/v1/query.proto"></a>
@@ -598,7 +598,7 @@ Query defines the gRPC querier service.
 | Validator           | [QueryValidatorRequest](#oracle.v1.QueryValidatorRequest)                     | [QueryValidatorResponse](#oracle.v1.QueryValidatorResponse)                     | Validator queries properties of given validator address.                                                               |
 | Reporters           | [QueryReportersRequest](#oracle.v1.QueryReportersRequest)                     | [QueryReportersResponse](#oracle.v1.QueryReportersResponse)                     | Reporters queries all reporters associated with given validator address.                                               |
 | ActiveValidators    | [QueryActiveValidatorsRequest](#oracle.v1.QueryActiveValidatorsRequest)       | [QueryActiveValidatorsResponse](#oracle.v1.QueryActiveValidatorsResponse)       | ActiveValidators queries all active oracle validators.                                                                 |
-| Params              | [QueryParamsRequest](#oracle.v1.QueryParamsRequest)                           | [QueryParamsResponse](#oracle.v1.QueryParamsResponse)                           | Params queries parameters used for runnning bandchain network.                                                         |
+| Params              | [QueryParamsRequest](#oracle.v1.QueryParamsRequest)                           | [QueryParamsResponse](#oracle.v1.QueryParamsResponse)                           | Params queries parameters used for running bandchain network.                                                         |
 | RequestSearch       | [QueryRequestSearchRequest](#oracle.v1.QueryRequestSearchRequest)             | [QueryRequestSearchResponse](#oracle.v1.QueryRequestSearchResponse)             | RequestSearch queries the latest request that match search criteria.                                                   |
 | RequestPrice        | [QueryRequestPriceRequest](#oracle.v1.QueryRequestPriceRequest)               | [QueryRequestPriceResponse](#oracle.v1.QueryRequestPriceResponse)               | RequestPrice queries the latest price on standard price reference oracle script.                                       |
 | RequestVerification | [QueryRequestVerificationRequest](#oracle.v1.QueryRequestVerificationRequest) | [QueryRequestVerificationResponse](#oracle.v1.QueryRequestVerificationResponse) | RequestVerification verifies a request to make sure that all information that will be used to report the data is valid |
@@ -829,7 +829,7 @@ GenesisState defines the oracle module&#39;s genesis state.
 
 | Field          | Type                                                      | Label    | Description                                                                                                      |
 | -------------- | --------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
-| params         | [Params](#oracle.v1.Params)                               |          | Params defines all the paramaters of the module.                                                                 |
+| params         | [Params](#oracle.v1.Params)                               |          | Params defines all the parameters of the module.                                                                 |
 | data_sources   | [DataSource](#oracle.v1.DataSource)                       | repeated | DataSources are data sources to be installed during genesis phase                                                |
 | oracle_scripts | [OracleScript](#oracle.v1.OracleScript)                   | repeated | OracleScripts are list of data scripts to be installed during genesis phase                                      |
 | reporters      | [ReportersPerValidator](#oracle.v1.ReportersPerValidator) | repeated | Reporters are mapping between reporter&#39;s account address (key) and validator&#39;s validator address (value) |

@@ -882,7 +882,7 @@ const sendCoin = async () => {
 
 ## sendTxAsyncMode(data)
 
-Send a transaction in async mode, that is, send and returned immediantly without waiting for the transaction processes.
+Send a transaction in async mode, that is, send and returned immediately without waiting for the transaction processes.
 
 **Parameter**
 

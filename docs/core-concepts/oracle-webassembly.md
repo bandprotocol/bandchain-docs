@@ -44,7 +44,7 @@ The script starts off by defining the input and output structs. In this case, th
 
 Once the structs and types of both input and output have been determined, we move on to defining the [preparation](#preparation-phase) and [execution](#execution-phase) phases of the data script, defined by `prepare_impl` and `execute_impl`, respectively.
 
-In order to call these functions, we need to pass appriopriate input values and make the function calls. To do so, data script writer can use our macros defined in [`macros.rs`](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/macros.rs), also shown below. The aim of these macros is to reduce the load of the script writer by handling the work of retrieving the calldata, deserializing it, and using it to construct the appropriate input struct for them.
+In order to call these functions, we need to pass appropriate input values and make the function calls. To do so, data script writer can use our macros defined in [`macros.rs`](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/macros.rs), also shown below. The aim of these macros is to reduce the load of the script writer by handling the work of retrieving the calldata, deserializing it, and using it to construct the appropriate input struct for them.
 
 ```rust
 #[macro_export]
