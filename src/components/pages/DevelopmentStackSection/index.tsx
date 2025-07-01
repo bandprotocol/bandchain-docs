@@ -12,7 +12,7 @@ const stacks: CardItem[] = [
   {
     title: 'WebAssembly',
     Svg: require('@site/static/img/WebAssembly_Logo.svg').default,
-    description: <>The standard underpinning BandChain's data oracle script</>,
+    description: <>The standard underpinning BandChain's data script</>,
     to: 'https://webassembly.org/',
     target: '_blank',
   },

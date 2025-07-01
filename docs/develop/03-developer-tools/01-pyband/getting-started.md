@@ -27,9 +27,9 @@ pip install pyband
 
 ## Basic Usages
 
-### Making an oracle request
+### Making a data request
 
-This section describes the methods used to send a transaction containing an oracle request to BandChain
+This section describes the methods used to send a transaction containing a data request to BandChain
 
 **Step 1:** Import `pyband` and create a parameter: `grpc_url` with the required `<GRPC>` endpoint which can be found [here](/develop/api-endpoints). Then the client instance needs to be initialized in order to allow for the methods in client module to be used.
 
@@ -112,7 +112,7 @@ obi = PyObi("{symbols:[string],multiplier:u64}/{rates:[u64]}")
 calldata = obi.encode({"symbols": ["ETH"], "multiplier": 100})
 ```
 
-The message can be any message as listed in [Oracle Modules](/core-concepts/oracle-modules#oracle-v1-tx-proto) or [Cosmos Based Messages](https://docs.cosmos.network/v0.47/core/proto-docs). However, please note that our message should be imported from the generated [protobuf files](https://github.com/bandprotocol/chain/tree/master/proto/oracle/v1).
+The message can be any message as listed in [Protobuf Documentation](/core-concepts/oracle-modules#oracle-v1-tx-proto) or [Cosmos Based Messages](https://docs.cosmos.network/v0.47/core/proto-docs). However, please note that our message should be imported from the generated [protobuf files](https://github.com/bandprotocol/chain/tree/master/proto/oracle/v1).
 
 #### Sequence and Account Number
 
@@ -379,7 +379,7 @@ And the result should look like this.
 
 ### Sending BAND token
 
-The process of sending BAND token is similar to **making an oracle request** , except we will use [`MsgSend`] as our message.
+The process of sending BAND token is similar to **making a data request** , except we will use [`MsgSend`] as our message.
 
 The [`MsgSend`] contains the following parameters:
 

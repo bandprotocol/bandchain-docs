@@ -1,6 +1,6 @@
-# Creating an Oracle Script
+# Creating an Data Script
 
-In this section, we will take a look at how to create an oracle script.
+In this section, we will take a look at how to create a data script.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ Note: If wasm32-unknown-unknown hasn't been added as a target, you can add it us
 rustup target add wasm32-unknown-unknown
 ```
 
-## Writing the Oracle Script
+## Writing the Data Script
 
 ### File structure
 
@@ -42,7 +42,7 @@ As `Cargo.toml` is the manifest file for Rust's package manager: Cargo, this fil
 version and dependencies of the package. By default, Cargo checks dependencies on crates.io. Therefore, when adding a
 crate, we only need to add the crate name and version to the `Cargo.toml`.
 
-When creating an oracle script, two main dependencies are required:
+When creating a data script, two main dependencies are required:
 [owasm-kit](https://docs.rs/owasm-kit/0.1.13/owasm_kit/) and [obi](https://docs.rs/obi/latest/obi/).
 
 An example is shown below:
@@ -64,16 +64,16 @@ obi = { version = "0.0.2" }
 
 ```
 
-### Writing the Oracle Script
+### Writing the Data Script
 
-As mentioned in the [introduction](/develop/custom-scripts/oracle-script/introduction), an oracle script execution flow can
+As mentioned in the [introduction](/develop/custom-scripts/oracle-script/introduction), a data script execution flow can
 be categorized into two main phases, the preparation phase and the execution phase. However, we also do need to define
-the oracle scripts input and outputs.
+the data scripts input and outputs.
 
 #### Input/Output
 
-An oracle script's input and output can be defined in a struct. In the example below, we can see that this specific
-oracle scripts takes in an input `repeat` as a `u64` and returns an output `response` as a `string`
+A data script's input and output can be defined in a struct. In the example below, we can see that this specific
+data scripts takes in an input `repeat` as a `u64` and returns an output `response` as a `string`
 
 ```rust
 #[derive(OBIDecode, OBISchema)]
@@ -167,9 +167,9 @@ prepare_entry_point!(prepare_impl);
 execute_entry_point!(execute_impl);
 ```
 
-### Compling the Oracle Script
+### Compling the Data Script
 
-To compile the oracle script, the following command can be run
+To compile the data script, the following command can be run
 
 ```shell
 RUSTFLAGS='-C link-arg=-s' cargo build --release --target wasm32-unknown-unknown
@@ -180,7 +180,7 @@ After the compilation is complete, the `.wasm` file can be found in the sub-dire
 
 ## More Examples
 
-Below is another example of an oracle script that queries a token's total supply.
+Below is another example of a data script that queries a token's total supply.
 
 ### Query for token total supply
 

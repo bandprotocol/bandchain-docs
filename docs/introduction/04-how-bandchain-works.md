@@ -59,7 +59,7 @@ Again, this script assumes that [getent](https://en.wikipedia.org/wiki/Getent) a
 getent hosts $1 | awk '{ print $1 }'
 ```
 
-### Data Scripts (reffered in the code as OracleScript)
+### Data Scripts (referred in the code as Oracle Script)
 
 When someone wants to request data from BandChain, however, it is not the data sources that they interact with. Instead, they do so by calling one of the available data scripts.
 
@@ -70,7 +70,7 @@ A data script (or OracleScript) is an executable program that encodes:
 
 Data scripts are also Turing-complete and can be programmed in multiple languages. This composability and Turing-completeness makes data scripts very similar to [smart contracts](https://en.wikipedia.org/wiki/Smart_contract).
 
-To create an data script (reffered in the code as OracleScript), the creator must broadcast a [`MsgCreateOracleScript`](/core-concepts/protocol-messages#msgcreateoraclescript) to BandChain. The contents of the message is simlar to `MsgCreateDataSource`, and includes:
+To create an data script (referred in the code as Oracle Script), the creator must broadcast a [`MsgCreateOracleScript`](/core-concepts/protocol-messages#msgcreateoraclescript) to BandChain. The contents of the message is simlar to `MsgCreateDataSource`, and includes:
 
 - the **sender** who wishes to create the data script
 - the **owner** of the data script, if specified

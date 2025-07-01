@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Common Usage Example
 
-### Make an oracle request
+### Make an data request
 
-This section describes methods to send a transaction of oracle request to BandChain
+This section describes methods to send a transaction of request to BandChain
 
 **Step 1:** Import `Client` from `@bandprotocol/bandchain.js` and creates a new instance of `grpcUrl` as a parameter and you can get `<GRPC_WEB>` endpoint from [here](/develop/api-endpoints). Then initialize the client instance. Every method in client module can now be used.
 
@@ -149,7 +149,7 @@ async function makeRequest() {
   const pubkey = privateKey.toPubkey()
   const sender = pubkey.toAddress().toAccBech32()
 
-  // Step 2.1: Prepare oracle request's properties
+  // Step 2.1: Prepare request's properties
   const obi = new Obi('{symbols:[string],multiplier:u64}/{rates:[u64]}')
   const calldata = obi.encodeInput({ symbols: ['ETH'], multiplier: 100 })
 
@@ -165,7 +165,7 @@ async function makeRequest() {
   const prepareGas = 100000
   const executeGas = 200000
 
-  // Step 2.2: Create an oracle request message
+  // Step 2.2: Create an request message
   const requestMessage = new Message.MsgRequestData(
     oracleScriptId,
     calldata,
@@ -466,7 +466,7 @@ And the result should look like this.
 
 ### Send BAND token via IBC Transfer
 
-With BandChain built based on the Cosmos-SDK, we also allow interaction with our data oracle through **Cosmos Inter-Blockchain-Communication protocol, [`IBC`]**, which connects other compatible blockchains to request data from BandChain.
+With BandChain built based on the Cosmos-SDK, we also allow interaction with our data through **Cosmos Inter-Blockchain-Communication protocol, [`IBC`]**, which connects other compatible blockchains to request data from BandChain.
 
 To send BAND tokens through IBC Protocol, we will use [`MsgTransfer`] as a method to represents a message to send coins from one account to another between ICS20 enabled chains. See ICS spec [here](https://github.com/cosmos/ibc/tree/master/spec/app/ics-020-fungible-token-transfer).
 
