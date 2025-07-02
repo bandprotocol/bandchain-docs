@@ -1,6 +1,6 @@
 # Governance Parameters
 
-This section explains the governance variables associated with Band Protocol's threshold signature implementation.
+This section explains the governance variables associated with Band's threshold signature implementation.
 
 ## `tss` Module
 

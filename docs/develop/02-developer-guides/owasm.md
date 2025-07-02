@@ -1,6 +1,6 @@
 # Oracle WebAssembly (Owasm)
 
-Oracle WebAssembly, or Owasm for short, is Band Protocol's Domain Specific Language (DSL) for writing [oracle scripts](/develop/custom-scripts/oracle-script/introduction) to be used in the BandChain ecosystem.
+Oracle WebAssembly, or Owasm for short, is Band's Domain Specific Language (DSL) for writing [oracle scripts](/develop/custom-scripts/oracle-script/introduction) to be used in the BandChain ecosystem.
 
 ## Owasm Library Structure
 

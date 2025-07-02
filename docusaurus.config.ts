@@ -7,9 +7,9 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 const config: Config = {
-  title: 'Band Protocol',
+  title: 'Band',
   tagline:
-    'Band Protocol is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts.',
+    'Band is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts.',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
@@ -154,7 +154,7 @@ const config: Config = {
           {
             items: [
               {
-                html: `<a href="https://bandprotocol.com"><img src="/img/logo-full-dark.svg" alt="Band Protocol logo" width="180"  class="logo-dark" /><img src="/img/logo-full-light.svg" alt="Band Protocol logo" width="180" class="logo-light"/></a>`,
+                html: `<a href="https://bandprotocol.com"><img src="/img/logo-full-dark.svg" alt="Band logo" width="180"  class="logo-dark" /><img src="/img/logo-full-light.svg" alt="Band logo" width="180" class="logo-light"/></a>`,
               },
             ],
           },
@@ -191,8 +191,8 @@ const config: Config = {
                 href: 'https://www.bandpartners.io/',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/BandProtocol',
+                label: 'X',
+                href: 'https://x.com/BandProtocol',
               },
               {
                 label: 'Discord',
@@ -230,7 +230,7 @@ const config: Config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Band Protocol. All Rights Reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Band. All Rights Reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
