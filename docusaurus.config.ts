@@ -126,10 +126,10 @@ const config: Config = {
         },
       },
       navbar: {
-        title: 'Band Protocol',
         logo: {
-          alt: 'Band Protocol Logo',
-          src: 'img/logo.svg',
+          alt: 'Band Logo',
+          src: 'img/logo-full-light.svg',
+          srcDark: 'img/logo-full-dark.svg',
         },
         items: [
           // {
