@@ -2,11 +2,11 @@
 
 ## Prerequisite
 
-If this is the first time you start the falcon service, run the following
+If this is the first time you start Falcon service, run the following
 
-1. Initialize the Falcon configuration file.
+1. Initialize the Falcon configuration file (if you leave the passphrase unset, it defaults to "").
     ```shell
-    $ PASSPHRASE=$YOUR_PASSPHRASE falcon config init
+    $PASSPHRASE=$YOUR_PASSPHRASE Falcon config init
     ```
 
     Passphrase will be used when it interacts with keys management. 
@@ -16,12 +16,13 @@ If this is the first time you start the falcon service, run the following
     [global]
     log_level = 'info'
     checking_packet_interval = 60000000000
-    max_checking_packet_penalty_duration = 3600000000000
-    penalty_exponential_factor = 1.0
+    sync_tunnel_interval = 300000000000
+    penalty_skip_rounds = 3
 
     [bandchain]
     rpc_endpoints = ['http://localhost:26657']
     timeout = 3000000000
+    liveliness_checking_interval=60000000000
 
     [target_chains]
 
@@ -42,15 +43,15 @@ If this is the first time you start the falcon service, run the following
     chain_type = 'evm'
     max_retry = 3
     query_timeout = 3000000000
+    execute_timeout = 3000000000
     chain_id = 31337
     tunnel_router_address = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9'
     block_confirmation = 5
     waiting_tx_duration = 3000000000
+    liveliness_checking_interval = 900000000000
     checking_tx_interval = 1000000000
     gas_type = 'eip1559'
     gas_multiplier = 1.1
-    execute_timeout = 3000000000
-    liveliness_checking_interval = 900000000000
     ```
 
     The supported `gas_type` values are **legacy** and **eip1559**. Each type requires specific configuration fields.
@@ -67,7 +68,7 @@ If this is the first time you start the falcon service, run the following
 
     `$CHAIN_NAME` should be matched with the one predefined in the tss-tunnel.
 
-    You can check if falcon can connect to both BandChain and destination via query tunnel information using following command
+    You can check if Falcon can connect to both BandChain and destination via query tunnel information using following command
     ``` shell
     falcon query tunnel <TUNNEL_ID>
     ```

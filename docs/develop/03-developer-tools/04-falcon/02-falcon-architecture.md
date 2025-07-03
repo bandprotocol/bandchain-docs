@@ -20,10 +20,10 @@ There are 5 main components
     - Synchronize with BandChain periodically to fetch new tunnel (if it is in all-tss-tunnel mode).
 
 4. Tunnel Relayer
-    - Fetche tunnel information and packet by BandChain Client and chain provider
+    - Fetch tunnel information and packet by BandChain Client and chain provider
     - Handle the packet relaying process
         - Validate tunnel state (e.g., active status, latest sequence).
-        - Fetche unrelayed packets from BandChain client.
+        - Fetch unrelayed packets from BandChain client.
         - Submit packet to chain provider to continue on transaction process.
 
 5. Wallet
