@@ -41,10 +41,10 @@ This section we will compare gas usage on each message type to compare how many 
 | MsgTransfer(IBC)                                             | ~85k          |
 | MsgUpdateClient + MsgReceivePacket (Transfer packet)         | ~350k         |
 | MsgRequestData\*                                             | >500k upto 5m |
-| MsgUpdateClient + MsgReceivePacket (Oracle request packet)\* | >560k upto 5m |
+| MsgUpdateClient + MsgReceivePacket (Data request packet)\*   | >560k upto 5m |
 | MsgCreateDataSource / MsgEditDataSource\*\*                  | 30k - 100k    |
 | MsgCreateOracleScript / MsgEditOracleScript\*\*              | 500k - 2m     |
 
-(\*) The gas is used on MsgRequestData or process oracle request packet based on complexity of oracle script and how many validator need to query data on this request.
+(\*) The gas is used on MsgRequestData or process request packet based on complexity of data script and how many validator need to query data on this request.
 
-(\*\*) Based on size of data source and oracle script mostly data source should be smaller than oracle script.
+(\*\*) Based on size of data source and data script mostly data source should be smaller than data script.

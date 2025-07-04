@@ -31,7 +31,7 @@ Note that `base` and `quote` is the first and the second price symbols respectiv
 | pair      | string                   | The token pair e.g. "BTC/USD" |
 | rate      | float                    | Price rate                    |
 | updatedAt | [ReferenceDataUpdated]   | Price update time             |
-| requestId | [ReferenceDataRequestID] | OracleRequest ID              |
+| requestId | [ReferenceDataRequestID] | Request ID                    |
 
 ### Syntax
 

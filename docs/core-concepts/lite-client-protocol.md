@@ -1,8 +1,8 @@
 # Lite Client Protocol
 
-In addition to the native IBC connections, we also provide a lite client for anyone who requested data from our oracle to verify the validity of the result they received. An instance of this client exists on each of the blockchains to which Band has integrated.
+In addition to the native IBC connections, we also provide a lite client for anyone who requested data from our BandChain to verify the validity of the result they received. An instance of this client exists on each of the blockchains to which Band has integrated.
 
-When someone submits a verification request to our lite client, they must also send in the encoded result they got from BandChain oracle. This is because the result is not just the data they requested, but also contains information on the request itself as well as the associated response. The lite client use these information to prove that the data the user requested exists on BandChain, thus verifying the oracle result’s validity.
+When someone submits a verification request to our lite client, they must also send in the encoded result they got from BandChain. This is because the result is not just the data they requested, but also contains information on the request itself as well as the associated response. The lite client use these information to prove that the data the user requested exists on BandChain, thus verifying the result’s validity.
 
 The lite client's verification process checks for 3 conditions:
 
@@ -14,11 +14,11 @@ The diagram below illustrates the above steps.
 
 ![Lite Client Request Flow](https://i.imgur.com/RQl8gY9.png)
 
-## Constructing the Block Header from the Oracle Data Proof
+## Constructing the Block Header from the Data Proof
 
-The proof that BandChain's oracle returns is a packet called `result` which encodes the information from both the oracle request sent to BandChain and the oracle response aggregated from reports submitted by validators assigned to this request. Some of the information includes
+The proof that BandChain's data returns is a packet called `result` which encodes the information from both the data request sent to BandChain and the response aggregated from reports submitted by validators assigned to this request. Some of the information includes
 
-- The identifier of the oracle script requested,
+- The identifier of the data script requested,
 - The number of validators that are requested to respond to this request,
 - The number of validators that actually responded to the request,
 - The timestamp of when the request was sent and when it was resolved to a final result
@@ -36,9 +36,9 @@ The task of the lite client is then to use this packet to eventually arrive at t
 
 #### Oracle Store Tree Contents
 
-BandChain's oracle system resides in an `oracle` [Cosmos module](https://github.com/cosmos/cosmos-sdk/tree/master/x), also known as the `oracle` store. Each of these stores can then be represented as an [iAVL tree](https://github.com/cosmos/iavl), where the bottom or leaves of these store trees contains the byte representation of the data in that module. In our case of the `oracle` store root, the only piece of data that we will be looking at is the `result` packet.
+BandChain's data system resides in an `oracle` [Cosmos module](https://github.com/cosmos/cosmos-sdk/tree/master/x), also known as the `oracle` store. Each of these stores can then be represented as an [iAVL tree](https://github.com/cosmos/iavl), where the bottom or leaves of these store trees contains the byte representation of the data in that module. In our case of the `oracle` store root, the only piece of data that we will be looking at is the `result` packet.
 
-As mentioned previously, the `result` packet contains information related to both the request that the user made to our oracle, such as the oracle script identifier and the number of requested validators, and the corresponding oracle response composed from validators' reports, such as the actual number of validators that responded to the request as well as the actual result value itself.
+As mentioned previously, the `result` packet contains information related to both the request that the user made to our BandChain, such as the data script identifier and the number of requested validators, and the corresponding data response composed from validators' reports, such as the actual number of validators that responded to the request as well as the actual result value itself.
 
 This `result` packet is what the lite client essentially returns to the requester upon successful validation. By also returning contextual information on the request and response, in addition to the actual result value itself, we aim to give as much information as possible for the user to use in their application or for any further validation they might want to perform.
 

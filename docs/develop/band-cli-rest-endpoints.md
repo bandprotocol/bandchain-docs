@@ -29,7 +29,7 @@ $ curl -X GET "${REST}/oracle/v1/data_sources/1"
 }
 ```
 
-## Get Oracle Script by ID
+## Get Data Script by ID
 
 **CLI**: `bandd query oracle-script [id] --node ${RPC}`
 
@@ -51,7 +51,7 @@ $ curl -X GET "${REST}/oracle/v1/oracle_scripts/37"
 }
 ```
 
-## Get Data Oracle Request by ID
+## Get Data Request by ID
 
 **CLI**: `bandd query request [id] --node ${RPC}`
 
@@ -618,7 +618,7 @@ $ curl -X GET "${REST}/oracle/v1/params"
 }
 ```
 
-## Get BandChain Oracle Counts
+## Get BandChain Data Counts
 
 **CLI**: `bandd query oracle counts --node ${RPC}`
 

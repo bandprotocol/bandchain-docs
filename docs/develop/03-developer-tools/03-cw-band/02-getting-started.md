@@ -6,18 +6,18 @@ sidebar_position: 2
 
 This guide serves as a quick reference on how to request and receive data from BandChain. For examples of CosmWasm contracts, please refer to the [Example Use Cases](/develop/developer-tools/cw-band/example) section.
 
-### Step 1: Prepare an oracle script and data sources
+### Step 1: Prepare a data script and data sources
 
 There are two main components on the BandChain in the requesting process:
 
-- [Oracle script](/develop/custom-scripts/oracle-script/introduction)
+- [Data script](/develop/custom-scripts/oracle-script/introduction)
 - [Data source](/develop/custom-scripts/data-source/introduction)
 
 For requesting data from BandChain on the smart contract, you have to deploy both of them in the BandChain first so that your smart contract can specify the `oracle_script_id` when sending the request.
 
 ### Step 2: Prepare a CosmWasm contract
 
-To request data from BandChain’s Oracle via a CosmWasm contract, your contract will need to implement the functions listed below:
+To request data from BandChain via a CosmWasm contract, your contract will need to implement the functions listed below:
 
 ```
 ibc_channel_open()
@@ -35,9 +35,9 @@ The behavior of the functions mentioned can be separated into 2 parts of the IBC
 
 #### Channel
 
-A channel between your contract and our oracle module on BandChain needs to be created to relay an IBC message via a relayer. To do that, 2 entry points need to be provided.
+A channel between your contract and our `oracle` module on BandChain needs to be created to relay an IBC message via a relayer. To do that, 2 entry points need to be provided.
 
-**Note**: As creating a channel can be started from either the contract or the oracle; A function that accepts messages regardless of the initiator side needs to be provided.
+**Note**: As creating a channel can be started from either the contract or the BandChain; A function that accepts messages regardless of the initiator side needs to be provided.
 
 **IBC Channel Open**
 
@@ -104,7 +104,7 @@ This function is called when the channel is somehow closed. You can add your log
 
 #### Packet
 
-Three callback functions will need to be provided to accept the three outgoing messages from Oracle: `IbcPacketAckMsg`, `IbcPacketTimeoutMsg` and `IbcPacketReceiveMsg`.
+Three callback functions will need to be provided to accept the three outgoing messages from BandChain: `IbcPacketAckMsg`, `IbcPacketTimeoutMsg` and `IbcPacketReceiveMsg`.
 
 **IBCPacketAckMsg**
 
@@ -123,7 +123,7 @@ pub fn ibc_packet_ack(
 }
 ```
 
-The oracle will send an acknowledgement message with the corresponding request_id on BandChain if the request can be processed so that the sender’s side can process the data as needed.
+The BandChain will send an acknowledgement message with the corresponding request_id on BandChain if the request can be processed so that the sender’s side can process the data as needed.
 
 **IBCPacketReceiveMsg**
 
@@ -146,7 +146,7 @@ pub fn ibc_packet_receive(
 }
 ```
 
-After BandChain finishes your request, an OracleResponsePacketData packet will be sent to this function in your contract. The output of the oracle script that you requested will be contained in the result field.
+After BandChain finishes your request, an OracleResponsePacketData packet will be sent to this function in your contract. The output of the data script that you requested will be contained in the result field.
 
 **IBCPacketTimeoutMsg**
 

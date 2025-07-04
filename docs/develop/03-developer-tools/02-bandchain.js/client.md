@@ -278,7 +278,7 @@ const id = 1
 
 ## getOracleScript(id)
 
-Get oracle script metadata by given ID
+Get data script metadata by given ID
 
 **Parameter**
 
@@ -319,7 +319,7 @@ const id = 1
 
 ## getRequestByID(id)
 
-Get an oracle request by given request ID
+Get a data request by given request ID
 
 **Parameter**
 
@@ -327,7 +327,7 @@ Get an oracle request by given request ID
 
 **Return**
 
-- [`Request`] - Information of the oracle request
+- [`Request`] - Information of the data request
 
 **Example**
 
@@ -516,13 +516,13 @@ Search for latest request that match given oracle script ID, calldata, min count
 **Parameter**
 
 - **oid** `number` - Oracle script ID
-- **calldata** `string` - OBI-encoded calldata of the oracle request in hex format
+- **calldata** `string` - OBI-encoded calldata of the request in hex format
 - **minCount** `number` - The minimum number of validators necessary for the request to proceed to the execution phase
 - **askCount** `number` - The number of validators that are requested to respond to this request
 
 **Return**
 
-- [`QueryRequestResponse`] - An object containing oracle request information, reports of the request, and final result
+- [`QueryRequestResponse`] - An object containing data request information, reports of the request, and final result
 
 **Example**
 
@@ -882,7 +882,7 @@ const sendCoin = async () => {
 
 ## sendTxAsyncMode(data)
 
-Send a transaction in async mode, that is, send and returned immediantly without waiting for the transaction processes.
+Send a transaction in async mode, that is, send and returned immediately without waiting for the transaction processes.
 
 **Parameter**
 
@@ -973,7 +973,7 @@ const sendCoin = async () => {
 
 ## getReferenceData(pairs, minCount, askCount)
 
-Get current prices from standard price references oracle script based on given symbol pairs, min count, and ask count.
+Get current prices from standard price references based on given symbol pairs, min count, and ask count.
 
 **Parameter**
 

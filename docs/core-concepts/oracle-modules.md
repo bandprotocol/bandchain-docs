@@ -270,7 +270,7 @@ ResolveStatus encodes the status of an oracle request.
 | ------------------------------- | ------ | -------------------------------------------------------------------------------------- |
 | RESOLVE_STATUS_OPEN_UNSPECIFIED | 0      | Open - the request is not yet resolved.                                                |
 | RESOLVE_STATUS_SUCCESS          | 1      | Success - the request has been resolved successfully with no errors.                   |
-| RESOLVE_STATUS_FAILURE          | 2      | Failure - an error occured during the request&#39;s resolve call.                      |
+| RESOLVE_STATUS_FAILURE          | 2      | Failure - an error occurred during the request&#39;s resolve call.                      |
 | RESOLVE_STATUS_EXPIRED          | 3      | Expired - the request does not get enough reports from validator within the timeframe. |
 
 <a name="oracle/v1/query.proto"></a>
@@ -598,7 +598,7 @@ Query defines the gRPC querier service.
 | Validator           | [QueryValidatorRequest](#oracle.v1.QueryValidatorRequest)                     | [QueryValidatorResponse](#oracle.v1.QueryValidatorResponse)                     | Validator queries properties of given validator address.                                                               |
 | Reporters           | [QueryReportersRequest](#oracle.v1.QueryReportersRequest)                     | [QueryReportersResponse](#oracle.v1.QueryReportersResponse)                     | Reporters queries all reporters associated with given validator address.                                               |
 | ActiveValidators    | [QueryActiveValidatorsRequest](#oracle.v1.QueryActiveValidatorsRequest)       | [QueryActiveValidatorsResponse](#oracle.v1.QueryActiveValidatorsResponse)       | ActiveValidators queries all active oracle validators.                                                                 |
-| Params              | [QueryParamsRequest](#oracle.v1.QueryParamsRequest)                           | [QueryParamsResponse](#oracle.v1.QueryParamsResponse)                           | Params queries parameters used for runnning bandchain network.                                                         |
+| Params              | [QueryParamsRequest](#oracle.v1.QueryParamsRequest)                           | [QueryParamsResponse](#oracle.v1.QueryParamsResponse)                           | Params queries parameters used for running bandchain network.                                                         |
 | RequestSearch       | [QueryRequestSearchRequest](#oracle.v1.QueryRequestSearchRequest)             | [QueryRequestSearchResponse](#oracle.v1.QueryRequestSearchResponse)             | RequestSearch queries the latest request that match search criteria.                                                   |
 | RequestPrice        | [QueryRequestPriceRequest](#oracle.v1.QueryRequestPriceRequest)               | [QueryRequestPriceResponse](#oracle.v1.QueryRequestPriceResponse)               | RequestPrice queries the latest price on standard price reference oracle script.                                       |
 | RequestVerification | [QueryRequestVerificationRequest](#oracle.v1.QueryRequestVerificationRequest) | [QueryRequestVerificationResponse](#oracle.v1.QueryRequestVerificationResponse) | RequestVerification verifies a request to make sure that all information that will be used to report the data is valid |
@@ -671,16 +671,16 @@ MsgCreateDataSourceResponse is response data for MsgCreateDataSource message
 
 ### MsgCreateOracleScript
 
-MsgCreateOracleScript is a message for creating an oracle script.
+MsgCreateOracleScript is a message for creating an script.
 
 | Field           | Type              | Label | Description                                                                       |
 | --------------- | ----------------- | ----- | --------------------------------------------------------------------------------- |
-| name            | [string](#string) |       | Name is the name of this oracle script used for display (optional).               |
-| description     | [string](#string) |       | Description is the description of this oracle script used for display (optional). |
-| schema          | [string](#string) |       | Schema is the OBI schema of this oracle script (optional).                        |
+| name            | [string](#string) |       | Name is the name of this script used for display (optional).                      |
+| description     | [string](#string) |       | Description is the description of this script used for display (optional).        |
+| schema          | [string](#string) |       | Schema is the OBI schema of this script (optional).                               |
 | source_code_url | [string](#string) |       | SourceCodeURL is the absolute URI to the script&#39;s source code (optional).     |
-| code            | [bytes](#bytes)   |       | Code is the oracle WebAssembly binary code. Can be raw of gzip compressed.        |
-| owner           | [string](#string) |       | Owner is the address who is allowed to make further changes to the oracle script. |
+| code            | [bytes](#bytes)   |       | Code is the WebAssembly binary code. Can be raw of gzip compressed.               |
+| owner           | [string](#string) |       | Owner is the address who is allowed to make further changes to the script.        |
 | sender          | [string](#string) |       | Sender is the signer of this message.                                             |
 
 <a name="oracle.v1.MsgCreateOracleScriptResponse"></a>
@@ -717,18 +717,18 @@ MsgEditDataSourceResponse is response data for MsgEditDataSource message
 
 ### MsgEditOracleScript
 
-MsgEditOracleScript is a message for editing an existing oracle script.
+MsgEditOracleScript is a message for editing an existing data script.
 
 | Field            | Type              | Label | Description                                                                                        |
 | ---------------- | ----------------- | ----- | -------------------------------------------------------------------------------------------------- |
-| oracle_script_id | [int64](#int64)   |       | OracleScriptID is the unique identifier of the oracle script to be edited.                         |
-| name             | [string](#string) |       | Name is the name of this oracle script used for display (optional).                                |
-| description      | [string](#string) |       | Description is the description of this oracle script used for display (optional).                  |
-| schema           | [string](#string) |       | Schema is the OBI schema of this oracle script (optional).                                         |
+| oracle_script_id | [int64](#int64)   |       | OracleScriptID is the unique identifier of the data script to be edited.                           |
+| name             | [string](#string) |       | Name is the name of this data script used for display (optional).                                  |
+| description      | [string](#string) |       | Description is the description of this data script used for display (optional).                    |
+| schema           | [string](#string) |       | Schema is the OBI schema of this data script (optional).                                           |
 | source_code_url  | [string](#string) |       | SourceCodeURL is the absolute URI to the script&#39;s source code (optional).                      |
-| code             | [bytes](#bytes)   |       | Code is the oracle WebAssembly binary code. Can be raw of gzip compressed.                         |
+| code             | [bytes](#bytes)   |       | Code is the WebAssembly binary code. Can be raw of gzip compressed.                                |
 | owner            | [string](#string) |       | Owner is an account address who is allowed to make further changes to the oracle script.           |
-| sender           | [string](#string) |       | Sender is an account address who sign this message. Must be the current oracle script&#39;s owner. |
+| sender           | [string](#string) |       | Sender is an account address who sign this message. Must be the current data script&#39;s owner.   |
 
 <a name="oracle.v1.MsgEditOracleScriptResponse"></a>
 
@@ -777,7 +777,7 @@ MsgReportDataResponse is response data for MsgReportData message
 
 ### MsgRequestData
 
-MsgRequestData is a message for sending a data oracle request.
+MsgRequestData is a message for sending a data request.
 
 | Field            | Type                                                  | Label    | Description                                                                          |
 | ---------------- | ----------------------------------------------------- | -------- | ------------------------------------------------------------------------------------ |
@@ -809,8 +809,8 @@ Msg defines the oracle Msg service.
 | ReportData         | [MsgReportData](#oracle.v1.MsgReportData)                 | [MsgReportDataResponse](#oracle.v1.MsgReportDataResponse)                 | ReportData defines a method for reporting a data to resolve the request.  |
 | CreateDataSource   | [MsgCreateDataSource](#oracle.v1.MsgCreateDataSource)     | [MsgCreateDataSourceResponse](#oracle.v1.MsgCreateDataSourceResponse)     | CreateDataSource defines a method for creating a new data source.         |
 | EditDataSource     | [MsgEditDataSource](#oracle.v1.MsgEditDataSource)         | [MsgEditDataSourceResponse](#oracle.v1.MsgEditDataSourceResponse)         | EditDataSource defines a method for editing an existing data source.      |
-| CreateOracleScript | [MsgCreateOracleScript](#oracle.v1.MsgCreateOracleScript) | [MsgCreateOracleScriptResponse](#oracle.v1.MsgCreateOracleScriptResponse) | CreateOracleScript defines a method for creating a new oracle script.     |
-| EditOracleScript   | [MsgEditOracleScript](#oracle.v1.MsgEditOracleScript)     | [MsgEditOracleScriptResponse](#oracle.v1.MsgEditOracleScriptResponse)     | EditOracleScript defines a method for editing an existing oracle script.  |
+| CreateOracleScript | [MsgCreateOracleScript](#oracle.v1.MsgCreateOracleScript) | [MsgCreateOracleScriptResponse](#oracle.v1.MsgCreateOracleScriptResponse) | CreateOracleScript defines a method for creating a new data script.       |
+| EditOracleScript   | [MsgEditOracleScript](#oracle.v1.MsgEditOracleScript)     | [MsgEditOracleScriptResponse](#oracle.v1.MsgEditOracleScriptResponse)     | EditOracleScript defines a method for editing an existing data script.    |
 | Activate           | [MsgActivate](#oracle.v1.MsgActivate)                     | [MsgActivateResponse](#oracle.v1.MsgActivateResponse)                     | Activate defines a method for applying to be an oracle validator.         |
 | AddReporter        | [MsgAddReporter](#oracle.v1.MsgAddReporter)               | [MsgAddReporterResponse](#oracle.v1.MsgAddReporterResponse)               | AddReporter defines a method for adding a new reporter for a validator.   |
 | RemoveReporter     | [MsgRemoveReporter](#oracle.v1.MsgRemoveReporter)         | [MsgRemoveReporterResponse](#oracle.v1.MsgRemoveReporterResponse)         | RemoveReporter defines a method for removing an reporter from a validator |
@@ -829,9 +829,9 @@ GenesisState defines the oracle module&#39;s genesis state.
 
 | Field          | Type                                                      | Label    | Description                                                                                                      |
 | -------------- | --------------------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
-| params         | [Params](#oracle.v1.Params)                               |          | Params defines all the paramaters of the module.                                                                 |
+| params         | [Params](#oracle.v1.Params)                               |          | Params defines all the parameters of the module.                                                                 |
 | data_sources   | [DataSource](#oracle.v1.DataSource)                       | repeated | DataSources are data sources to be installed during genesis phase                                                |
-| oracle_scripts | [OracleScript](#oracle.v1.OracleScript)                   | repeated | OracleScripts are list of oracle scripts to be installed during genesis phase                                    |
+| oracle_scripts | [OracleScript](#oracle.v1.OracleScript)                   | repeated | OracleScripts are list of data scripts to be installed during genesis phase                                      |
 | reporters      | [ReportersPerValidator](#oracle.v1.ReportersPerValidator) | repeated | Reporters are mapping between reporter&#39;s account address (key) and validator&#39;s validator address (value) |
 
 ## Scalar Value Types

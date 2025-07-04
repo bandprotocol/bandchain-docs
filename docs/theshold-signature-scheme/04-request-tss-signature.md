@@ -30,14 +30,14 @@ message MsgRequestSignature {
   string sender = 4 [(cosmos_proto.scalar) = "cosmos.AddressString"];
 }
 
-// OracleResultSignatureOrder defines a request id to request bandtss signature from the oracle result.
+// OracleResultSignatureOrder defines a request id to request bandtss signature from the data result.
 message OracleResultSignatureOrder {
   option (gogoproto.goproto_getters) = false;
 
-  // request_id is oracle's unique identifier for this oracle request.
+  // request_id is unique identifier of this data request.
   uint64 request_id = 1 [(gogoproto.customname) = "RequestID", (gogoproto.casttype) = "RequestID"];
 
-  // encoder is the mode of encoding oracle result signature order.
+  // encoder is the mode of encoding data result signature order.
   Encoder encoder = 3;
 }
 
