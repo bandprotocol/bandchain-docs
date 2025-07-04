@@ -4,9 +4,9 @@ sidebar_position: 4
 
 # Protobuf Documentation
 
-## oracle/v1/oracle.proto
+## band/oracle/v1/oracle.proto
 
-<a name="oracle.v1.ActiveValidator"></a>
+<a name="band.oracle.v1.ActiveValidator"></a>
 
 ### ActiveValidator
 
@@ -17,7 +17,7 @@ ActiveValidator is information of currently active validator
 | address | [string](#string) |       | Address is a validator address                            |
 | power   | [uint64](#uint64) |       | Power is an amount of token that the validator is holding |
 
-<a name="oracle.v1.DataSource"></a>
+<a name="band.oracle.v1.DataSource"></a>
 
 ### DataSource
 
@@ -32,7 +32,7 @@ DataSource is the data structure for storing data sources in the storage.
 | treasury    | [string](#string)                                     |          | Treasury is the account address who receive data source fee from requester.                               |
 | fee         | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) | repeated | Fee is the data source fee per ask_count that data provider will receive from requester.                  |
 
-<a name="oracle.v1.IBCChannel"></a>
+<a name="band.oracle.v1.IBCChannel"></a>
 
 ### IBCChannel
 
@@ -44,7 +44,7 @@ chain
 | port_id    | [string](#string) |       | PortID is port ID used for sending response packet when request is resolved.       |
 | channel_id | [string](#string) |       | ChannelID is channel ID used for sending response packet when request is resolved. |
 
-<a name="oracle.v1.OracleRequestPacketAcknowledgement"></a>
+<a name="band.oracle.v1.OracleRequestPacketAcknowledgement"></a>
 
 ### OracleRequestPacketAcknowledgement
 
@@ -55,7 +55,7 @@ send back to requester chain.
 | ---------- | --------------- | ----- | ----------------------------------------------------------------------- |
 | request_id | [int64](#int64) |       | RequestID is BandChain&#39;s unique identifier for this oracle request. |
 
-<a name="oracle.v1.OracleRequestPacketData"></a>
+<a name="band.oracle.v1.OracleRequestPacketData"></a>
 
 ### OracleRequestPacketData
 
@@ -74,7 +74,7 @@ to BandChain.
 | prepare_gas      | [uint64](#uint64)                                     |          | PrepareGas is amount of gas to pay to prepare raw requests                                                                                                             |
 | execute_gas      | [uint64](#uint64)                                     |          | ExecuteGas is amount of gas to reserve for executing                                                                                                                   |
 
-<a name="oracle.v1.OracleResponsePacketData"></a>
+<a name="band.oracle.v1.OracleResponsePacketData"></a>
 
 ### OracleResponsePacketData
 
@@ -91,7 +91,7 @@ requester.
 | resolve_status | [ResolveStatus](#oracle.v1.ResolveStatus) |       | ResolveStatus is the status of this oracle request, which can be OK, FAILURE, or EXPIRED.                                                                      |
 | result         | [bytes](#bytes)                           |       | Result is the final aggregated value encoded in OBI format. Only available if status if OK.                                                                    |
 
-<a name="oracle.v1.OracleScript"></a>
+<a name="band.oracle.v1.OracleScript"></a>
 
 ### OracleScript
 
@@ -106,7 +106,7 @@ OracleScript is the data structure for storing oracle scripts in the storage.
 | schema          | [string](#string) |       | Schema is the schema of the oracle script input/output which is formatted in OBI format e.g. `"{symbol:string,multiplier:u64}/{px:u64}"`                   |
 | source_code_url | [string](#string) |       | SourceCodeURL is the URL of oracle script&#39;s source code. It is recommendded to store source code on IPFS and get its URL to preserve decentralization. |
 
-<a name="oracle.v1.Params"></a>
+<a name="band.oracle.v1.Params"></a>
 
 ### Params
 
@@ -124,7 +124,7 @@ Params is the data structure that keeps the parameters of the oracle module.
 | inactive_penalty_duration | [uint64](#uint64) |       | InactivePenaltyDuration is the duration period where a validator cannot activate back after missing an oracle report.                    |
 | ibc_request_enabled       | [bool](#bool)     |       | IBCRequestEnabled is a flag indicating whether sending oracle request via IBC is allowed                                                 |
 
-<a name="oracle.v1.PendingResolveList"></a>
+<a name="band.oracle.v1.PendingResolveList"></a>
 
 ### PendingResolveList
 
@@ -134,7 +134,7 @@ PendingResolveList is a list of requests that are waiting to be resolved
 | ----------- | --------------- | -------- | ------------------------------------------------------------------- |
 | request_ids | [int64](#int64) | repeated | RequestIDs is a list of request IDs that are waiting to be resolved |
 
-<a name="oracle.v1.PriceResult"></a>
+<a name="band.oracle.v1.PriceResult"></a>
 
 ### PriceResult
 
@@ -148,7 +148,7 @@ PriceResult is a result from standard price reference
 | request_id   | [int64](#int64)   |       | RequestID is oracle request ID that contains this price                                   |
 | resolve_time | [int64](#int64)   |       | ResolveTime is epoch timestamp indicating the time when the request had been resolved     |
 
-<a name="oracle.v1.RawReport"></a>
+<a name="band.oracle.v1.RawReport"></a>
 
 ### RawReport
 
@@ -160,7 +160,7 @@ RawRequest is the data structure for storing raw reporter in the storage.
 | exit_code   | [uint32](#uint32) |       | ExitCode is status code provided by validators to specify error, if any. Exit code is usually filled by the exit code returned from execution of specified data source script. With code 0 means there is no error. |
 | data        | [bytes](#bytes)   |       | Data is raw result provided by validators. It is usually filled by the result from execution of specified data source script.                                                                                       |
 
-<a name="oracle.v1.RawRequest"></a>
+<a name="band.oracle.v1.RawRequest"></a>
 
 ### RawRequest
 
@@ -172,7 +172,7 @@ RawRequest is the data structure for storing raw requests in the storage.
 | data_source_id | [int64](#int64) |       | DataSourceID is an ID of data source script that relates to the raw request   |
 | calldata       | [bytes](#bytes) |       | Calldata is the data used as argument params for executing data source script |
 
-<a name="oracle.v1.Report"></a>
+<a name="band.oracle.v1.Report"></a>
 
 ### Report
 
@@ -184,7 +184,7 @@ Report is the data structure for storing reports in the storage.
 | in_before_resolve | [bool](#bool)                     |          | InBeforeResolve indicates whether the report is submitted before the request resolved                  |
 | raw_reports       | [RawReport](#oracle.v1.RawReport) | repeated | RawReports is list of raw reports provided by the validator. Each raw report has different external ID |
 
-<a name="oracle.v1.ReportersPerValidator"></a>
+<a name="band.oracle.v1.ReportersPerValidator"></a>
 
 ### ReportersPerValidator
 
@@ -196,7 +196,7 @@ validator
 | validator | [string](#string) |          | Validator a validator address                                                   |
 | reporters | [string](#string) | repeated | Reporters is a list of reporter account addresses associated with the validator |
 
-<a name="oracle.v1.Request"></a>
+<a name="band.oracle.v1.Request"></a>
 
 ### Request
 
@@ -215,7 +215,7 @@ Request is the data structure for storing requests in the storage.
 | ibc_channel          | [IBCChannel](#oracle.v1.IBCChannel) |          | IBCChannel is an IBC channel info of the other chain, which contains a channel and a port to allow bandchain connect to that chain. This field allows other chain be able to request data from bandchain via IBC. |
 | execute_gas          | [uint64](#uint64)                   |          | ExecuteGas is amount of gas to reserve for executing                                                                                                                                                              |
 
-<a name="oracle.v1.RequestVerification"></a>
+<a name="band.oracle.v1.RequestVerification"></a>
 
 ### RequestVerification
 
@@ -229,7 +229,7 @@ to be used as a part of verification of oracle request.
 | request_id  | [int64](#int64)   |       | RequestID is the targeted request ID                      |
 | external_id | [int64](#int64)   |       | ExternalID is the oracle&#39;s external ID of data source |
 
-<a name="oracle.v1.Result"></a>
+<a name="band.oracle.v1.Result"></a>
 
 ### Result
 
@@ -249,7 +249,7 @@ Result encodes a result of request and store in chain
 | resolve_status   | [ResolveStatus](#oracle.v1.ResolveStatus) |       | ResolveStatus is the status of this oracle request, which can be OK, FAILURE, or EXPIRED.                                                                              |
 | result           | [bytes](#bytes)                           |       | Result is the final aggregated value only available if status if OK.                                                                                                   |
 
-<a name="oracle.v1.ValidatorStatus"></a>
+<a name="band.oracle.v1.ValidatorStatus"></a>
 
 ### ValidatorStatus
 
@@ -260,7 +260,7 @@ ValidatorStatus maintains whether a validator is an active oracle provider.
 | is_active | [bool](#bool)                                           |       | IsActive is a boolean indicating active status of validator. The validator will be deactivated when they are unable to send reports to fulfill oracle request before the request expired. |
 | since     | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |       | Since is a block timestamp when validator has been activated/deactivated                                                                                                                  |
 
-<a name="oracle.v1.ResolveStatus"></a>
+<a name="band.oracle.v1.ResolveStatus"></a>
 
 ### ResolveStatus
 
@@ -273,20 +273,20 @@ ResolveStatus encodes the status of an oracle request.
 | RESOLVE_STATUS_FAILURE          | 2      | Failure - an error occurred during the request&#39;s resolve call.                      |
 | RESOLVE_STATUS_EXPIRED          | 3      | Expired - the request does not get enough reports from validator within the timeframe. |
 
-<a name="oracle/v1/query.proto"></a>
+<a name="band/oracle/v1/query.proto"></a>
 
 <p align="right"><a href="#top">Top</a></p>
 
-## oracle/v1/query.proto
+## band/oracle/v1/query.proto
 
-<a name="oracle.v1.QueryActiveValidatorsRequest"></a>
+<a name="band.oracle.v1.QueryActiveValidatorsRequest"></a>
 
 ### QueryActiveValidatorsRequest
 
 QueryActiveValidatorsRequest is request type for the Query/ActiveValidators
 RPC method.
 
-<a name="oracle.v1.QueryActiveValidatorsResponse"></a>
+<a name="band.oracle.v1.QueryActiveValidatorsResponse"></a>
 
 ### QueryActiveValidatorsResponse
 
@@ -297,13 +297,13 @@ RPC method.
 | ---------- | --------------------------------------------- | -------- | ----------------------------------------- |
 | validators | [ActiveValidator](#oracle.v1.ActiveValidator) | repeated | Validators is a list of active validators |
 
-<a name="oracle.v1.QueryCountsRequest"></a>
+<a name="band.oracle.v1.QueryCountsRequest"></a>
 
 ### QueryCountsRequest
 
 QueryCountsRequest is request type for the Query/Count RPC method.
 
-<a name="oracle.v1.QueryCountsResponse"></a>
+<a name="band.oracle.v1.QueryCountsResponse"></a>
 
 ### QueryCountsResponse
 
@@ -315,7 +315,7 @@ QueryCountsResponse is response type for the Query/Count RPC method.
 | oracle_script_count | [int64](#int64) |       | OracleScriptCount is total number of oracle scripts available on the chain |
 | request_count       | [int64](#int64) |       | RequestCount is total number of requests submitted to the chain            |
 
-<a name="oracle.v1.QueryDataRequest"></a>
+<a name="band.oracle.v1.QueryDataRequest"></a>
 
 ### QueryDataRequest
 
@@ -325,7 +325,7 @@ QueryDataRequest is request type for the Query/Data RPC method.
 | --------- | ----------------- | ----- | -------------------------------------------------------------------------------------------- |
 | data_hash | [string](#string) |       | DataHash is SHA256 hash of the file&#39;s content, which can be data source or oracle script |
 
-<a name="oracle.v1.QueryDataResponse"></a>
+<a name="band.oracle.v1.QueryDataResponse"></a>
 
 ### QueryDataResponse
 
@@ -335,7 +335,7 @@ QueryDataResponse is response type for the Query/Data RPC method.
 | ----- | --------------- | ----- | --------------------------------------------------------------------- |
 | data  | [bytes](#bytes) |       | Data is file&#39;s content, which can be data source or oracle script |
 
-<a name="oracle.v1.QueryDataSourceRequest"></a>
+<a name="band.oracle.v1.QueryDataSourceRequest"></a>
 
 ### QueryDataSourceRequest
 
@@ -345,7 +345,7 @@ QueryDataSourceRequest is request type for the Query/DataSource RPC method.
 | -------------- | --------------- | ----- | ------------------------------------------ |
 | data_source_id | [int64](#int64) |       | DataSourceID is ID of a data source script |
 
-<a name="oracle.v1.QueryDataSourceResponse"></a>
+<a name="band.oracle.v1.QueryDataSourceResponse"></a>
 
 ### QueryDataSourceResponse
 
@@ -355,7 +355,7 @@ QueryDataSourceResponse is response type for the Query/DataSource RPC method.
 | ----------- | ----------------------------------- | ----- | -------------------------------------------------- |
 | data_source | [DataSource](#oracle.v1.DataSource) |       | DataSource is summary information of a data source |
 
-<a name="oracle.v1.QueryOracleScriptRequest"></a>
+<a name="band.oracle.v1.QueryOracleScriptRequest"></a>
 
 ### QueryOracleScriptRequest
 
@@ -366,7 +366,7 @@ method.
 | ---------------- | --------------- | ----- | ---------------------------------------- |
 | oracle_script_id | [int64](#int64) |       | OracleScriptID is ID of an oracle script |
 
-<a name="oracle.v1.QueryOracleScriptResponse"></a>
+<a name="band.oracle.v1.QueryOracleScriptResponse"></a>
 
 ### QueryOracleScriptResponse
 
@@ -377,13 +377,13 @@ method.
 | ------------- | --------------------------------------- | ----- | ------------------------------------------------------- |
 | oracle_script | [OracleScript](#oracle.v1.OracleScript) |       | OracleScript is summary information of an oracle script |
 
-<a name="oracle.v1.QueryParamsRequest"></a>
+<a name="band.oracle.v1.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 
 QueryParamsRequest is request type for the Query/Params RPC method.
 
-<a name="oracle.v1.QueryParamsResponse"></a>
+<a name="band.oracle.v1.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 
@@ -393,7 +393,7 @@ QueryParamsResponse is response type for the Query/Params RPC method.
 | ------ | --------------------------- | ----- | ---------------------------------------------------------- |
 | params | [Params](#oracle.v1.Params) |       | pagination defines an optional pagination for the request. |
 
-<a name="oracle.v1.QueryPendingRequestsRequest"></a>
+<a name="band.oracle.v1.QueryPendingRequestsRequest"></a>
 
 ### QueryPendingRequestsRequest
 
@@ -404,7 +404,7 @@ method.
 | ----------------- | ----------------- | ----- | ------------------------------------------ |
 | validator_address | [string](#string) |       | ValidatorAddress is address of a validator |
 
-<a name="oracle.v1.QueryPendingRequestsResponse"></a>
+<a name="band.oracle.v1.QueryPendingRequestsResponse"></a>
 
 ### QueryPendingRequestsResponse
 
@@ -415,7 +415,7 @@ RPC method.
 | ----------- | --------------- | -------- | --------------------------------------------------------------------------- |
 | request_ids | [int64](#int64) | repeated | RequestIDs is a list of pending request IDs assigned to the given validator |
 
-<a name="oracle.v1.QueryReportersRequest"></a>
+<a name="band.oracle.v1.QueryReportersRequest"></a>
 
 ### QueryReportersRequest
 
@@ -425,7 +425,7 @@ QueryReportersRequest is request type for the Query/Reporters RPC method.
 | ----------------- | ----------------- | ----- | --------------------------------------- |
 | validator_address | [string](#string) |       | ValidatorAddress is a validator address |
 
-<a name="oracle.v1.QueryReportersResponse"></a>
+<a name="band.oracle.v1.QueryReportersResponse"></a>
 
 ### QueryReportersResponse
 
@@ -435,7 +435,7 @@ QueryReportersResponse is response type for the Query/Reporters RPC method.
 | -------- | ----------------- | -------- | ---------------------------------------------------- |
 | reporter | [string](#string) | repeated | Reporter is a list of account addresses of reporters |
 
-<a name="oracle.v1.QueryRequestPoolRequest"></a>
+<a name="band.oracle.v1.QueryRequestPoolRequest"></a>
 
 ### QueryRequestPoolRequest
 
@@ -447,7 +447,7 @@ QueryRequestPoolRequest is request type for the Query/RequestPool RPC method.
 | port_id     | [string](#string) |       | PortID is the corresponding port to the request pool       |
 | channel_id  | [string](#string) |       | ChannelID is the corresponding channel to the request pool |
 
-<a name="oracle.v1.QueryRequestPoolResponse"></a>
+<a name="band.oracle.v1.QueryRequestPoolResponse"></a>
 
 ### QueryRequestPoolResponse
 
@@ -459,7 +459,7 @@ method.
 | request_pool_address | [string](#string)                                     |          | RequestPoolAddress is an address of a request pool |
 | balance              | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) | repeated |                                                    |
 
-<a name="oracle.v1.QueryRequestPriceRequest"></a>
+<a name="band.oracle.v1.QueryRequestPriceRequest"></a>
 
 ### QueryRequestPriceRequest
 
@@ -472,7 +472,7 @@ method.
 | ask_count | [int64](#int64)   |          | AskCount is number of validators allowed for fulfilling the request  |
 | min_count | [int64](#int64)   |          | MinCount is number of validators required for fulfilling the request |
 
-<a name="oracle.v1.QueryRequestPriceResponse"></a>
+<a name="band.oracle.v1.QueryRequestPriceResponse"></a>
 
 ### QueryRequestPriceResponse
 
@@ -483,7 +483,7 @@ method.
 | ------------- | ------------------------------------- | -------- | -------------------------------------------------------- |
 | price_results | [PriceResult](#oracle.v1.PriceResult) | repeated | PriceResult is a list of price results for given symbols |
 
-<a name="oracle.v1.QueryRequestRequest"></a>
+<a name="band.oracle.v1.QueryRequestRequest"></a>
 
 ### QueryRequestRequest
 
@@ -493,7 +493,7 @@ QueryRequestRequest is request type for the Query/Request RPC method.
 | ---------- | --------------- | ----- | ------------------------------------ |
 | request_id | [int64](#int64) |       | RequestID is ID of an oracle request |
 
-<a name="oracle.v1.QueryRequestResponse"></a>
+<a name="band.oracle.v1.QueryRequestResponse"></a>
 
 ### QueryRequestResponse
 
@@ -505,7 +505,7 @@ QueryRequestResponse is response type for the Query/Request RPC method.
 | reports | [Report](#oracle.v1.Report)   | repeated | Reports is list of result data as raw reports that are fulfilled by assigned validators |
 | result  | [Result](#oracle.v1.Result)   |          | Result is a final form of result data                                                   |
 
-<a name="oracle.v1.QueryRequestSearchRequest"></a>
+<a name="band.oracle.v1.QueryRequestSearchRequest"></a>
 
 ### QueryRequestSearchRequest
 
@@ -519,7 +519,7 @@ method.
 | ask_count        | [uint64](#uint64) |       | AskCount is number of validators allowed for fulfilling the request                 |
 | min_count        | [uint64](#uint64) |       | MinCount is number of validators required for fulfilling the request                |
 
-<a name="oracle.v1.QueryRequestSearchResponse"></a>
+<a name="band.oracle.v1.QueryRequestSearchResponse"></a>
 
 ### QueryRequestSearchResponse
 
@@ -530,7 +530,7 @@ method.
 | ------- | ------------------------------------------------------- | ----- | --------------------------------------- |
 | request | [QueryRequestResponse](#oracle.v1.QueryRequestResponse) |       | Request is details of an oracle request |
 
-<a name="oracle.v1.QueryRequestVerificationRequest"></a>
+<a name="band.oracle.v1.QueryRequestVerificationRequest"></a>
 
 ### QueryRequestVerificationRequest
 
@@ -546,7 +546,7 @@ Query/RequestVerification RPC
 | reporter    | [string](#string) |       | Reporter is an bech32-encoded public key of the reporter authorized by the validator |
 | signature   | [bytes](#bytes)   |       | Signature is a signature signed by the reporter using reporter&#39;s private key     |
 
-<a name="oracle.v1.QueryRequestVerificationResponse"></a>
+<a name="band.oracle.v1.QueryRequestVerificationResponse"></a>
 
 ### QueryRequestVerificationResponse
 
@@ -561,7 +561,7 @@ Query/RequestVerification RPC
 | external_id    | [int64](#int64)   |       | ExternalID is the ID of targeted oracle&#39;s external data source               |
 | data_source_id | [int64](#int64)   |       | DataSourceID is the ID of a data source that relates to the targeted external ID |
 
-<a name="oracle.v1.QueryValidatorRequest"></a>
+<a name="band.oracle.v1.QueryValidatorRequest"></a>
 
 ### QueryValidatorRequest
 
@@ -571,7 +571,7 @@ QueryValidatorRequest is request type for the Query/Validator RPC method.
 | ----------------- | ----------------- | ----- | ------------------------------------------ |
 | validator_address | [string](#string) |       | ValidatorAddress is address of a validator |
 
-<a name="oracle.v1.QueryValidatorResponse"></a>
+<a name="band.oracle.v1.QueryValidatorResponse"></a>
 
 ### QueryValidatorResponse
 
@@ -581,7 +581,7 @@ QueryValidatorResponse is response type for the Query/Validator RPC method.
 | ------ | --------------------------------------------- | ----- | ---------------------------------------------------- |
 | status | [ValidatorStatus](#oracle.v1.ValidatorStatus) |       | Status is status of a validator e.g. active/inactive |
 
-<a name="oracle.v1.Query"></a>
+<a name="band.oracle.v1.Query"></a>
 
 ### Query
 
@@ -608,9 +608,9 @@ Query defines the gRPC querier service.
 
 <p align="right"><a href="#top">Top</a></p>
 
-## oracle/v1/tx.proto
+## band/oracle/v1/tx.proto
 
-<a name="oracle.v1.MsgActivate"></a>
+<a name="band.oracle.v1.MsgActivate"></a>
 
 ### MsgActivate
 
@@ -622,13 +622,13 @@ is unable to provide data to fulfill requests
 | --------- | ----------------- | ----- | ------------------------------------------------------------------------------------- |
 | validator | [string](#string) |       | Validator is the validator address who sign this message and request to be activated. |
 
-<a name="oracle.v1.MsgActivateResponse"></a>
+<a name="band.oracle.v1.MsgActivateResponse"></a>
 
 ### MsgActivateResponse
 
 MsgActivateResponse is response data for MsgActivate message
 
-<a name="oracle.v1.MsgAddReporter"></a>
+<a name="band.oracle.v1.MsgAddReporter"></a>
 
 ### MsgAddReporter
 
@@ -639,13 +639,13 @@ MsgAddReporter is a message for adding a new reporter for a validator.
 | validator | [string](#string) |       | Validator is the validator address who requested to add a new reporter. Note that this is the signer. |
 | reporter  | [string](#string) |       | Reporter is the account address to be added as a reporter to the validator.                           |
 
-<a name="oracle.v1.MsgAddReporterResponse"></a>
+<a name="band.oracle.v1.MsgAddReporterResponse"></a>
 
 ### MsgAddReporterResponse
 
 MsgAddReporterResponse is response data for MsgAddReporter message
 
-<a name="oracle.v1.MsgCreateDataSource"></a>
+<a name="band.oracle.v1.MsgCreateDataSource"></a>
 
 ### MsgCreateDataSource
 
@@ -661,13 +661,13 @@ MsgCreateDataSource is a message for creating a new data source.
 | owner       | [string](#string)                                     |          | Owner is the account address who is allowed to make further changes to the data source.               |
 | sender      | [string](#string)                                     |          | Sender is the signer of this message.                                                                 |
 
-<a name="oracle.v1.MsgCreateDataSourceResponse"></a>
+<a name="band.oracle.v1.MsgCreateDataSourceResponse"></a>
 
 ### MsgCreateDataSourceResponse
 
 MsgCreateDataSourceResponse is response data for MsgCreateDataSource message
 
-<a name="oracle.v1.MsgCreateOracleScript"></a>
+<a name="band.oracle.v1.MsgCreateOracleScript"></a>
 
 ### MsgCreateOracleScript
 
@@ -683,14 +683,14 @@ MsgCreateOracleScript is a message for creating an script.
 | owner           | [string](#string) |       | Owner is the address who is allowed to make further changes to the script.        |
 | sender          | [string](#string) |       | Sender is the signer of this message.                                             |
 
-<a name="oracle.v1.MsgCreateOracleScriptResponse"></a>
+<a name="band.oracle.v1.MsgCreateOracleScriptResponse"></a>
 
 ### MsgCreateOracleScriptResponse
 
 MsgCreateOracleScriptResponse is response data for MsgCreateOracleScript
 message
 
-<a name="oracle.v1.MsgEditDataSource"></a>
+<a name="band.oracle.v1.MsgEditDataSource"></a>
 
 ### MsgEditDataSource
 
@@ -707,13 +707,13 @@ MsgEditDataSource is a message for editing an existing data source.
 | owner          | [string](#string)                                     |          | Owner is the address who is allowed to make further changes to the data source.          |
 | sender         | [string](#string)                                     |          | Sender is the signer of this message. Must be the current data source&#39;s owner.       |
 
-<a name="oracle.v1.MsgEditDataSourceResponse"></a>
+<a name="band.oracle.v1.MsgEditDataSourceResponse"></a>
 
 ### MsgEditDataSourceResponse
 
 MsgEditDataSourceResponse is response data for MsgEditDataSource message
 
-<a name="oracle.v1.MsgEditOracleScript"></a>
+<a name="band.oracle.v1.MsgEditOracleScript"></a>
 
 ### MsgEditOracleScript
 
@@ -730,13 +730,13 @@ MsgEditOracleScript is a message for editing an existing data script.
 | owner            | [string](#string) |       | Owner is an account address who is allowed to make further changes to the oracle script.           |
 | sender           | [string](#string) |       | Sender is an account address who sign this message. Must be the current data script&#39;s owner.   |
 
-<a name="oracle.v1.MsgEditOracleScriptResponse"></a>
+<a name="band.oracle.v1.MsgEditOracleScriptResponse"></a>
 
 ### MsgEditOracleScriptResponse
 
 MsgEditOracleScriptResponse is response data for MsgEditOracleScript message
 
-<a name="oracle.v1.MsgRemoveReporter"></a>
+<a name="band.oracle.v1.MsgRemoveReporter"></a>
 
 ### MsgRemoveReporter
 
@@ -748,13 +748,13 @@ validator.
 | validator | [string](#string) |       | Validator is the validator address who requested to remove an existing reporter. Note that this is the signer. |
 | reporter  | [string](#string) |       | Reporter is the account address to be removed from being the validator&#39;s reporter.                         |
 
-<a name="oracle.v1.MsgRemoveReporterResponse"></a>
+<a name="band.oracle.v1.MsgRemoveReporterResponse"></a>
 
 ### MsgRemoveReporterResponse
 
 MsgRemoveReporterResponse is response data for MsgRemoveReporter message
 
-<a name="oracle.v1.MsgReportData"></a>
+<a name="band.oracle.v1.MsgReportData"></a>
 
 ### MsgReportData
 
@@ -767,13 +767,13 @@ MsgReportData is a message for reporting to a data request by a validator.
 | validator   | [string](#string)                 |          | Validator is the address of the validator that owns this report.                                |
 | reporter    | [string](#string)                 |          | Reporter is the message signer who submits this report transaction for the validator.           |
 
-<a name="oracle.v1.MsgReportDataResponse"></a>
+<a name="band.oracle.v1.MsgReportDataResponse"></a>
 
 ### MsgReportDataResponse
 
 MsgReportDataResponse is response data for MsgReportData message
 
-<a name="oracle.v1.MsgRequestData"></a>
+<a name="band.oracle.v1.MsgRequestData"></a>
 
 ### MsgRequestData
 
@@ -791,13 +791,13 @@ MsgRequestData is a message for sending a data request.
 | execute_gas      | [uint64](#uint64)                                     |          | ExecuteGas is amount of gas to reserve for executing                                 |
 | sender           | [string](#string)                                     |          | Sender is an account address of message sender.                                      |
 
-<a name="oracle.v1.MsgRequestDataResponse"></a>
+<a name="band.oracle.v1.MsgRequestDataResponse"></a>
 
 ### MsgRequestDataResponse
 
 MsgRequestDataResponse is response data for MsgRequestData message
 
-<a name="oracle.v1.Msg"></a>
+<a name="band.oracle.v1.Msg"></a>
 
 ### Msg
 
@@ -815,13 +815,13 @@ Msg defines the oracle Msg service.
 | AddReporter        | [MsgAddReporter](#oracle.v1.MsgAddReporter)               | [MsgAddReporterResponse](#oracle.v1.MsgAddReporterResponse)               | AddReporter defines a method for adding a new reporter for a validator.   |
 | RemoveReporter     | [MsgRemoveReporter](#oracle.v1.MsgRemoveReporter)         | [MsgRemoveReporterResponse](#oracle.v1.MsgRemoveReporterResponse)         | RemoveReporter defines a method for removing an reporter from a validator |
 
-<a name="oracle/v1/genesis.proto"></a>
+<a name="band/oracle/v1/genesis.proto"></a>
 
 <p align="right"><a href="#top">Top</a></p>
 
-## oracle/v1/genesis.proto
+## band/oracle/v1/genesis.proto
 
-<a name="oracle.v1.GenesisState"></a>
+<a name="band.oracle.v1.GenesisState"></a>
 
 ### GenesisState
 

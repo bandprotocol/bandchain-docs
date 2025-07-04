@@ -1,7 +1,5 @@
 # Router Route
 
-> This route type is coming soon.
-
 ## Overview
 
 The **Router Route** leverages IBC hooks and the Router Bridge Protocol to transmit packet data from **BandChain** to other EVM-compatible chains. This enables developers to create smart contracts that receive real-time price data from BandChain and seamlessly integrate it into their applications by utilizing both BandChain price data and the Router Protocol bridge.
