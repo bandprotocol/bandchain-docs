@@ -36,7 +36,7 @@ const FeatureList: CardItem[] = [
     iconPath: require('@site/static/img/Guides.png').default,
     description: (
       <>
-        Learn how to use Band's integration tools to integrate Band's oracle data into your
+        Learn how to use Band's integration tools to integrate Band's data into your
         applications.
       </>
     ),

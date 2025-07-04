@@ -9,7 +9,7 @@ import rehypeKatex from 'rehype-katex'
 const config: Config = {
   title: 'Band Protocol',
   tagline:
-    'Band Protocol is a cross-chain data oracle platform that aggregates and connects real-world data and APIs to smart contracts.',
+    'Band Protocol is a cross-chain data platform that aggregates and connects real-world data and APIs to smart contracts.',
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here

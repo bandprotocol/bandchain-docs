@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The correctness of the data is a crucial part of decentralized applications (dApps) that rely on data from the real world. Manipulated data can impact the security and the objective of the applications.
 
-The `cw-band` introduces a standard for anyone looking to integrate data from Band's oracle into their CosmWasm smart contract on a Cosmos-SDK-based blockchain through [Inter-Blockchain Communication (IBC)](https://ibc.cosmos.network/main/ibc/overview.html). The standard itself consists of data types that require for requesting and receiving data.
+The `cw-band` introduces a standard for anyone looking to integrate data from BandChain into their CosmWasm smart contract on a Cosmos-SDK-based blockchain through [Inter-Blockchain Communication (IBC)](https://ibc.cosmos.network/main/ibc/overview.html). The standard itself consists of data types that require for requesting and receiving data.
 
 ### Workflow
 
@@ -26,7 +26,7 @@ Here are the data types and functions that the library provides for you.
 
 **Version**
 
-First, the library provides the version of the IBC channel of the Oracle module.
+First, the library provides the version of the IBC channel of the `oracle` module.
 
 ```rust
 pub const IBC_APP_VERSION: &str = "bandchain-1";
@@ -101,22 +101,22 @@ pub struct BandAcknowledgement {
 }
 ```
 
-**Oracle script - Price**
+**Data script - Price**
 
-This is the example of the Input and Output of the oracle script for getting the rates of symbols.
+This is the example of the Input and Output of the data script for getting the rates of symbols.
 
 ```rust
-// Input of the oracle script.
+// Input of the data script.
 #[derive(OBIEncode)]
 pub struct Input {
     pub symbols: Vec<String>, // Symbol list that you want to request.
     pub minimum_sources: u8, // Minimum sources
 }
 
-// Output of the oracle script.
+// Output of the data script.
 #[derive(OBIDecode)]
 pub struct Output {
-    pub responses: Vec<Response>, // Arrary of response of each each symbol.
+    pub responses: Vec<Response>, // Array of response of each each symbol.
 }
 
 // Rate of the symbol.

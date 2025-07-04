@@ -46,7 +46,7 @@ interface IVRFConsumer {
     /// @dev The function is called by the VRF provider in order to deliver results to the consumer.
     /// @param seed Any string that used to initialize the randomizer.
     /// @param time Timestamp where the random data was created.
-    /// @param result A random bytes for given seed anfd time.
+    /// @param result A random bytes for given seed and time.
     function consume(
         string calldata seed,
         uint64 time,
@@ -241,7 +241,7 @@ interface IVRFConsumer {
     /// @dev The function is called by the VRF provider in order to deliver results to the consumer.
     /// @param seed Any string that used to initialize the randomizer.
     /// @param time Timestamp where the random data was created.
-    /// @param result A random bytes for given seed anfd time.
+    /// @param result A random bytes for given seed and time.
     function consume(
         string calldata seed,
         uint64 time,

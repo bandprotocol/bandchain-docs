@@ -46,11 +46,11 @@ print(MessageToJson(data_source))
 
 ## get_oracle_script(id)
 
-This function returns oracle script details of the given ID.
+This function returns data script details of the given ID.
 
 **Parameter**
 
-- **id** `<int>`: Oracle Script ID
+- **id** `<int>`: Data Script ID
 
 **Return**
 

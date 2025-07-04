@@ -2,13 +2,13 @@
 
 ## Motivation
 
-All BandChain validators have an additional responsibility other than voting and proposing new blocks. That is submitting reports for incoming oracle requests. However, asking all validators to retrieve results and waiting for their reports for every request is time inefficient, since this would become a single queue for requests bottlenecking the whole system of BandChain. Since there are many validators on BandChain, we can process multiple requests simultaneously and mitigate the bottleneck effect by distributing each oracle request to a random subset of the validators.
+All BandChain validators have an additional responsibility other than voting and proposing new blocks. That is submitting reports for incoming requests. However, asking all validators to retrieve results and waiting for their reports for every request is time inefficient, since this would become a single queue for requests bottlenecking the whole system of BandChain. Since there are many validators on BandChain, we can process multiple requests simultaneously and mitigate the bottleneck effect by distributing each request to a random subset of the validators.
 
-The randomized selection is based on the voting power of validators. The underlying reason is the same as that of Proof-of-Stake concept. Validators with higher voting powers are those that have staked more BAND token. Due to the higher commitment to risks, they are incentivized to be good actors and to deliver the correct oracle results within the expected time interval.
+The randomized selection is based on the voting power of validators. The underlying reason is the same as that of Proof-of-Stake concept. Validators with higher voting powers are those that have staked more BAND token. Due to the higher commitment to risks, they are incentivized to be good actors and to deliver the correct results within the expected time interval.
 
-Those with lower voting power have less risk exposure and thus are generally less incentivized to be a good actor as they do not have much to lose. Nevertheless, we still want every validator to have a chance in participating in the oracle retrieving result task. Otherwise, the platform would be centralized around few validators with high voting powers, undermining the very goal of any blockchain -- decentralization.
+Those with lower voting power have less risk exposure and thus are generally less incentivized to be a good actor as they do not have much to lose. Nevertheless, we still want every validator to have a chance in participating in the retrieving result task. Otherwise, the platform would be centralized around few validators with high voting powers, undermining the very goal of any blockchain -- decentralization.
 
-Therefore, when determining which algorithm to use in selecting the validators to respond to an oracle data request, there are two main characteristics that we have incorporated:
+Therefore, when determining which algorithm to use in selecting the validators to respond to a data request, there are two main characteristics that we have incorporated:
 
 1. A validator with a higher voting power should have a higher chance of being chosen than one with a lower voting power
 2. Every validator should still have a chance to be selected
@@ -19,7 +19,7 @@ From the pool of all validators, we have to select a specific set of validators 
 
 ### Random Number and Seed Generation
 
-As with most random number generator, our number generation proces require the use of a seed. In this specific case, our seed comprises of:
+As with most random number generator, our number generation process require the use of a seed. In this specific case, our seed comprises of:
 
 - A list of `blockHashes`
 - The `requestID` of the request the validators are being chosen for
