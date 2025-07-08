@@ -52,7 +52,7 @@ An example is shown below:
 name = "hello-world"
 
 version = "0.1.0"
-authors = ["Band Protocol <dev@bandprotocol.com>"]
+authors = ["Band <dev@bandprotocol.com>"]
 edition = "2018"
 
 [lib]

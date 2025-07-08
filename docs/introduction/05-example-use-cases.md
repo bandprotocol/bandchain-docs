@@ -8,7 +8,7 @@ As this trend continues to propagate, the need for stronger decentralization and
 
 With the next major upgrade of our Standard Dataset, we will be adding a new mechanism that will allow anyone to send price update transactions to our data contract themselves, all secured and verified by our lite client verification architecture and a challenge mechanism.
 
-![](https://i.imgur.com/gDL6llY.png)
+![Verification Architecture](/img/Verification_Architecture.png)
 
 ## Verifiable Random Number Generators
 
@@ -24,7 +24,7 @@ By providing a tamper-proof method of generating unpredictable yet verifiably ra
 
 This feature is currently in active development and we will have much more to share on this soon.
 
-![](https://i.imgur.com/GzCvPyS.png)
+![Verifiable Random Number Generators](/img/Verifiable_Random_Number_Generators.png)
 
 ## Cross Chain Communication
 
@@ -34,4 +34,4 @@ We believe that data feeds provider such as Band will not only be useful within 
 
 This can be in the form of verifying token transfer transactions when bridging assets across chain, relaying transaction between chain, or any other arbitrary number of data or actions that needed to be tranasferred across networks.
 
-![](https://i.imgur.com/QitF6gv.png)
+![Bridging Assets](/img/Bridging_Assets.png)
