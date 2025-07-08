@@ -22,6 +22,6 @@ This guide includes full instructions for joining the mainnet either as an archi
 
 ## Hardware Requirements
 
-You have to have at least 32 GB of RAM and 4 CPU Cores to run a node in BandChain Laozi mainnet.
+You have to have at least 32 GB of RAM and 8 CPU Cores to run a node in BandChain Laozi mainnet.
 
 **Note:** Storage size for validators will depend on the level of pruning.
