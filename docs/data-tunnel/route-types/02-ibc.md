@@ -1,7 +1,5 @@
 # IBC Route
 
-> This route type is currently only available on BandChain v3 testnet.
-
 ## Overview
 
 The **IBC Route** is one of the tunnel routes used to transmit tunnel packet data from **BandChain** to other **Cosmos SDK-based blockchains**. To utilize this route, consumers have two options:

@@ -17,9 +17,11 @@ This guide includes full instructions for joining the mainnet either as an archi
   - [Snapshot - HighStakes](./02-installation.mdx#step-3-sync-with-the-network)
 - [Setup daemon service](./02-installation.mdx#step-4-setup-daemon-service)
 - [Setup Yoda](./02-installation.mdx#step-5-setup-yoda)
+- [Setup Bothan](./02-installation.mdx#step-6-setup-bothan)
+- [Setup Grogu](./02-installation.mdx#step-7-setup-grogu)
 
 ## Hardware Requirements
 
-You have to have at least 32 GB of RAM and 4 CPU Cores to run a node in BandChain Laozi mainnet.
+You have to have at least 32 GB of RAM and 8 CPU Cores to run a node in BandChain Laozi mainnet.
 
 **Note:** Storage size for validators will depend on the level of pruning.

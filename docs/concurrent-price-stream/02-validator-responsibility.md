@@ -31,4 +31,4 @@ message MsgSubmitSignalPrices {
 }
 ```
 
-Band Protocol does not dictate how validators should obtain the raw price data. However, the Band Protocol team provides an open-source reference implementation called [Grogu and Bothan](../node-validators/grogu-and-bothan). Validators are required to disclose their methods for obtaining price data for each symbol. It is the responsibility of Band Protocol token holders to choose validators based on these disclosures, ensuring the quality of the data is maintained.
+Band does not dictate how validators should obtain the raw price data. However, the Band team provides an open-source reference implementation called [Grogu and Bothan](../node-validators/grogu-and-bothan). Validators are required to disclose their methods for obtaining price data for each symbol. It is the responsibility of Band token holders to choose validators based on these disclosures, ensuring the quality of the data is maintained.

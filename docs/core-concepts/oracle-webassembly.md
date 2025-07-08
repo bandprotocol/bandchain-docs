@@ -1,6 +1,6 @@
 # Oracle WebAssembly (Owasm)
 
-Oracle WebAssembly, or Owasm for short, is Band Protocol's Domain Specific Language (DSL) on top of the Rust programing language for writing [data scripts](/develop/custom-scripts/oracle-script/introduction) to be used in the BandChain ecosystem. The Owasm library consists of two primary modules: `owasm/oei` and `owasm/ext`.
+Oracle WebAssembly, or Owasm for short, is Band's Domain Specific Language (DSL) on top of the Rust programing language for writing [data scripts](/develop/custom-scripts/data-script/introduction) to be used in the BandChain ecosystem. The Owasm library consists of two primary modules: `owasm/oei` and `owasm/ext`.
 
 - **Owasm/OEI** - The OEI modules defines a set of functions that are part of the Owasm Environment Interface. These functions are then accessible to a data script during its execution. The complete list of functions and implementation can be found [here](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/oei/mod.rs).
 - **Owasm/Ext** - The Owasm extension module provides a convenient way to write data scripts that connect to various public APIs. Examples of these are functions to calculate the mean, median, and majority values from the validator's reported results, which can be used during the aggregation phase of a data script. The full list of functions and its implementation can be found [here](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/ext/mod.rs).

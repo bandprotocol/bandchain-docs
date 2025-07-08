@@ -10,7 +10,7 @@ This guide serves as a quick reference on how to request and receive data from B
 
 There are two main components on the BandChain in the requesting process:
 
-- [Data script](/develop/custom-scripts/oracle-script/introduction)
+- [Data script](/develop/custom-scripts/data-script/introduction)
 - [Data source](/develop/custom-scripts/data-source/introduction)
 
 For requesting data from BandChain on the smart contract, you have to deploy both of them in the BandChain first so that your smart contract can specify the `oracle_script_id` when sending the request.

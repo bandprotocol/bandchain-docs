@@ -52,7 +52,7 @@ An example is shown below:
 name = "hello-world"
 
 version = "0.1.0"
-authors = ["Band Protocol <dev@bandprotocol.com>"]
+authors = ["Band <dev@bandprotocol.com>"]
 edition = "2018"
 
 [lib]
@@ -66,7 +66,7 @@ obi = { version = "0.0.2" }
 
 ### Writing the Data Script
 
-As mentioned in the [introduction](/develop/custom-scripts/oracle-script/introduction), a data script execution flow can
+As mentioned in the [introduction](/develop/custom-scripts/data-script/introduction), a data script execution flow can
 be categorized into two main phases, the preparation phase and the execution phase. However, we also do need to define
 the data scripts input and outputs.
 

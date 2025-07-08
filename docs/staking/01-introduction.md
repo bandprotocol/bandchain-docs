@@ -10,7 +10,7 @@ Validators are required to operate and maintain a software referred to as a node
 
 There must be some penalty imposed on the validators for any intentional or unintentional deviation from the sanctioned protocol. Some evidence is immediately admissible, such as a double-sign at the same height and round, or a violation of “prevote-the-lock” (a rule of the Tendermint consensus protocol). Such evidence will result in the validator losing its good standing and its bonded atoms as well its proportionate share of tokens in the reserve pool – collectively called its “stake” – will get slashed.
 
-The slashing mechanism is a fundamental component of PoS protocols, including the Band Protocol. It acts as a preventive measure against malicious activities and violations within the network. Validators, by staking their BAND tokens, are motivated to operate in the best interest of the network. However, if they contravene these expectations, they stand to lose a part or all of their staked tokens
+The slashing mechanism is a fundamental component of PoS protocols, including the Band. It acts as a preventive measure against malicious activities and violations within the network. Validators, by staking their BAND tokens, are motivated to operate in the best interest of the network. However, if they contravene these expectations, they stand to lose a part or all of their staked tokens
 
 There are two primary conditions under which a validator can get slashed.
 
@@ -18,13 +18,13 @@ There are two primary conditions under which a validator can get slashed.
 
 Double signing refers to the act of a validator signing two blocks at the same height on two different chains. This is considered a severe violation of the network protocol, and it can cause instability and uncertainty in the blockchain.
 
-To deter this, Band Protocol imposes a significant penalty. If a validator is caught double signing, they face a slashing penalty of 5% of their staked and delegated BAND tokens.
+To deter this, Band imposes a significant penalty. If a validator is caught double signing, they face a slashing penalty of 5% of their staked and delegated BAND tokens.
 
 What's critical to understand is that the penalty isn't limited to validators. If you've delegated your BAND tokens to a validator, and they engage in double signing, your staked tokens are also at risk. The 5% penalty also applies to the BAND tokens you've staked with that validator.
 
 #### 2. Downtime:
 
-A robust and reliable network necessitates active and consistent participation from validators. Validators in the Band Protocol have a duty to be online and operational to validate transactions and add new blocks to the blockchain.
+A robust and reliable network necessitates active and consistent participation from validators. Validators in the Band have a duty to be online and operational to validate transactions and add new blocks to the blockchain.
 
 If a validator is offline and misses a certain number of blocks, in this case, 30,000 blocks, they face a downtime penalty. A slashing penalty of 0.01% is imposed, and the validator is put into **jail**. This means they are prevented from signing any further blocks until they can prove they're back online and operational.
 
