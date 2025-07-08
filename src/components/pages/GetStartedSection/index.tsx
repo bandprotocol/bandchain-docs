@@ -5,14 +5,14 @@ import Card, { CardItem } from '../../Card'
 const FeatureList: CardItem[] = [
   {
     title: 'Introduction to BandChain',
-    iconPath: require('@site/static/img/icon/Introduction.png').default,
+    iconPath: require('@site/static/img/icon/introduction.png').default,
     description: <>High-level overview of the BandChain</>,
     to: '/introduction/overview',
     target: '_self',
   },
   {
     title: 'Core Concepts',
-    iconPath: require('@site/static/img/icon/Core_Concepts.png').default,
+    iconPath: require('@site/static/img/icon/core-concepts.png').default,
     description: (
       <>Learn about the core concepts of BandChain, including tokenomics, gas and fees, and more.</>
     ),
@@ -21,7 +21,7 @@ const FeatureList: CardItem[] = [
   },
   {
     title: 'Developer Guides',
-    iconPath: require('@site/static/img/icon/Developer_Guides.png').default,
+    iconPath: require('@site/static/img/icon/developer-guides.png').default,
     description: (
       <>
         Learn how to use Band's integration tools to integrate Band's data into your applications.
@@ -32,7 +32,7 @@ const FeatureList: CardItem[] = [
   },
   {
     title: 'Node & Validators',
-    iconPath: require('@site/static/img/icon/Validators.png').default,
+    iconPath: require('@site/static/img/icon/validators.png').default,
     description: <>Learn how to run a BandChain node and become a validator to earn rewards.</>,
     to: '/node-validators/run-node/joining-mainnet/getting-started',
     target: '_self',
