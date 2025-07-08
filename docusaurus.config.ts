@@ -11,7 +11,7 @@ const config: Config = {
   tagline:
     'Band is a cross-chain data platform that aggregates and connects real-world data and APIs to smart contracts.',
 
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://docs.bandchain.org',
