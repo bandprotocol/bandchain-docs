@@ -21,4 +21,4 @@ Band's flexible design allows developers to **query any data** including real-wo
 - [Telegram](https://t.me/bandprotocol)
 - [Developer Discord](https://discord.bandprotocol.com)
 
-For updates on the Band Protocol team's activities follow us on the [Band Protocol Twitter](https://twitter.com/bandprotocol) account.
+For updates on the Band team's activities follow us on the [X](https://x.com/bandprotocol) account.

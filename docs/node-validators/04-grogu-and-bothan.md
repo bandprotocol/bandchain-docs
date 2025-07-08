@@ -6,22 +6,23 @@ Grogu is a program that is used by BandChain's validator nodes to automatically 
 
 Since a subset of validators who are selected for Price Stream service need to maintain to price of all current feeds by providing price data with a `MsgSubmitSignalPrices` transaction to BandChain for every specified interval to fulfill their duty.
 
-Although the transaction can be sent manually by user, it is not convenient, and would be rather time-consuming. 
-Furthermore, most data providers already have APIs that can be used to query data automatically by another software. 
+Although the transaction can be sent manually by user, it is not convenient, and would be rather time-consuming.
+Furthermore, most data providers already have APIs that can be used to query data automatically by another software.
 Therefore, we have developed [Bothan](#bothan) to help validators to automatically query data from data providers, then Grogu to submit the result to fulfill the Price Stream.
 
 Grogu's execution flow consists of the following steps
+
 1. Query chain on current feeds, validator status and its latest submitted prices.
 2. Get prices of required signals from Bothan.
 3. Calculate on which signals are required to be updated.
 4. Collect price data and store in local pending list.
 5. Pack price data and send to BandChain.
 
-Grogu usually run as a process alongside the main BandChain daemon process. It holds multiple wallet (private key) accounts called a `feeder account`, which is owned by validator account. The feeder account is used to help validator submit 
+Grogu usually run as a process alongside the main BandChain daemon process. It holds multiple wallet (private key) accounts called a `feeder account`, which is owned by validator account. The feeder account is used to help validator submit
 transactions of price data.
 
-The reason of using feeder account instead of validator account is to maintain security of validator's private key. 
-If Grogu's server is compromised, then feeder's private key may be exposed but not validator's private key. 
+The reason of using feeder account instead of validator account is to maintain security of validator's private key.
+If Grogu's server is compromised, then feeder's private key may be exposed but not validator's private key.
 Moreover, most validators use hardware wallets, which is not designed for server that runs 24/7.
 
 ![Grogu's diagram](https://i.imgur.com/FmH2xxH.png)
@@ -59,6 +60,7 @@ Its primary goal is to serve as the go-to price hub and cache for Grogu, reducin
 ## Bothan flow
 
 Bothan's execution flow consists of the following steps
+
 1. Validate and register Bothan registry.
 2. Start each source API workers.
 3. Query all source via REST/Websocket by signals in the registry and update the price.
@@ -75,7 +77,7 @@ If Bothan is requested to provide a signal that is not in the registry, it will 
 
 ### Bothan monitoring
 
-Bothan Monitoring is a dedicated service provided by Band Protocol to ensure the smooth operation and reliability of Bothan. It serves two primary purposes:
+Bothan Monitoring is a dedicated service provided by Band to ensure the smooth operation and reliability of Bothan. It serves two primary purposes:
 
 1. Health Check Monitoring:
    The service continuously tracks the health status of the Bothan program, ensuring that all its components are functioning correctly. This includes monitoring uptime, performance metrics, API connectivity, and the status of all workers interacting with various price data sources.
@@ -83,4 +85,4 @@ Bothan Monitoring is a dedicated service provided by Band Protocol to ensure the
 2. Price Data Tracking:
    Bothan Monitoring also logs and tracks all price data entries processed by Bothan. This ensures that data is being collected, cached, and updated accurately. It provides transparency and accountability by maintaining a detailed record of prices received from different sources and their subsequent updates.
 
-By leveraging Bothan Monitoring, Band Protocol ensures the system is robust, reliable, and capable of delivering accurate price data to users while minimizing downtime and data inconsistencies.
+By leveraging Bothan Monitoring, Band ensures the system is robust, reliable, and capable of delivering accurate price data to users while minimizing downtime and data inconsistencies.
