@@ -92,12 +92,12 @@ Requests a new data based on an existing oracle script. A data request will be a
 
 | Parameter      | Type           | Description                                                                                                                                                |
 | -------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OracleScriptID | int64          | The unique identifier number assigned to the oracle script when it was first registered on Bandchain                                                       |
+| OracleScriptID | int64          | The unique identifier number assigned to the data script when it was first registered on Bandchain                                                       |
 | Sender         | sdk.AccAddress | The address of the message's sender.                                                                                                                       |
-| Calldata       | string         | The data passed over to the oracle script for the script to use during its execution                                                                       |
+| Calldata       | string         | The data passed over to the data script for the script to use during its execution                                                                       |
 | AskCount       | int64          | The number of validators that are requested to respond to this request                                                                                     |
 | MinCount       | int64          | The minimum number of validators necessary for the request to proceed to the execution phase                                                               |
-| ClientID       | string         | the unique identifier of this oracle request, as specified by the client. This same unique ID will be sent back to the requester with the oracle response. |
+| ClientID       | string         | the unique identifier of this data request, as specified by the client. This same unique ID will be sent back to the requester with the response. |
 
 ### MsgReportData
 

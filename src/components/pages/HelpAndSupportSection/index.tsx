@@ -3,7 +3,7 @@ import Card, { CardItem } from '../../Card'
 
 const items: CardItem[] = [
   {
-    title: 'Devloper Discord',
+    title: 'Developer Discord',
     Svg: require('@site/static/img/discord.svg').default,
     description: <>Chat with Band Developers on Discord.</>,
     to: 'https://discord.bandprotocol.com',

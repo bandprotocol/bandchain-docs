@@ -1,6 +1,7 @@
 # Oracle WebAssembly (Owasm)
 
-Oracle WebAssembly, or Owasm for short, is Band's Domain Specific Language (DSL) for writing [oracle scripts](/develop/custom-scripts/oracle-script/introduction) to be used in the BandChain ecosystem.
+Oracle WebAssembly, or Owasm for short, is Band's Domain Specific Language (DSL) for writing [data scripts](/develop/custom-scripts/oracle-script/introduction) to be used in the BandChain ecosystem.
+
 
 ## Owasm Library Structure
 
@@ -9,19 +10,19 @@ The Owasm library is separated into [`owasm-vm`](https://crates.io/crates/owasm-
 
 ### Owasm-vm
 
-The Owasm-vm library implements a wasmer virtual machine runtime and logic for the on-chain execution of oracle scripts.
+The Owasm-vm library implements a wasmer virtual machine runtime and logic for the on-chain execution of data scripts.
 
 ### Owasm-kit
 
 #### Owasm-kit/OEI
 
-The OEI modules defines a set of functions that are part of the Owasm Oracle Environment Interface. These functions are then accessible to an oracle script during its execution.
+The OEI modules defines a set of functions that are part of the Owasm Environment Interface. These functions are then accessible to a data script during its execution.
 
 #### OEI Module Functions
 
 ##### **get_ask_count()**
 
-GetAskCount returns the number of validators asked to work for this oracle query.
+GetAskCount returns the number of validators asked to work for this data query.
 
 Returns:
 
@@ -61,7 +62,7 @@ Returns:
 
 ##### **get_calldata()**
 
-GetCalldata returns the raw calldata as specified when the oracle request is submitted.
+GetCalldata returns the raw calldata as specified when the data request is submitted.
 
 Returns:
 
@@ -69,7 +70,7 @@ Returns:
 
 ##### **save_return_data(&[u8])**
 
-SaveReturnData saves the given data as the result of the oracle execution. Must only be called during execution phase
+SaveReturnData saves the given data as the result of the data execution. Must only be called during execution phase
 and must be called exactly once.
 
 Parameters:
@@ -104,9 +105,9 @@ Returns:
 
 #### Owasm-kit/Ext
 
-The Owasm Extension module provides a convenient way to write oracle scripts that connect to various public APIs.
+The Owasm Extension module provides a convenient way to write data scripts that connect to various public APIs.
 Examples of these are functions to calculate the mean, median, and majority values from the validator's reported results
-, which can be used during the aggregation phase of an oracle script.
+, which can be used during the aggregation phase of a data script.
 
 ##### **load_input\<T\>(i64)**
 
@@ -161,7 +162,7 @@ The full implementation can be found [here](https://github.com/bandprotocol/owas
 
 ## Usage
 
-To illustrate an example usage of the Owasm library, we will be using the example below. The code is based off an oracle script that retrieves the price of a stock.
+To illustrate an example usage of the Owasm library, we will be using the example below. The code is based off a data script that retrieves the price of a stock.
 
 ```rust
 use obi::{OBIDecode, OBIEncode, OBISchema};
@@ -195,13 +196,13 @@ execute_entry_point!(execute_impl);
 
 The script starts off by defining the input and output structs. In this case, the input comprises of the stock ticker (`string`) and the multiplier we want to multiply the stock's price by (`u64`). On the other hand, the output is simply the price of the stock multiplied by the multiplier, returned as a `u64` value.
 
-Once the input and output structs and types have been defined, we move on to define the preparation and execution phases the oracle script, defined by `prepare_impl` and `execute_impl`, respectively.
+Once the input and output structs and types have been defined, we move on to define the preparation and execution phases the data script, defined by `prepare_impl` and `execute_impl`, respectively.
 
-The `prepare_impl` function takes the previously-defined input struct as an argument. The function itself then only peforms one task; calling the [`ask_external_data`](https://github.com/bandprotocol/owasm/blob/a8fed03070b5262b2fb05664f3bd601a352b18cb/packages/kit/src/oei/mod.rs#L49) function in the `oei` module. This call to `ask_external_data` is then caught and ultimately resolved by BandChain through [`exec_env.go`](https://github.com/bandprotocol/chain/blob/43e33ccdd135eab985538454fe3eefd9de82e20f/x/oracle/types/exec_env.go#L89).
+The `prepare_impl` function takes the previously-defined input struct as an argument. The function itself then only performs one task; calling the [`ask_external_data`](https://github.com/bandprotocol/owasm/blob/a8fed03070b5262b2fb05664f3bd601a352b18cb/packages/kit/src/oei/mod.rs#L49) function in the `oei` module. This call to `ask_external_data` is then caught and ultimately resolved by BandChain through [`exec_env.go`](https://github.com/bandprotocol/chain/blob/43e33ccdd135eab985538454fe3eefd9de82e20f/x/oracle/types/exec_env.go#L89).
 
 The `execute_impl` function takes in the input type as an argument as well, but also returns the output struct type, as one might expect. It then starts by computing the final value of the request through calling [`load_average`](https://github.com/bandprotocol/bandchain/blob/master/owasm/src/ext/mod.rs#L21) function from the `ext` module. It then proceeds to use the computed average to construct and return the appropriate output struct.
 
-Once we have defined the functions for both stages of the oracle script's execution, we need to pass in the appriopriate input values and actually make the function calls. To do so, oracle script writer can use our macros defined in [`macros.rs`](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/macros.rs), also shown below. The aim of these macros is to reduce the load of the script writer by handling the work of retrieving the calldata, deserializing it, and using it to construct the appropriate input struct for them.
+Once we have defined the functions for both stages of the data script's execution, we need to pass in the appropriate input values and actually make the function calls. To do so, data script writer can use our macros defined in [`macros.rs`](https://github.com/bandprotocol/owasm/blob/master/packages/kit/src/macros.rs), also shown below. The aim of these macros is to reduce the load of the script writer by handling the work of retrieving the calldata, deserializing it, and using it to construct the appropriate input struct for them.
 
 ```rust
 #[macro_export]
@@ -229,4 +230,4 @@ macro_rules! execute_entry_point {
 }
 ```
 
-The last two lines of the oracle script above shows the macros in action.
+The last two lines of the data script above shows the macros in action.

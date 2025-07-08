@@ -43,7 +43,7 @@ CCUSGgAAAAIAAAADQlRDAAAAA0VUSAAAAAAAAABkGAQgAyoRZnJvbV9iYW5kY2hhaW4uanM40IYDQOCn
 
 ## validate
 
-Validates the message in a basic manner to ensure that there are no invarient values stored in the message instance. If message's validation fails, it will throw the exception.
+Validates the message in a basic manner to ensure that there are no invariant values stored in the message instance. If message's validation fails, it will throw the exception.
 
 **Example**
 

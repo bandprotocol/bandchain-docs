@@ -1,17 +1,17 @@
 # Deployment
 
-On BandChain, an oracle script can be registered into the system by anyone. This is done through the registrant sending
+On BandChain, a data script can be registered into the system by anyone. This is done through the registrant sending
 a [`MsgCreateOracleScript`](/core-concepts/protocol-messages#msgcreateoraclescript) message to the chain.
 
-A `MsgCreateOracleScript` message contains various parameters of the oracle script that is to be registered. These
+A `MsgCreateOracleScript` message contains various parameters of the data script that is to be registered. These
 parameters include:
 
-- `name`: Name of the oracle script.
-- `description`: A description of the oracle script.
-- `schema`: The oracle script's schema which details the inputs and outputs of this oracle script.
-- `source_code_url`: The URL for the source code of the oracle script.
-- `code`: The Owasm-compiled binary of the oracle script.
-- `owner`: The owner of the oracle script. The owner will have edit rights. If omitted, the oracle script's parameters
+- `name`: Name of the data script.
+- `description`: A description of the data script.
+- `schema`: The data script's schema which details the inputs and outputs of this data script.
+- `source_code_url`: The URL for the source code of the data script.
+- `code`: The Owasm-compiled binary of the data script.
+- `owner`: The owner of the data script. The owner will have edit rights. If omitted, the data script's parameters
   will no longer be able to be edited after being registered.
 - `sender`: The message sender account.
 
@@ -49,8 +49,8 @@ async function createOracleScript() {
   feeCoin.setAmount('0')
 
   const requestMessage = new Message.MsgCreateOracleScript(
-    'Hello World!', // oracle script name
-    code, // oracle script code
+    'Hello World!', // data script name
+    code, // data script code
     sender, // owner
     sender, // sender
     '', // description
@@ -156,8 +156,8 @@ if __name__ == "__main__":
 
 ```
 
-After a successful transaction broadcast, the newly created oracle script ID can be found in the response json.
-The registrant can also view the created oracle script details on [CosmoScan](https://cosmoscan.io/oracle-scripts/). An
+After a successful transaction broadcast, the newly created data script ID can be found in the response json.
+The registrant can also view the created data script details on [CosmoScan](https://cosmoscan.io/oracle-scripts/). An
 example of a successful transaction will return a response similar to the one shown below.
 
 ```json

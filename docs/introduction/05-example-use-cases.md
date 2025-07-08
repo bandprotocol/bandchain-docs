@@ -2,7 +2,7 @@
 
 ## Decentralized Standard Price Reference
 
-Since the initial launch of the Standrd Dataset back in October 2020, we have seen an exponential increase in adoption and usage of Band's price data across numerous chains and sectors.
+Since the initial launch of the Standard Dataset back in October 2020, we have seen an exponential increase in adoption and usage of Band's price data across numerous chains and sectors.
 
 As this trend continues to propagate, the need for stronger decentralization and robustness of our price feed becomes ever more crucial.
 
@@ -30,7 +30,7 @@ This feature is currently in active development and we will have much more to sh
 
 BandChain's infrastructure design decision to be cross-chain compatible and operate on independent blockchain prepares its role as a key player in the ever-growing cross-chain and multi-chain narratives.
 
-We believe that data feeds provider such as Band will not only be useful wihtin the context of a single destination chain, but also will a core infrastructure in relaying information and faciliating communication between two independent chain.
+We believe that data feeds provider such as Band will not only be useful within the context of a single destination chain, but also will a core infrastructure in relaying information and facilitating communication between two independent chain.
 
 This can be in the form of verifying token transfer transactions when bridging assets across chain, relaying transaction between chain, or any other arbitrary number of data or actions that needed to be tranasferred across networks.
 

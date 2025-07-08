@@ -6,7 +6,7 @@ OBI is designed with the following properties in mind:
 
 - **Compactness**: OBI schema will be stored on-chain and passed around between blockchains. Thus, it is essential to keep the size of the schema specification tiniest.
 - **Simplicity & Portability**: As a blockchain-agnostic protocol, OBI serialization and deserialization must be easy to implement in any environment. Consequently, complex platform-specific features are not supported.
-- **Readability**: Lastly, OBI is intended to be used as a communication tool between oracle script creators and smart contract developers. It must be intuitive for readers to understand the OBI underlying objects from reading the schema.
+- **Readability**: Lastly, OBI is intended to be used as a communication tool between data script creators and smart contract developers. It must be intuitive for readers to understand the OBI underlying objects from reading the schema.
 
 ## Specification
 
@@ -69,7 +69,7 @@ let encode (s : indv_schema) (o : object) :=
 
 ## OBI Schema Examples
 
-Below is an example OBI schema of an oracle script to fetch a cryptocurrency price, which is then multiplied by a specific multiplier. The OBI itself schema consists of two internal schemas, one for the inputs to the oracle script and the other for the output.
+Below is an example OBI schema of a data script to fetch a cryptocurrency price, which is then multiplied by a specific multiplier. The OBI itself schema consists of two internal schemas, one for the inputs to the data script and the other for the output.
 
 - The input consists with two fields: a string symbol and a u64 multiplier.
 - The output consists with two fields: a u64 final price and a vector of struct each has string name and u64 timestamp.

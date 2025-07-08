@@ -38,7 +38,7 @@ The final result is transmitted back to the main-chain’s VRFProvider contract 
 
 ### Band VRF on EVM
 
-From the protocol flow, we can catagorize the EVM contracts into two parts: the Band-operated contracts and the consumer (third-party) contract. We provide detailed explanations regarding the consumer contract in the VRF Intergration section. In this section, we will focus on the two Band-operated contracts: Bridge and VRFProvider.
+From the protocol flow, we can catagorize the EVM contracts into two parts: the Band-operated contracts and the consumer (third-party) contract. We provide detailed explanations regarding the consumer contract in the VRF Integration section. In this section, we will focus on the two Band-operated contracts: Bridge and VRFProvider.
 
 #### Bridge
 
@@ -106,7 +106,7 @@ The VRFProvider contract is a contract that is used for tracking all VRF request
     // A reference to the Bridge contract
     IBridge public bridge;
 
-    // An id of the VRF oracle script on Bandchain
+    // An id of the VRF data script on Bandchain
     uint64 public oracleScriptID;
 
     // A minimum number of validators needed to resolve requests.
@@ -174,4 +174,4 @@ The data source is an off-chain execution script that is used to call external A
 
 - [Band VRF Whitepaper](https://bandprotocol.com/static/Band-VRF-Whitepaper.pdf)
 - [Band Data Script docs](/develop/custom-scripts/oracle-script/introduction)
-- [Band data source docs](/develop/custom-scripts/data-source/introduction)
+- [Band Data Source docs](/develop/custom-scripts/data-source/introduction)

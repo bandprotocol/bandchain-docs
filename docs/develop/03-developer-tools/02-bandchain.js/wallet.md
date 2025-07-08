@@ -184,7 +184,7 @@ console.log(priv.sign(Buffer.from('test message')).toString('hex'))
 
 ## PublicKey
 
-Class for wraping verify Key, which is a byte array of public key, used for signature verification, and generate bech32-encoded address.
+Class for wrapping verify Key, which is a byte array of public key, used for signature verification, and generate bech32-encoded address.
 
 ### fromAccBech32(bech)
 
@@ -505,7 +505,7 @@ true
 
 ## Address
 
-Class for wraping Address. Adding method to encode/decode to Bech32 format.
+Class for wrapping Address. Adding method to encode/decode to Bech32 format.
 
 ### fromAccBech32(bech)
 
