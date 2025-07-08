@@ -27,25 +27,40 @@ bandd tx staking create-validator \
 
 Registered validators can be found on [CosmoScan](https://cosmoscan.io/validators).
 
-## Step 3: Register Reporters and Become Data Provider
+## Step 3: Register Reporters & Feeders and Become Data Provider
 
-Yoda contains multiple reporters. You will need to register the reporters to help the validator submit transactions of reporting data.
+You will need to register Reporters and Feeders to help the validator submit transactions of reporting data.
 
-Firstly, reporter accounts must be created on BandChain by supplying a small amount of BAND tokens.
+Firstly, reporter and feeder accounts must be created on BandChain by supplying a small amount of BAND tokens.
 
 ```bash
 # Send 1uband from a wallet to each reporter.
-bandd tx multi-send 1uband $(yoda keys list -a) \
-  --from $WALLET_NAME \
-  --chain-id $CHAIN_ID
+bandd tx bank multi-send $WALLET_NAME $(yoda keys list -a) 1uband \
+  --chain-id $CHAIN_ID \
+  --gas 400000
 ```
 
-Secondly, register reporters to the validator, so that data requests for validator can be assigned to the reporters.
+```bash
+# Send 1uband from a wallet to each feeder.
+bandd tx bank multi-send $WALLET_NAME $(grogu keys list -a) 1uband \
+  --chain-id $CHAIN_ID \
+  --gas 400000
+```
+
+Secondly, register reporters and feeders to the validator, so that they can send transactions for the validator.
 
 ```bash
 bandd tx oracle add-reporters $(yoda keys list -a) \
   --from $WALLET_NAME \
-  --chain-id $CHAIN_ID
+  --chain-id $CHAIN_ID \
+  --gas 400000
+```
+
+```bash
+bandd tx feeds add-feeders $(grogu keys list -a) \
+  --from $WALLET_NAME \
+  --chain-id $CHAIN_ID \
+  --gas 400000
 ```
 
 Finally, activate the validator to become a data provider

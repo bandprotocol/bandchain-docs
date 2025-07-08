@@ -14,7 +14,7 @@ This library is only implemented on Python.
 
 ## System Requirements
 
-- Recommended Python version: `3.8.x` or below
+- Recommended Python version: `3.11.x` or below
 - MacOS, Windows (including WSL), and Linux are supported
 
 ## Installation

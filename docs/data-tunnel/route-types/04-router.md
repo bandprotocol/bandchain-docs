@@ -1,7 +1,5 @@
 # Router Route
 
-> This route type is coming soon.
-
 ## Overview
 
 The **Router Route** leverages IBC hooks and the Router Bridge Protocol to transmit packet data from **BandChain** to other EVM-compatible chains. This enables developers to create smart contracts that receive real-time price data from BandChain and seamlessly integrate it into their applications by utilizing both BandChain price data and the Router Protocol bridge.
@@ -37,7 +35,7 @@ bandd tx tunnel router [tunnel-id] [destination-chain-id] [destination-contract-
 
 Since this route uses the Router Bridge Protocol, users must deposit **route tokens** into the Band Router integration contract on the Router chain. This is done by executing the `RegisterFeePayerOrFund` function with the `band_fee_payer` parameter and providing funds.
 
-- The **minimum deposit** required to register a fee payer is **10,000,000,000 uRoute**.
+- The **minimum deposit** required to register a fee payer is **10,000 Route**.
 - Users can add more funds by sending a transaction with an empty `band_fee_payer` parameter.
 
 Additionally, users must pay a base fee by sending `uband` to the Tunnel Fee Payer address.
