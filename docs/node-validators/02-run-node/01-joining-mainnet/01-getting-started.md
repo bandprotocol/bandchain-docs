@@ -17,6 +17,8 @@ This guide includes full instructions for joining the mainnet either as an archi
   - [Snapshot - HighStakes](./02-installation.mdx#step-3-sync-with-the-network)
 - [Setup daemon service](./02-installation.mdx#step-4-setup-daemon-service)
 - [Setup Yoda](./02-installation.mdx#step-5-setup-yoda)
+- [Setup Bothan](./02-installation.mdx#step-6-setup-bothan)
+- [Setup Grogu](./02-installation.mdx#step-7-setup-grogu)
 
 ## Hardware Requirements
 

@@ -35,12 +35,12 @@ sudo apt-get upgrade -y && \
 sudo apt-get install -y build-essential curl wget jq
 ```
 
-- Install Go 1.19.1
+- Install Go 1.24.2
 
 ```bash
-# Install Go 1.19.1
-wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
-tar xf go1.19.1.linux-amd64.tar.gz
+# Install Go 1.24.2
+wget https://go.dev/dl/go1.24.2.linux-amd64.tar.gz
+tar xf go1.24.2.linux-amd64.tar.gz
 sudo mv go /usr/local/go
 
 # Set Go path to $PATH variable
@@ -54,10 +54,10 @@ Go binary should be at /usr/local/go/bin and any executable compiled by go insta
 
 ```bash
 cd ~
-# Clone BandChain Laozi version v2.5.4
+# Clone BandChain Laozi version v3.0.1
 git clone https://github.com/bandprotocol/chain
 cd chain
-git fetch && git checkout v2.5.4
+git fetch && git checkout v3.0.1
 
 # Install binaries to $GOPATH/bin
 make install
@@ -137,7 +137,7 @@ Install Cosmovisor and provide bandd binary to Cosmovisor
 
 ```bash
 # Install Cosmovisor
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
+go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.5.0
 
 # Setup folder and provide bandd binary for Cosmovisor Genesis
 mkdir -p $HOME/.band/cosmovisor/genesis/bin
@@ -145,8 +145,8 @@ mkdir -p $HOME/.band/cosmovisor/upgrades
 cp $HOME/go/bin/bandd $HOME/.band/cosmovisor/genesis/bin
 
 # Setup folder and provide bandd binary for Cosmovisor Upgrades
-mkdir -p $HOME/.band/cosmovisor/upgrades/v2_5/bin
-cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v2_5/bin
+mkdir -p $HOME/.band/cosmovisor/upgrades/v3/bin
+cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3/bin
 ```
 
 ## Step 3: Sync with the network
@@ -176,6 +176,7 @@ You can see the detail of genesis and each upgrade in the table below.
 | `genesis`    | `0`            | -                                                                           | `1.16.7`   | `v2.3.6`      | `~/.band/cosmovisor/genesis/bin`       |
 | `v2_4`       | `11525000`     | [link](https://medium.com/bandprotocol/bandchain-v2-4-upgrade-70dbb896618c) | `1.19.1`   | `v2.4.1`      | `~/.band/cosmovisor/upgrades/v2_4/bin` |
 | `v2_5`       | `16562500`     | [link](https://www.cosmoscan.io/proposal/11)                                | `1.19.1`   | `v2.5.4`      | `~/.band/cosmovisor/upgrades/v2_5/bin` |
+| `v3`         | `42051400`     | [link](https://www.cosmoscan.io/proposal/14)                                | `1.24.2`   | `v3.0.1`      | `~/.band/cosmovisor/upgrades/v3/bin`   |
 
 Before doing the next step, you have to build and provide each correct bandd binary version to Cosmovisor in the binary path so that Cosmovisor can automatically switch it correctly.
 
@@ -192,7 +193,7 @@ State Sync is an efficient and fast way to bootstrap a new node, and it works by
 # Get trust height and trust hash
 
 LATEST_HEIGHT=$(curl -s http://rpc.laozi1.bandchain.org/block | jq -r .result.block.header.height);
-TRUST_HEIGHT=$(($LATEST_HEIGHT-50000))
+TRUST_HEIGHT=$(($LATEST_HEIGHT-60000))
 TRUST_HASH=$(curl -s "http://rpc.laozi1.bandchain.org/block?height=$TRUST_HEIGHT" | jq -r .result.block_id.hash)
 
 # show trust height and trust hash
@@ -268,7 +269,7 @@ Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="UNSAFE_SKIP_BACKUP=true"
 User=$USERNAME
-ExecStart=${HOME}/go/bin/cosmovisor start
+ExecStart=${HOME}/go/bin/cosmovisor run start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
@@ -315,8 +316,8 @@ Before setting up Yoda, the Lambda function executor need to be set up to execut
 To check Yoda version, use the following command.
 
 ```bash
-yoda version
-# v2.5.4
+yoda3 version
+# v3.0.1
 ```
 
 ### Step 5.2: Set the Yoda configurations
@@ -324,30 +325,30 @@ yoda version
 Use the command below to config your Yoda, replacing `$VARIABLES` with their actual values.
 
 ```bash
-rm -rf ~/.yoda # clear old config if exist
-yoda config chain-id $CHAIN_ID
-yoda config node http://localhost:26657
-yoda config broadcast-timeout "5m"
-yoda config rpc-poll-interval "1s"
-yoda config max-try 5
-yoda config validator $(bandd keys show $WALLET_NAME -a --bech val)
+rm -rf ~/.yoda3 # clear old config if exist
+yoda3 config chain-id $CHAIN_ID
+yoda3 config node http://localhost:26657
+yoda3 config broadcast-timeout "5m"
+yoda3 config rpc-poll-interval "1s"
+yoda3 config max-try 5
+yoda3 config validator $(bandd keys show $WALLET_NAME -a --bech val)
 ```
 
 Then, add multiple reporter accounts to allow Yoda to submit transactions concurrently.
 
 ```bash
-yoda keys add REPORTER_1
-yoda keys add REPORTER_2
-yoda keys add REPORTER_3
-yoda keys add REPORTER_4
-yoda keys add REPORTER_5
+yoda3 keys add REPORTER_1
+yoda3 keys add REPORTER_2
+yoda3 keys add REPORTER_3
+yoda3 keys add REPORTER_4
+yoda3 keys add REPORTER_5
 ```
 
 Lastly, configure the Lambda Executor endpoint to helps running data source scripts and return results to Yoda. More details about the executor can be found in this [section](/develop/developer-guides/remote-data-source-executor).
 
 ```bash
 export EXECUTOR_URL=<YOUR_EXECUTOR_URL>
-yoda config executor "rest:${EXECUTOR_URL}?timeout=10s"
+yoda3 config executor "rest:${EXECUTOR_URL}?timeout=10s"
 ```
 
 ### Step 5.3: Start Yoda
@@ -355,16 +356,16 @@ yoda config executor "rest:${EXECUTOR_URL}?timeout=10s"
 To start Yoda, it's also recommended to use `systemctl`.
 
 ```bash
-# Write yoda service to /etc/systemd/system/yoda.service
+# Write yoda service to /etc/systemd/system/yoda3.service
 export USERNAME=$(whoami)
-sudo -E bash -c 'cat << EOF > /etc/systemd/system/yoda.service
+sudo -E bash -c 'cat << EOF > /etc/systemd/system/yoda3.service
 [Unit]
 Description=Yoda Daemon
 After=network-online.target
 
 [Service]
 User=$USERNAME
-ExecStart=/home/$USERNAME/go/bin/yoda run
+ExecStart=/home/$USERNAME/go/bin/yoda3 run
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
@@ -377,21 +378,156 @@ EOF'
 The first time running Yoda, you will need to register and start `yoda` services by running the following commands.
 
 ```bash
-# Register yoda to systemctl
-sudo systemctl enable yoda
-# Start yoda daemon
-sudo systemctl start yoda
+# Register yoda3 to systemctl
+sudo systemctl enable yoda3
+# Start yoda3 daemon
+sudo systemctl start yoda3
 ```
 
-After `yoda` service has been started, logs can be queried by running `journalctl -u yoda.service -f` command. The log should be similar to the following log example below. Once verified, you can stop tailing the log by typing `Control-C`.
+After `yoda3` service has been started, logs can be queried by running `journalctl -u yoda3.service -f` command. The log should be similar to the following log example below. Once verified, you can stop tailing the log by typing `Control-C`.
 
 ```bash
 ... systemd[...]: Started Yoda Daemon.
-... yoda[...]: I[...] ⭐  Creating HTTP client with node URI: tcp://localhost:26657
-... yoda[...]: I[...] 🚀  Starting WebSocket subscriber
-... yoda[...]: I[...] 👂  Subscribing to events with query: tm.event = 'Tx'...
+... yoda3[...]: I[...] ⭐  Creating HTTP client with node URI: tcp://localhost:26657
+... yoda3[...]: I[...] 🚀  Starting WebSocket subscriber
+... yoda3[...]: I[...] 👂  Subscribing to events with query: tm.event = 'Tx'...
 ```
 
-### Step 5.4: Wait for the latest blocks to be synced
+## Step 6: Setup Bothan
+
+:::info Pre-requisite Readings
+
+- [Bothan](/node-validators/grogu-and-bothan#bothan)
+
+:::
+
+Based on design, validators need to submit prices based on current feeds interval. However, the method is quite tedios. Therefore, we have developed an application called Bothan, which is a price discovery application that help validators automatically query price from multiple sources, and process it to match with BandChain standard.
+
+### Step 6.1: Install docker
+
+[Install Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+### Step 6.2: Download config file
+
+🌍 For Non-US regions:
+
+```bash
+mkdir -p $HOME/.bothan && wget -O $HOME/.bothan/config.toml https://raw.githubusercontent.com/bandprotocol/launch/refs/heads/master/laozi-mainnet/bothan-config.toml
+```
+
+🇺🇸 For US region:
+
+```bash
+mkdir -p $HOME/.bothan && wget -O $HOME/.bothan/config.toml https://raw.githubusercontent.com/bandprotocol/launch/master/laozi-mainnet/bothan-config-us.toml
+```
+
+### Step 6.3: Run Bothan docker
+
+```bash
+sudo docker pull bandprotocol/bothan-api:v0.0.1
+CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 50051:50051 bandprotocol/bothan-api:v0.0.1)
+```
+
+### Step 6.4: Save your Private Key
+
+To export your Bothan private key, run the following command:
+
+```bash
+sudo docker exec -it $CONTAINER_ID /bin/sh -c "bothan key export"
+```
+
+This will display your private key. Make sure to save it in a secure location, as it is essential for recovering your key using the bothan key import command.
+
+### Step 6.5: Send your Public Key to Monitoring
+
+To retrieve your public key, run this command:
+
+```bash
+sudo docker exec -it $CONTAINER_ID /bin/sh -c "bothan key display"
+```
+
+After retrieving your public key, submit it [via this form](https://docs.google.com/forms/d/e/1FAIpQLSc0yk3wbZzD8Id-ndhT4SqJXvgPe84Cmq5eaUOJKqCER06GkQ/viewform). Do not share your private key.
+
+## Step 7: Setup Grogu
+
+:::info Pre-requisite Readings
+
+- [Grogu](/node-validators/grogu-and-bothan#grogu)
+
+:::
+
+Based on design, validators need to send a transaction to submit prices based on current feeds interval. The validator should submit prices within a specified timeframe. However, the method is quite tedios. Therefore, we have developed an application called Grogu, which is a bot application that help validators automatically query for current feeds, get prices from price service (Bothan), and submit prices to BandChain, so validators don't have to send the transactions manually.
+
+### Step 7.1: Set the Grogu configurations
+
+Use the command below to config your Grogu, replacing $VARIABLES with their actual values.
+
+```bash
+grogu config chain-id $CHAIN_ID
+grogu config validator $(bandd keys show $WALLET_NAME -a --bech val)
+grogu config rpc-poll-interval "1s"
+grogu config max-try 5
+grogu config broadcast-timeout 30s
+grogu config nodes http://localhost:26657
+```
+
+Then, add multiple feeder accounts to allow Grogu to submit transactions concurrently.
+
+```bash
+grogu keys add FEEDER_1
+grogu keys add FEEDER_2
+grogu keys add FEEDER_3
+grogu keys add FEEDER_4
+grogu keys add FEEDER_5
+```
+
+Lastly, configure Bothan to helps getting prices from sources.
+
+```bash
+grogu config bothan "localhost:50051"
+```
+
+### Step 7.2: Start Grogu
+
+To start Grogu, it's also recommended to use systemctl.
+
+```bash
+# Write grogu service to /etc/systemd/system/grogu.service
+export USERNAME=$(whoami)
+sudo -E bash -c 'cat << EOF > /etc/systemd/system/grogu.service
+[Unit]
+Description=Grogu Daemon
+After=network-online.target
+
+[Service]
+User=$USERNAME
+ExecStart=/home/$USERNAME/go/bin/grogu run
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+EOF'
+```
+
+The first time running Grogu, you will need to register and start grogu services by running the following commands.
+
+```bash
+# Register grogu to systemctl
+sudo systemctl enable grogu
+# Start grogu daemon
+sudo systemctl start grogu
+```
+
+After `grogu` service has been started, logs can be queried by running `journalctl -u grogu.service -f` command. The log should be similar to the following log example below. Once verified, you can stop tailing the log by typing `Control-C`.
+
+```bash
+... systemd[...]: Started Grogu Daemon.
+... grogu[...]: I[...] ⭐  Connecting to Bothan service at localhost:50051
+... grogu[...]: I[...] 🚀  Grogu has started
+```
+
+### Step 8: Wait for the latest blocks to be synced
 
 It is imperative to exercise caution and allow adequate time for the newly started BandChain node to synchronize its blocks until it has reached the latest block. The latest block can be verified on [CosmoScan](https://cosmoscan.io/blocks).
