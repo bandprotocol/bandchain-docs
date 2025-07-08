@@ -7,7 +7,7 @@ The primary function of the data feeds is as follows:
 1. Responding to data requests from dApps
 2. Querying data from the corresponding providers, and
 3. Reporting results back to the application.
-4. ![Oracle as the Middle Layer](/img/The_BandChain_Oracle.png)
+4. ![Data Feeds as the Middle Layer](/img/The_BandChain_Data_Feeds.png)
 
 BandChain Data Feed stands out from other data feed solutions in four key areas:
 

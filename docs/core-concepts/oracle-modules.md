@@ -231,6 +231,7 @@ to be used as a part of verification of oracle request.
 
 Result encodes a result of request and store in chain
 
+
 | Field            | Type                                           | Label | Description                                                                                                                                                            |
 |------------------|------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | client_id        | [string](#string)                              |       | ClientID is the unique identifier of this oracle request, as specified by the client. This same unique ID will be sent back to the requester with the oracle response. |
@@ -268,6 +269,7 @@ ResolveStatus encodes the status of an oracle request.
 | RESOLVE_STATUS_SUCCESS          | 1      | Success - the request has been resolved successfully with no errors.                   |
 | RESOLVE_STATUS_FAILURE          | 2      | Failure - an error occurred during the request&#39;s resolve call.                     |
 | RESOLVE_STATUS_EXPIRED          | 3      | Expired - the request does not get enough reports from validator within the timeframe. |
+
 
 <a name="band.oracle.v1.Encoder"></a>
 
