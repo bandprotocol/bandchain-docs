@@ -67,10 +67,10 @@ Install [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ### Step 1.2: Clone & Install Band V3 binary
 
 ```bash
-# Clone Band binary version v3.0.1-rc1
+# Clone Band binary version v3.1.0
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v3.0.1-rc1
+git checkout v3.1.0
 
 # Install binaries to $GOPATH/bin
 make install
@@ -131,7 +131,7 @@ sed -E -i \
 
 # Set number of outbound peers
 sed -E -i \
-  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 30/" \
+  "s/max_num_outbound_peers = .*/max_num_outbound_peers = 20/" \
   $HOME/.band/config/config.toml
 ```
 
@@ -195,8 +195,8 @@ mkdir -p $HOME/.band/cosmovisor/upgrades
 cp $HOME/go/bin/bandd $HOME/.band/cosmovisor/genesis/bin
 
 # Setup folder and provide bandd binary for Cosmovisor Upgrades
-mkdir -p $HOME/.band/cosmovisor/upgrades/v3_0_1_rc1_testnet/bin
-cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_0_1_rc1_testnet/bin
+mkdir -p $HOME/.band/cosmovisor/upgrades/v3_1/bin
+cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_1/bin
 ```
 
 ### Step 2.3: Update Bandchain service
@@ -245,11 +245,11 @@ There is an update in the executor configuration. You can **set up a new executo
 - [AWS Lambda Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-AWS-Lambda)
 - [Google Cloud Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-Google-Cloud-Function)
 
-Then, check Yoda version that we have compiled. It should be `v3.0.1-rc1`.
+Then, check Yoda version that we have compiled. It should be `v3.1.0`.
 
 ```bash
 yoda version
-# v3.0.1-rc1
+# v3.1.0
 ```
 
 ### Step 3.2: Configure Yoda
