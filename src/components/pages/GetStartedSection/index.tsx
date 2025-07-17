@@ -1,4 +1,3 @@
-import React from 'react'
 // import styles from './styles.module.css'
 import Card, { CardItem } from '../../Card'
 
@@ -73,18 +72,18 @@ const FeatureList: CardItem[] = [
     to: '/verifiable-random-function/introduction',
     target: '_self',
   },
-  {
-    title: 'Membit',
-    iconPath: require('@site/static/img/icon/membit.png').default,
-    description: (
-      <>
-        A membit is a rule-based dataset living in a vector database, focused on a specific topic
-        (e.g., social trends, market data).
-      </>
-    ),
-    to: '/',
-    target: '_self',
-  },
+  // {
+  //   title: 'Membit',
+  //   iconPath: require('@site/static/img/icon/membit.png').default,
+  //   description: (
+  //     <>
+  //       A membit is a rule-based dataset living in a vector database, focused on a specific topic
+  //       (e.g., social trends, market data).
+  //     </>
+  //   ),
+  //   to: '/',
+  //   target: '_self',
+  // },
 ]
 
 export default function GetStartedSection(): JSX.Element {
