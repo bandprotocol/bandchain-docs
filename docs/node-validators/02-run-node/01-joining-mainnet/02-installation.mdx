@@ -54,10 +54,10 @@ Go binary should be at /usr/local/go/bin and any executable compiled by go insta
 
 ```bash
 cd ~
-# Clone BandChain Laozi version v3.0.2
+# Clone BandChain Laozi version v3.1.0
 git clone https://github.com/bandprotocol/chain
 cd chain
-git fetch && git checkout v3.0.2
+git fetch && git checkout v3.1.0
 
 # Install binaries to $GOPATH/bin
 make install
@@ -111,12 +111,12 @@ sed -E -i \
 
 # Set timeout propose
 sed -E -i \
-  "s/timeout_propose = \".*\"/timeout_propose = \"2s\"/" \
+  "s/timeout_propose = \".*\"/timeout_propose = \"1s\"/" \
   $HOME/.band/config/config.toml
 
 # Set timeout commit
 sed -E -i \
-  "s/timeout_commit = \".*\"/timeout_commit = \"1s\"/" \
+  "s/timeout_commit = \".*\"/timeout_commit = \"500ms\"/" \
   $HOME/.band/config/config.toml
 
 # Set peer_gossip_sleep_duration
@@ -165,8 +165,8 @@ mkdir -p $HOME/.band/cosmovisor/upgrades
 cp $HOME/go/bin/bandd $HOME/.band/cosmovisor/genesis/bin
 
 # Setup folder and provide bandd binary for Cosmovisor Upgrades
-mkdir -p $HOME/.band/cosmovisor/upgrades/v3/bin
-cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3/bin
+mkdir -p $HOME/.band/cosmovisor/upgrades/v3_1/bin
+cp $HOME/go/bin/bandd $DAEMON_HOME/cosmovisor/upgrades/v3_1/bin
 ```
 
 ## Step 3: Sync with the network
@@ -338,7 +338,7 @@ To check Yoda version, use the following command.
 
 ```bash
 yoda3 version
-# v3.0.2
+# v3.1.0
 ```
 
 ### Step 5.2: Set the Yoda configurations
