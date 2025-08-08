@@ -7,9 +7,8 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 const config: Config = {
-  title: 'Band',
-  tagline:
-    'Band is a cross-chain data platform that aggregates and connects real-world data and APIs to smart contracts.',
+  title: 'Band | Documentation',
+  tagline: 'The Unified Data Layer for AI and Web3',
 
   favicon: 'img/favicon.ico',
 
