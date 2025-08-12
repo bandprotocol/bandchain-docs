@@ -24,7 +24,7 @@ Undelegate pop-up window will be shown. enter BAND amount that you want to undel
 
 check if transaction detail is valid then click **Broadcast**
 
-![click undelegate](/img/staking/undelegate_transaction_detail.png)
+![click undelegate](/img/staking/undelegate_summary.png)
 
 Well done! Your BAND has been successfully undelegated.
 
