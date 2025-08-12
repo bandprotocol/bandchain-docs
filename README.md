@@ -1,7 +1,7 @@
 <p>&nbsp;</p>
 <p align="center">
 
-<img src="bandprotocol_logo.svg" width=500>
+<img src="logo-band.png" width=500>
 
 </p>
 

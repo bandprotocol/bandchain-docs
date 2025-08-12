@@ -7,7 +7,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 const config: Config = {
-  title: 'Band | Document',
+  title: 'Band | Documentation',
   tagline: 'The Unified Data Layer for AI and Web3',
 
   favicon: 'img/favicon.ico',
