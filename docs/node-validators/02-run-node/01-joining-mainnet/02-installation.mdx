@@ -446,7 +446,7 @@ mkdir -p $HOME/.bothan && wget -O $HOME/.bothan/config.toml https://raw.githubus
 
 ```bash
 sudo docker pull bandprotocol/bothan-api:v0.0.1
-CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 50051:50051 bandprotocol/bothan-api:v0.0.1)
+CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 127.0.0.1:50051:50051 bandprotocol/bothan-api:v0.0.1)
 ```
 
 ### Step 6.4: Save your Private Key
