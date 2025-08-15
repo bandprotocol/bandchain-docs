@@ -1,11 +1,8 @@
----
-title: 'Installation'
-sidebar_position: 2
----
+# Installation
 
 ## System Requirements
 
-- Node.js 12.22.0 or later
+- Node.js 16.0.0 or later
 
 - MacOS, Windows (including WSL), and Linux are supported
 
@@ -13,12 +10,12 @@ sidebar_position: 2
 
 The default build targets browsers that support both [native ESM via script tags](https://caniuse.com/es6-module) and [native ESM dynamic import](https://caniuse.com/es6-module-dynamic-import).
 
-## Installation
+## Install from package management of your choice
 
 **NPM**
 
 ```bash
-npm install --save @bandprotocol/bandchain.js
+npm install @bandprotocol/bandchain.js
 ```
 
 **Yarn**

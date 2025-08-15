@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Common Usage Example
 
 ### Make an data request
