@@ -22,7 +22,7 @@ In the Reinvest pop-up window, you will see the amount of reward you will receiv
 
 check if transaction detail is valid then click **Broadcast**
 
-![check transaction details](/img/staking/withdraw_transaction_detail.png)
+![check transaction details](/img/staking/reinvest_summary.png)
 
 Congratulations! Your BAND has been successfully reinvest your reward
 

@@ -22,7 +22,7 @@ In the Withdraw Reward pop-up window, you will see the amount of reward you will
 
 check if transaction detail is valid then click **Broadcast**
 
-![check transaction details](/img/staking/withdraw_transaction_detail.png)
+![check transaction details](/img/staking/withdraw_summary.png)
 
 Congratulations! Your BAND has been successfully claimed reward
 

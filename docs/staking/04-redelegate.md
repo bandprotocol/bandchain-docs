@@ -8,7 +8,7 @@ This guide necessitates that you first familiarize yourself with the [Delegate](
 
 ### Step 1 — Select the Validator you want to redelegate
 
-navigate to your account details page. you will see the section of Delegation. then click **Redelegate** on your selected validator
+navigate to your account details page. you will see the section of Delegation. then click on three dot menu then **Redelegate** on your selected validator
 
 ![click redelegate](/img/staking/redelegate_section.png)
 
@@ -26,11 +26,11 @@ and Enter BAND amount you want to redalegate to and click Next to the next step
 
 Check if transaction detail is valid then click **Broadcast**
 
-![click undelegate](/img/staking/redelegate_transaction_detail.png)
+![click undelegate](/img/staking/redelegate_summary.png)
 
 Congratulations! Your BAND has been successfully redelegated to the new validator
 
-![check transaction details](/img/staking/undelegate_transaction_success.png)
+![check transaction details](/img/staking/transaction_success.png)
 
 ### Step 4 — Check Redelegate tab
 
