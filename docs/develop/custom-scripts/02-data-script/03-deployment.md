@@ -16,69 +16,70 @@ parameters include:
 - `sender`: The message sender account.
 
 In order to send a `MsgCreateOracleScript` message, we can use either
-[bandchain.js](/develop/developer-tools/bandchain.js/getting-started) or
+[bandchain.js](/develop/developer-tools/02-bandchain.js/03-getting-started) or
 [pyband](/develop/developer-tools/pyband/getting-started)
 
 An example on how to send a `MsgCreateOracleScript` message via
-[bandchain.js](/develop/developer-tools/bandchain.js/getting-started) can be seen below.
+[bandchain.js](/develop/developer-tools/02-bandchain.js/03-getting-started) can be seen below.
 
 ```javascript
-import { Client, Wallet, Message, Coin, Transaction, Fee } from '@bandprotocol/bandchain.js'
+import { band, getSigningBandClient } from '@bandprotocol/bandchain.js'
 import fs from 'fs'
 import path from 'path'
 
-const grpcURL = 'https://laozi-testnet6.bandchain.org/grpc-web'
-const client = new Client(grpcURL)
+// Import DirectSecp256k1HdWallet from the bundled cosmjs in bandchain.js
+const { DirectSecp256k1HdWallet } = await import(
+  '@bandprotocol/bandchain.js/node_modules/@cosmjs/proto-signing'
+)
 
-// Setup the client
+const rpcEndpoint = 'https://rpc.band-v3-testnet.bandchain.org'
+const mnemonic = process.env.MNEMONIC
+
 async function createOracleScript() {
-  // Setup the wallet
-  const { PrivateKey } = Wallet
-  const mnemonic = process.env.MNEMONIC
-  const privateKey = PrivateKey.fromMnemonic(mnemonic)
-  const publicKey = privateKey.toPubkey()
-  const sender = publicKey.toAddress().toAccBech32()
+  // Create a signer using the compatible DirectSecp256k1HdWallet
+  const signer = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
+    prefix: 'band',
+  })
+
+  const [account] = await signer.getAccounts()
+
+  // Create a signing client
+  const client = await getSigningBandClient({
+    rpcEndpoint: rpcEndpoint,
+    signer: signer,
+  })
 
   // Setup the transaction's properties
-  const chainId = await client.getChainId()
   const execPath = path.resolve(__dirname, 'hello_world.wasm')
   const code = fs.readFileSync(execPath)
 
-  let feeCoin = new Coin()
-  feeCoin.setDenom('uband')
-  feeCoin.setAmount('0')
+  // Import the createOracleScript message composer from Band's oracle module
+  const { createOracleScript } = band.oracle.v1.MessageComposer.withTypeUrl
 
-  const requestMessage = new Message.MsgCreateOracleScript(
-    'Hello World!', // data script name
-    code, // data script code
-    sender, // owner
-    sender, // sender
-    '', // description
-    '{repeat:u64}/{response:string}', // schema
-    'https://ipfs.io/ipfs/QmSSrgJ6QuFDJHyC2SyTgnHKRBhPdLHUD2tJJ86xejrCfn' // source code url
-  )
+  // Create a MsgCreateOracleScript message
+  const msgCreateOracleScript = band.oracle.v1.MsgCreateOracleScript.fromPartial({
+    name: 'Hello World!', // data script name
+    code: code, // data script code
+    owner: account.address, // owner
+    sender: account.address, // sender
+    description: '', // description
+    schema: '{repeat:u64}/{response:string}', // schema
+    sourceCodeUrl: 'https://ipfs.io/ipfs/QmSSrgJ6QuFDJHyC2SyTgnHKRBhPdLHUD2tJJ86xejrCfn' // source code url
+  })
 
-  // Construct the transaction
-  const fee = new Fee()
-  fee.setAmountList([feeCoin])
-  fee.setGasLimit(350000)
+  // Convert to properly formatted message with type URL
+  const msg = createOracleScript(msgCreateOracleScript)
 
-  const txn = new Transaction()
-  txn.withMessages(requestMessage)
-  await txn.withSender(client, sender)
-  txn.withChainId(chainId)
-  txn.withFee(fee)
-  txn.withMemo('')
+  // Set transaction fee
+  const fee = {
+    amount: [{ denom: 'uband', amount: '5000' }], // Transaction fee
+    gas: '350000', // Gas limit
+  }
 
-  // Sign the transaction
-  const signDoc = txn.getSignDoc(publicKey)
-  const signature = privateKey.sign(signDoc)
-  const txRawBytes = txn.getTxData(signature, publicKey)
+  // Sign and broadcast the transaction
+  const result = await client.signAndBroadcast(account.address, [msg], fee)
 
-  // Broadcast the transaction
-  const sendTx = await client.sendTxBlockMode(txRawBytes)
-
-  return sendTx
+  return result
 }
 
 ;(async () => {
