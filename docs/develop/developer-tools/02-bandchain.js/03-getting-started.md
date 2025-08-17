@@ -1,4 +1,4 @@
-# Getting Started with BandChain.js
+# Getting Started
 
 BandChain.js provides two primary interaction patterns for working with the BandChain blockchain:
 
@@ -17,7 +17,7 @@ npm install @bandprotocol/bandchain.js
 yarn add @bandprotocol/bandchain.js
 ```
 
-## 🔍 Simple Query
+## Simple Query
 
 The query client allows you to read data from the blockchain without needing a wallet or paying transaction fees. This is perfect for fetching account balances, oracle data, validator information, and more.
 
@@ -50,7 +50,7 @@ Other query examples you can try:
 - `client.cosmos.staking.v1beta1.validators({ status: 'BOND_STATUS_BONDED' })` - Get active validators
 - `client.cosmos.gov.v1beta1.proposals({})` - Get governance proposals
 
-## ⚡ Simple Transaction
+## Simple Transaction
 
 Transactions require a signing client that can create, sign, and broadcast messages to modify blockchain state. This includes operations like sending tokens, requesting oracle data, staking, voting on proposals, and more.
 
@@ -121,7 +121,7 @@ return result
 
 - **Error handling**: Check `result.code === 0` to verify transaction success. Failed transactions will have error details in `result.rawLog`.
 
-## 🎯 Next Steps
+## Next Steps
 
 Now that you understand the basics, you can:
 
