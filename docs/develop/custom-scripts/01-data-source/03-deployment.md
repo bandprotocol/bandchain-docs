@@ -17,7 +17,7 @@ parameters include:
 - `sender`: The message sender account.
 
 In order to send a `MsgCreateDataSource` message, we can use either
-[bandchain.js](/develop/developer-tools/02-bandchain.js/03-getting-started) or
+[bandchain.js](/develop/developer-tools/bandchain.js/getting-started) or
 [pyband](/develop/developer-tools/pyband/getting-started)
 
 An example on how to send a `MsgCreateDataSource` message via **BandChain.js** can be seen below.

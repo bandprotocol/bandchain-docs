@@ -59,7 +59,7 @@ If the mnemonic phrase leaks, accounts cannot be derived without the initial pas
 
 :::
 
-At BandChain, we offer a simple method for generating a mnemonic phrase to create a BandChain account using either [PyBand](/develop/developer-tools/pyband/wallet#from_mnemonicword-path) or [BandChain.js](/develop/developer-tools/02-bandchain.js/03-getting-started).
+At BandChain, we offer a simple method for generating a mnemonic phrase to create a BandChain account using either [PyBand](/develop/developer-tools/pyband/wallet#from_mnemonicword-path) or [BandChain.js](/develop/developer-tools/bandchain.js/getting-started).
 
 ```js
 // Import DirectSecp256k1HdWallet from the bundled cosmjs in bandchain.js
