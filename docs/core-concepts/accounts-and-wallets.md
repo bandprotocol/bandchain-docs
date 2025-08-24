@@ -59,14 +59,19 @@ If the mnemonic phrase leaks, accounts cannot be derived without the initial pas
 
 :::
 
-At BandChain, we offer a simple method for generating a mnemonic phrase to create a BandChain account using either [PyBand](/develop/developer-tools/pyband/wallet#from_mnemonicword-path) or [BandChain.js](/develop/developer-tools/bandchain.js/wallet#frommnemonicword-path).
+At BandChain, we offer a simple method for generating a mnemonic phrase to create a BandChain account using either [PyBand](/develop/developer-tools/pyband/wallet#from_mnemonicword-path) or [BandChain.js](/develop/developer-tools/bandchain.js/getting-started).
 
 ```js
-import { Wallet } from '@bandprotocol/bandchain.js'
-const { PrivateKey } = Wallet
+// Import DirectSecp256k1HdWallet from the bundled cosmjs in bandchain.js
+const { DirectSecp256k1HdWallet } = await import(
+  '@bandprotocol/bandchain.js/node_modules/@cosmjs/proto-signing'
+)
 
-const [mnemonic, privateKey] = PrivateKey.generate("m/44'/494'/0'/0/0")
-const address = PrivateKey.fromMnemonic(mnemonic).toPubkey().toAccBech32() // band1ycw2277nurr5zymw7exqf8za2t73y3ys5zwf7z
+// Generate a new mnemonic and create a wallet
+const mnemonic = DirectSecp256k1HdWallet.generateMnemonic()
+const wallet = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, { prefix: 'band' })
+const [account] = await wallet.getAccounts()
+const address = account.address // band1ycw2277nurr5zymw7exqf8za2t73y3ys5zwf7z
 ```
 
 ## Querying an Account

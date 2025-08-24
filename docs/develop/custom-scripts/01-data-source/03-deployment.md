@@ -23,63 +23,64 @@ In order to send a `MsgCreateDataSource` message, we can use either
 An example on how to send a `MsgCreateDataSource` message via **BandChain.js** can be seen below.
 
 ```javascript
-import { Client, Wallet, Message, Coin, Transaction, Fee } from '@bandprotocol/bandchain.js'
+import { band, getSigningBandClient } from '@bandprotocol/bandchain.js'
 import fs from 'fs'
 import path from 'path'
 
-// Setup the client
-const grpcURL = 'https://laozi-testnet6.bandchain.org/grpc-web'
-const client = new Client(grpcURL)
+// Import DirectSecp256k1HdWallet from the bundled cosmjs in bandchain.js
+const { DirectSecp256k1HdWallet } = await import(
+  '@bandprotocol/bandchain.js/node_modules/@cosmjs/proto-signing'
+)
+
+const rpcEndpoint = 'https://rpc.band-v3-testnet.bandchain.org'
+const mnemonic = process.env.MNEMONIC
 
 async function createDataSource() {
-  // Setup the wallet
-  const { PrivateKey } = Wallet
-  const mnemonic = process.env.MNEMONIC
-  const privateKey = PrivateKey.fromMnemonic(mnemonic)
-  const publicKey = privateKey.toPubkey()
-  const sender = publicKey.toAddress().toAccBech32()
+  // Create a signer using the compatible DirectSecp256k1HdWallet
+  const signer = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
+    prefix: 'band',
+  })
+
+  const [account] = await signer.getAccounts()
+
+  // Create a signing client
+  const client = await getSigningBandClient({
+    rpcEndpoint: rpcEndpoint,
+    signer: signer,
+  })
 
   // Setup the transaction's properties
-  const chainId = await client.getChainId()
   const execPath = path.resolve(__dirname, 'hello_world.py')
   const file = fs.readFileSync(execPath, 'utf8')
   const executable = Buffer.from(file).toString('base64')
 
-  let feeCoin = new Coin()
-  feeCoin.setDenom('uband')
-  feeCoin.setAmount('50000')
+  // Import the createDataSource message composer from Band's oracle module
+  const { createDataSource } = band.oracle.v1.MessageComposer.withTypeUrl
 
-  const requestMessage = new Message.MsgCreateDataSource(
-    'Hello World!', // Data source name
-    executable, // Data source executable
-    sender, // Treasury address
-    sender, // Owner address
-    sender, // Sender address
-    [feeCoin], // Fee
-    '' // Data source description
-  )
+  // Create a MsgCreateDataSource message
+  const msgCreateDataSource = band.oracle.v1.MsgCreateDataSource.fromPartial({
+    name: 'Hello World!', // Data source name
+    executable: executable, // Data source executable
+    treasury: account.address, // Treasury address
+    owner: account.address, // Owner address
+    sender: account.address, // Sender address
+    fee: [{ denom: 'uband', amount: '50000' }], // Fee
+    description: '' // Data source description
+  })
 
-  // Construct the transaction
-  const fee = new Fee()
-  fee.setAmountList([feeCoin])
-  fee.setGasLimit(60000)
+  // Convert to properly formatted message with type URL
+  const msg = createDataSource(msgCreateDataSource)
 
-  const txn = new Transaction()
-  txn.withMessages(requestMessage)
-  await txn.withSender(client, sender)
-  txn.withChainId(chainId)
-  txn.withFee(fee)
-  txn.withMemo('')
+  // Set transaction fee
+  const fee = {
+    amount: [{ denom: 'uband', amount: '5000' }], // Transaction fee
+    gas: '200000', // Gas limit
+  }
 
-  // Sign the transaction
-  const signDoc = txn.getSignDoc(publicKey)
-  const signature = privateKey.sign(signDoc)
-  const txRawBytes = txn.getTxData(signature, publicKey)
+  // Sign and broadcast the transaction
+  const result = await client.signAndBroadcast(account.address, [msg], fee)
 
-  // Broadcast the transaction
-  const sendTx = await client.sendTxBlockMode(txRawBytes)
-
-  return sendTx
+  return result
 }
 
 ;(async () => {
