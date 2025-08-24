@@ -19,7 +19,7 @@ yarn add @bandprotocol/bandchain.js
 
 ## Simple Query
 
-The query client allows you to read data from the blockchain without needing a wallet or paying transaction fees. This is perfect for fetching account balances, oracle data, validator information, and more.
+The query client allows you to read data from the BandChain without needing a wallet or paying transaction fees. This is perfect for fetching account balances, price feeds data, validator information, and more.
 
 > **Note**: This example is for demonstration purposes only. Do not use in production. Please see examples at https://github.com/bandprotocol/bandchain.js/tree/master/example
 

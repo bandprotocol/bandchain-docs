@@ -21,8 +21,8 @@ const getSignerClient = async () => {
   const signer = await getOfflineSigner({
     mnemonic,
     chain: {
-      bech32_prefix: 'band', // Band Protocol address prefix
-      slip44: 494, // Band Protocol coin type
+      bech32_prefix: 'band', // Band address prefix
+      slip44: 494, // Band coin type
     },
   })
 
@@ -34,13 +34,13 @@ const getSignerClient = async () => {
   return cosmosClient
 }
 
-// Creates a Band Protocol specific signing client with additional Band modules
+// Creates a Band specific signing client with additional Band modules
 const getBandSignerClient = async () => {
   const signer = await getOfflineSigner({
     mnemonic,
     chain: {
-      bech32_prefix: 'band', // Band Protocol address prefix
-      slip44: 494, // Band Protocol coin type
+      bech32_prefix: 'band', // Band address prefix
+      slip44: 494, // Band coin type
     },
   })
 
@@ -59,7 +59,7 @@ const getBandSignerClient = async () => {
 
 ## Vote on Signal
 
-This example demonstrates how to vote on price feed signals using Band Protocol's feeds module. Signal voting is used in Band's price feed system to indicate which price feeds validators should support.
+This example demonstrates how to vote on price feed signals using BandChain feeds module. Signal voting is used in Band's price feed system to indicate which price feeds validators should support.
 
 ```js
 import { band } from '@bandprotocol/bandchain.js'
@@ -157,7 +157,7 @@ const sendToken = async () => {
 
 ## Get Tunnels
 
-This example demonstrates how to query tunnel information from Band Protocol's tunnel module. Tunnels are used for cross-chain communication and data routing in Band Protocol's infrastructure.
+This example demonstrates how to query tunnel information from BandChain tunnel module. Tunnels are used for cross-chain communication and data routing in BandChain infrastructure.
 
 ```js
 const getTunnels = async () => {
@@ -183,7 +183,7 @@ const getTunnels = async () => {
 
 ## Get TSS Groups
 
-This example shows how to query Threshold Signature Scheme (TSS) groups from Band Protocol's TSS module. TSS groups are used for distributed key management and multi-party computation in Band Protocol's security infrastructure.
+This example shows how to query Threshold Signature Scheme (TSS) groups from BandChain TSS module. TSS groups are used for distributed key management and multi-party computation in BandChain security infrastructure.
 
 ```js
 const getTSSGroups = async () => {
@@ -208,7 +208,7 @@ const getTSSGroups = async () => {
 
 ## Get Feeds Data
 
-This example demonstrates how to query price feed data from Band Protocol's feeds module using a read-only client. No wallet or transaction fees are required for queries.
+This example demonstrates how to query price feed data from BandChain feeds module using a read-only client. No wallet or transaction fees are required for queries.
 
 ```js
 const getFeedPrices = async () => {
@@ -216,7 +216,7 @@ const getFeedPrices = async () => {
   const { createRPCQueryClient } = band.ClientFactory
   const client = await createRPCQueryClient({ rpcEndpoint })
 
-  // Query all available price feed data from Band Protocol
+  // Query all available price feed data from Band
   const prices = await client.band.feeds.v1beta1.allPrices()
 
   return prices // Returns array of price feed data with symbols, prices, and timestamps
@@ -225,7 +225,7 @@ const getFeedPrices = async () => {
 
 ## Send BAND Token via IBC Transfer
 
-This example shows how to transfer BAND tokens to another blockchain using the Inter-Blockchain Communication (IBC) protocol. This enables cross-chain token transfers between Band Protocol and other Cosmos SDK chains.
+This example shows how to transfer BAND tokens to another blockchain using the Inter-Blockchain Communication (IBC) protocol. This enables cross-chain token transfers between Band and other Cosmos SDK chains.
 
 > **Note**: You can view all active testnet channels at https://band-v3-testnet.cosmoscan.io/channel?port=transfer&channel=channel-8
 
@@ -233,7 +233,7 @@ This example shows how to transfer BAND tokens to another blockchain using the I
 const sendIBC = async () => {
   const signer = await getSignerClient()
 
-  const fromAddress = 'band1qjte252y5wk3vj0tk2cmgw64pwkxsg0n22pa4k' // Sender's address on Band Protocol
+  const fromAddress = 'band1qjte252y5wk3vj0tk2cmgw64pwkxsg0n22pa4k' // Sender's address on BandChain
 
   const fee = {
     amount: [
@@ -256,7 +256,7 @@ const sendIBC = async () => {
       denom: 'uband', // Token denomination to transfer
       amount: '1000000', // Amount to transfer (1 BAND = 1,000,000 uband)
     },
-    sender: fromAddress, // Sender's address on Band Protocol
+    sender: fromAddress, // Sender's address on BandCahin
     receiver: 'osmo1yrku9wh2amtsfxsegj4082k609cd8p85dsnsjd', // Recipient's address on destination chain (Osmosis in this example)
     timeoutHeight: {
       revisionNumber: BigInt(1), // Chain revision number
