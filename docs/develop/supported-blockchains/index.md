@@ -14,6 +14,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 
 | Blockchain         |                                                      `StdReferenceProxy` Contract Address                                                      |
 | ------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------: |
+| Arc                |          [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet.arcscan.app/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)          |
 | Astar (Shibuya)    |        [0x2Bf9a731f9A56C59DeB4DF1369286A3E69F5b418](https://blockscout.com/shibuya/address/0x2Bf9a731f9A56C59DeB4DF1369286A3E69F5b418)         |
 | Bitgert            |    [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet-explorer.brisescan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)     |
 | BitTorrent Chain   |         [0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68](https://testnet.bttcscan.com/address/0x8c064bCf7C0DA3B3b090BAbFE8f3323534D84d68)          |
