@@ -59,8 +59,8 @@ const config: Config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        gtag: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && {
-          trackingID: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
+        gtag: {
+          trackingID: 'G-DCFFR6X15E',
           anonymizeIP: true,
         },
       },

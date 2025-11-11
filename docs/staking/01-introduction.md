@@ -39,11 +39,13 @@ On the Validators page, you will encounter a table that outlines various validat
 ![validators page](/img/staking/all_validators_page.png)
 
 - **Column 1 — Rank:** Represents the sequence of validators based on the number of tokens bonded to each validator.
-- **Column 2 — Validator:** Name of validator
+- **Column 2 — Validator Name:** Name of validator
 - **Column 3 — Voting Power:** Denotes the number of tokens bonded to a particular validator.
 - **Column 4 — Commission:** Every validator charge commission on the rewards earned by the delegators on their behalf.
-- **Column 5 — Uptime:** Demonstrates the proportion of blocks a validator has been active within the last 100 blocks.
-- **Column 6 — Data Feeds Status:** shows that is this validator working as an data feed provider or not.
+- **Column 5 — Est. APR:** Shows the estimated Annual Percentage Rate (APR) that delegators can expect to earn by staking with this validator, calculated based on current network conditions, validator performance, and commission rates.
+- **Column 6 — Uptime:** Demonstrates the proportion of blocks a validator has been active within the last 100 blocks.
+- **Column 7 — Data Feeds Status:** shows that is this validator working as an data feed provider or not.
+- **Column 8 — TSS Status:** Indicates whether this validator is participating in the Threshold Signature Scheme (TSS) group, which enables secure cross-chain data verification. Learn more about TSS in the [Threshold Signature Scheme](/theshold-signature-scheme/introduction) section.
 
 There are three factors you should consider when choosing a validator:
 

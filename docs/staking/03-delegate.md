@@ -48,7 +48,7 @@ Upon clicking **Delegate**, a new window will pop up. Enter the amount of BAND t
 
 At this point, you'll see transaction details for your delegation. Review the information, and if everything is ok, click **Broadcast**.
 
-![transaction details](/img/staking/transaction_detail.png)
+![transaction details](/img/staking/delegate_summary.png)
 
 Voila! You have successfully delegated your BAND tokens. Congratulations on taking this step in staking and earning rewards on your tokens!
 
