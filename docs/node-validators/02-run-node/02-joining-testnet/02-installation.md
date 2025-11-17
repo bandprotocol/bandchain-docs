@@ -67,10 +67,10 @@ Install [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ### Step 1.2: Clone & Install Band V3 binary
 
 ```bash
-# Clone Band binary version v3.1.0
+# Clone Band binary version v3.1.1
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v3.1.0
+git checkout v3.1.1
 
 # Install binaries to $GOPATH/bin
 make install
@@ -245,11 +245,11 @@ There is an update in the executor configuration. You can **set up a new executo
 - [AWS Lambda Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-AWS-Lambda)
 - [Google Cloud Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-Google-Cloud-Function)
 
-Then, check Yoda version that we have compiled. It should be `v3.1.0`.
+Then, check Yoda version that we have compiled. It should be `v3.1.1`.
 
 ```bash
 yoda version
-# v3.1.0
+# v3.1.1
 ```
 
 ### Step 3.2: Configure Yoda
@@ -326,8 +326,8 @@ mkdir -p $HOME/.bothan && wget -O $HOME/.bothan/config.toml $BOTHAN_CONFIG_FILE_
 ### Step 4.2: Run Bothan docker
 
 ```bash
-sudo docker pull bandprotocol/bothan-api:v0.0.1
-CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 127.0.0.1:50051:50051 bandprotocol/bothan-api:v0.0.1)
+sudo docker pull bandprotocol/bothan-api:v0.1.0
+CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 127.0.0.1:50051:50051 bandprotocol/bothan-api:v0.1.0)
 ```
 
 ### Step 4.3: Save your Private Key

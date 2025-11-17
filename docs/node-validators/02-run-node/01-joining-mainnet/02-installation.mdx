@@ -54,10 +54,10 @@ Go binary should be at /usr/local/go/bin and any executable compiled by go insta
 
 ```bash
 cd ~
-# Clone BandChain Laozi version v3.1.0
+# Clone BandChain Laozi version v3.1.1
 git clone https://github.com/bandprotocol/chain
 cd chain
-git fetch && git checkout v3.1.0
+git fetch && git checkout v3.1.1
 
 # Install binaries to $GOPATH/bin
 make install
@@ -91,7 +91,7 @@ For minimum-gas-prices, you can set any number but the recommendation is 0.0025u
 
 ```bash
 # List of seeds and persistent peers you want to add
-# e.g. SEEDS="8d42bdcb6cced03e0b67fa3957e4e9c8fd89015a@34.87.86.195:26656,543e0cab9c3016a0e99775443a17bcf163038912@34.150.156.78:26656"
+# e.g. SEEDS="2ace5785ad45be3d49eabd937892fab097a3515e@49.12.222.89:26656,12879758fb38f5f80e05022f1102aecebcb56bb0@37.27.249.86:26656"
 export SEEDS="<SEED>,<SEED>,..."
 export PERSISTENT_PEERS="<PERSISTENT_PEER>,<PERSISTENT_PEER>,..."
 
@@ -197,7 +197,7 @@ You can see the detail of genesis and each upgrade in the table below.
 | `v2_4`       | `11525000`     | [link](https://medium.com/bandprotocol/bandchain-v2-4-upgrade-70dbb896618c) | `1.19.1`   | `v2.4.1`      | `~/.band/cosmovisor/upgrades/v2_4/bin` |
 | `v2_5`       | `16562500`     | [link](https://www.cosmoscan.io/proposal/11)                                | `1.19.1`   | `v2.5.4`      | `~/.band/cosmovisor/upgrades/v2_5/bin` |
 | `v3`         | `42051400`     | [link](https://www.cosmoscan.io/proposal/14)                                | `1.24.2`   | `v3.0.2`      | `~/.band/cosmovisor/upgrades/v3/bin`   |
-| `v3_1`       | `42450000`     | [link](https://www.cosmoscan.io/proposal/15)                                | `1.24.2`   | `v3.1.0`      | `~/.band/cosmovisor/upgrades/v3_1/bin` |
+| `v3_1`       | `42450000`     | [link](https://www.cosmoscan.io/proposal/15)                                | `1.24.2`   | `v3.1.1`      | `~/.band/cosmovisor/upgrades/v3_1/bin` |
 
 Before doing the next step, you have to build and provide each correct bandd binary version to Cosmovisor in the binary path so that Cosmovisor can automatically switch it correctly.
 
@@ -214,7 +214,7 @@ State Sync is an efficient and fast way to bootstrap a new node, and it works by
 # Get trust height and trust hash
 
 LATEST_HEIGHT=$(curl -s http://rpc.laozi1.bandchain.org/block | jq -r .result.block.header.height);
-TRUST_HEIGHT=$(($LATEST_HEIGHT-60000))
+TRUST_HEIGHT=$(($LATEST_HEIGHT-120000))
 TRUST_HASH=$(curl -s "http://rpc.laozi1.bandchain.org/block?height=$TRUST_HEIGHT" | jq -r .result.block_id.hash)
 
 # show trust height and trust hash
@@ -338,7 +338,7 @@ To check Yoda version, use the following command.
 
 ```bash
 yoda3 version
-# v3.1.0
+# v3.1.1
 ```
 
 ### Step 5.2: Set the Yoda configurations
@@ -445,8 +445,8 @@ mkdir -p $HOME/.bothan && wget -O $HOME/.bothan/config.toml https://raw.githubus
 ### Step 6.3: Run Bothan docker
 
 ```bash
-sudo docker pull bandprotocol/bothan-api:v0.0.1
-CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 127.0.0.1:50051:50051 bandprotocol/bothan-api:v0.0.1)
+sudo docker pull bandprotocol/bothan-api:v0.1.0
+CONTAINER_ID=$(sudo docker run --restart always --log-opt max-size=50m --log-opt max-file=5 -d --name bothan -v "$HOME/.bothan:/root/.bothan" -p 127.0.0.1:50051:50051 bandprotocol/bothan-api:v0.1.0)
 ```
 
 ### Step 6.4: Save your Private Key
