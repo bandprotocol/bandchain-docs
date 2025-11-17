@@ -214,7 +214,7 @@ State Sync is an efficient and fast way to bootstrap a new node, and it works by
 # Get trust height and trust hash
 
 LATEST_HEIGHT=$(curl -s http://rpc.laozi1.bandchain.org/block | jq -r .result.block.header.height);
-TRUST_HEIGHT=$(($LATEST_HEIGHT-60000))
+TRUST_HEIGHT=$(($LATEST_HEIGHT-120000))
 TRUST_HASH=$(curl -s "http://rpc.laozi1.bandchain.org/block?height=$TRUST_HEIGHT" | jq -r .result.block_id.hash)
 
 # show trust height and trust hash
