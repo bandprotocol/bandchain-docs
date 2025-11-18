@@ -256,7 +256,7 @@ const sendIBC = async () => {
       denom: 'uband', // Token denomination to transfer
       amount: '1000000', // Amount to transfer (1 BAND = 1,000,000 uband)
     },
-    sender: fromAddress, // Sender's address on BandCahin
+    sender: fromAddress, // Sender's address on BandChain
     receiver: 'osmo1yrku9wh2amtsfxsegj4082k609cd8p85dsnsjd', // Recipient's address on destination chain (Osmosis in this example)
     timeoutHeight: {
       revisionNumber: BigInt(1), // Chain revision number
