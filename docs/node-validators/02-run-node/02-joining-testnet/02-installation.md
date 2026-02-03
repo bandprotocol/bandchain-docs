@@ -67,10 +67,10 @@ Install [Docker for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ### Step 1.2: Clone & Install Band V3 binary
 
 ```bash
-# Clone Band binary version v3.1.1
+# Clone Band binary version v3.1.2
 git clone https://github.com/bandprotocol/chain
 cd chain
-git checkout v3.1.1
+git checkout v3.1.2
 
 # Install binaries to $GOPATH/bin
 make install
@@ -245,11 +245,11 @@ There is an update in the executor configuration. You can **set up a new executo
 - [AWS Lambda Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-AWS-Lambda)
 - [Google Cloud Function Setup](https://github.com/bandprotocol/data-source-runtime/wiki/Setup-Yoda-Executor-Using-Google-Cloud-Function)
 
-Then, check Yoda version that we have compiled. It should be `v3.1.1`.
+Then, check Yoda version that we have compiled. It should be `v3.1.2`.
 
 ```bash
 yoda version
-# v3.1.1
+# v3.1.2
 ```
 
 ### Step 3.2: Configure Yoda
