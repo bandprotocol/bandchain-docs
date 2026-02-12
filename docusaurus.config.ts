@@ -75,13 +75,6 @@ const config: Config = {
     },
   ],
   plugins: [
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-DCFFR6X15E',
-        anonymizeIP: true,
-      },
-    ],
     require.resolve('docusaurus-plugin-image-zoom'),
     // only enabled on production
     // [
