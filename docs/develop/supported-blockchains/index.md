@@ -49,6 +49,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Celo             |               [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.celo.org/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)               |
 | Cronos           |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://cronoscan.com/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                 |
 | Cronos zkEVM     |           [0x4ef80a75ac964d9eb366263a065ed35c842efe40](https://explorer.zkevm.cronos.org/address/0x4ef80a75ac964d9eb366263a065ed35c842efe40)           |
+| Coti             |              [0x9503d502435f8e228b874Ba0F792301d4401b523](https://mainnet.cotiscan.io/address/0x9503d502435f8e228b874Ba0F792301d4401b523)              |
 | Ethereum         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://etherscan.io/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)                  |
 | Flow             |                                       [0x6801a6222ebf784a](https://www.flowdiver.io/account/0x6801a6222ebf784a)                                        |
 | Godwoken         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
