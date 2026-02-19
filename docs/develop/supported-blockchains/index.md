@@ -54,7 +54,7 @@ Currently, our `StdReferenceProxy` smart contracts are available on the followin
 | Flow             |                                       [0x6801a6222ebf784a](https://www.flowdiver.io/account/0x6801a6222ebf784a)                                        |
 | Godwoken         |                 [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://v1.gwscan.com/account/0xda7a001b254cd22e46d3eab04d937489c93174c3)                 |
 | Horizen (EON)    |          [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://eon-explorer.horizenlabs.io/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)          |
-| Harmony          |             [0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1](https://explorer.harmony.one/address/0xA55d9ef16Af921b70Fed1421C1D298Ca5A3a18F1)              |
+| Harmony          |             [0xDA7a001b254CD22e46d3eAB04d937489c93174C3](https://explorer.harmony.one/address/0xDA7a001b254CD22e46d3eAB04d937489c93174C3)              |
 | Icon (Java)      |            [cxe647e0af68a4661566f5e9861ad4ac854de808a2](https://tracker.icon.community/contract/cxe647e0af68a4661566f5e9861ad4ac854de808a2)            |
 | Meter            |                 [0x861C20f77f194EEa4f86e0d39069D789265A3A82](https://scan.meter.io/address/0x861C20f77f194EEa4f86e0d39069D789265A3A82)                 |
 | Moonriver        |             [0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E](https://moonriver.moonscan.io/address/0x75B01902D9297fD381bcF3B155a8cEAC78F5A35E)             |
