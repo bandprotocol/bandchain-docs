@@ -75,6 +75,7 @@ const config: Config = {
     },
   ],
   plugins: [
+    'docusaurus-plugin-copy-page-button',
     require.resolve('docusaurus-plugin-image-zoom'),
     // only enabled on production
     // [

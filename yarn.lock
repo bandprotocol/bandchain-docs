@@ -4051,6 +4051,11 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
+docusaurus-plugin-copy-page-button@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-copy-page-button/-/docusaurus-plugin-copy-page-button-0.8.3.tgz#fbe3f6d83bf737d9fc9510fe98b38952d19e7e4d"
+  integrity sha512-2/k4H/ePsuZUVv5S91XC2zhnIWLufHzEPTdo/6jYcvonQqHKcLK9vfOp24L5qwMO16VGhHRIEYcEVrXOshxaBw==
+
 docusaurus-plugin-image-zoom@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/docusaurus-plugin-image-zoom/-/docusaurus-plugin-image-zoom-1.0.1.tgz#17afec39f2e630cac50a4ed3a8bbdad8d0aa8b9d"
