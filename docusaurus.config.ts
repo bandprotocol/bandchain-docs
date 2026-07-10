@@ -1,10 +1,10 @@
 import type { Config } from '@docusaurus/types'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
 const { themes } = require('prism-react-renderer')
 const lightCodeTheme = themes.github
 const darkCodeTheme = themes.dracula
-import remarkMath from 'remark-math'
-import rehypeKatex from 'rehype-katex'
 
 const config: Config = {
   title: 'Band | Documentation',
@@ -188,7 +188,7 @@ const config: Config = {
             items: [
               {
                 label: 'Band Partners',
-                href: 'https://www.bandpartners.io/',
+                href: 'https://bandpartners.xyz/',
               },
               {
                 label: 'X',
