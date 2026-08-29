@@ -33,3 +33,15 @@ When you want to add a custom network, these additional fields may be required:
 | Decimals                 | 6                                     |
 | Block Explorer (mainnet) | https://www.cosmoscan.io/             |
 | Block Explorer (testnet) | https://band-v3-testnet.cosmoscan.io/ |
+
+## Community RPC Endpoints
+
+The following community-operated endpoints are publicly available for Band Protocol mainnet:
+
+| Provider    | RPC Endpoint                                            |
+| ----------- | ------------------------------------------------------- |
+| High Stakes | https://bandprotocol-rpc.highstakes.ch                  |
+| Stakewolle  | https://public.stakewolle.com/cosmos/bandchain/rpc      |
+| IBS Team    | https://band.ibs.team:443/rpc                           |
+
+For independent latency and availability measurements across these endpoints, see the [Band Protocol RPC Benchmark](https://openchainbench.com/benchmarks/bandchain-rpc) on OpenChainBench.
